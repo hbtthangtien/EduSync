@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|e:\\documents\\c#\\sp_exe\\edusync\\infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\commons\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\commons\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\commons\\iaudiable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\commons\\iaudiable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DependenceInjection.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Extensions\\DependenceInjection.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Extensions\\DependenceInjection.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Extensions\\DependenceInjection.cs",
+              "RelativeToolTip": "Infrastructure\\Extensions\\DependenceInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:07:55.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IAudiable.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\IAudiable.cs",
+              "RelativeDocumentMoniker": "Domain\\Commons\\IAudiable.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\IAudiable.cs",
+              "RelativeToolTip": "Domain\\Commons\\IAudiable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:04:18.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Domain\\Commons\\BaseEntity.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\BaseEntity.cs",
+              "RelativeToolTip": "Domain\\Commons\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:03:47.052Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
