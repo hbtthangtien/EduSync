@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Persistence.DatabaseConfigs;
+using System;
 
 namespace Presentation
 {
@@ -13,8 +16,9 @@ namespace Presentation
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
+			builder.Services.AddDbContext<EduSyncContext>(options =>
+                options.UseSqlServer("Server=DUONG-MEEP\\MSSQLSERVER01;Database=EduSyncDb;Trusted_Connection=True;TrustServerCertificate=True;"));
+			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

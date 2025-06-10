@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\hbtth\\.nuget\\packages\\": {},
-    "E:\\AppDownload\\Visual Studio Code Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\EduSync\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\hbtth\\.nuget\\packages\\",
-      "outputPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\EduSync\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\EduSync\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\AppDownload\\Visual Studio Code Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hbtth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
