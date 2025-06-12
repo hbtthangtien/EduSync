@@ -65,9 +65,10 @@ namespace Persistence.DatabaseConfigs
 
 			modelBuilder.Entity<Tutor>()
 				.HasOne(t => t.User)
-				.WithOne()
+				.WithOne(u => u.Tutor)
 				.HasForeignKey<Tutor>(t => t.Id)
 				.OnDelete(DeleteBehavior.Cascade);
+
 
 			modelBuilder.Entity<Tutor>()
 				.HasOne(t => t.Certificate)
@@ -193,6 +194,13 @@ namespace Persistence.DatabaseConfigs
 			modelBuilder.Entity<User>()
 				.Property(u => u.Username)
 				.IsRequired();
+			modelBuilder.Entity<ActivationRequest>()
+				.HasOne(ar => ar.Course)
+				.WithMany()
+				.HasForeignKey(ar => ar.CourseId)
+				.OnDelete(DeleteBehavior.Restrict); 
+
+
 
 		}
 	}

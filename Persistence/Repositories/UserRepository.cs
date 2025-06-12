@@ -23,14 +23,14 @@ namespace Persistence.Repositories
 
 		public bool Exists(string username)
 		{
-			throw new NotImplementedException();
+			return _context.Users.Any(u => u.Email == username);
 		}
 
-		public async Task<User?> GetByUserAsync(string username)
+		public async Task<User?> GetByUserAsync(string email)
 		{
 			return await _context.Users
 				.Include(u => u.Role)
-				.FirstOrDefaultAsync(u => u.Email == username);
+				.FirstOrDefaultAsync(u => u.Email == email);
 		}
 
 

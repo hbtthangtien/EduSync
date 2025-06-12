@@ -13,6 +13,8 @@ namespace Application.IUnitOfWorks
 		public IRoleRepository Role { get; }
 		public	IStudentRepository Student { get; }
 		public ITuTorRepository TuTor { get; }
+		public IUserTokenRepository UserToken { get; }
+
 		Task<int> SaveChangesAsync();
 	}
 }

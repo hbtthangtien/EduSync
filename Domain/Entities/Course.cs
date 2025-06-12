@@ -17,7 +17,7 @@ namespace Domain.Entities
 		public bool IsTrialAvailable { get; set; }
 		public long TrialSessions { get; set; }
 		public decimal ServiceFeePercentage { get; set; }
-
+		public Tutor Tutor { get; set; }
 		public Tutor CreatedByTutor { get; set; }
 		public ICollection<Content> Contents { get; set; }
 		public ICollection<Slot> Slots { get; set; }

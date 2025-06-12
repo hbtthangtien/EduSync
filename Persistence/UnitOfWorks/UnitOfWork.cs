@@ -16,16 +16,19 @@ namespace Persistence.UnitOfWorks
 		public IRoleRepository Role { get; private set; }
 		public IStudentRepository Student { get; private set; }
 		public ITuTorRepository TuTor { get; private set; }
+		public IUserTokenRepository UserToken { get; private set; }
+
 
 		public UnitOfWork(EduSyncContext context,
 			IUserRepository userRepository, IStudentRepository studentRepository,
-			IRoleRepository roleRepository, ITuTorRepository tutorRepository)
+			IRoleRepository roleRepository, ITuTorRepository tutorRepository, IUserTokenRepository userToken)
 		{
 			_context = context ?? throw new ArgumentNullException(nameof(context));
 			User = userRepository;
 			Role = roleRepository;
 			Student = studentRepository;
 			TuTor = tutorRepository;
+			UserToken = userToken;
 		}
 
 		public async Task<int> SaveChangesAsync()

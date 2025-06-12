@@ -368,3 +368,5 @@ C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\refint
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.pdb
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.genruntimeconfig.cache
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\ref\Presentation.dll
+C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\bin\Debug\net8.0\Mapster.dll
+C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\bin\Debug\net8.0\Mapster.Core.dll

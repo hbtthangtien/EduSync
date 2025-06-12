@@ -15,9 +15,9 @@ namespace Persistence.Repositories
 	{
 		public RoleRepository(EduSyncContext context) : base(context) { }
 
-		public Task<Role> GetByIdAsync(long id)
+		public async Task<Role> GetByIdAsync(long id)
 		{
-			throw new NotImplementedException();
+			return await _context.Roles.FindAsync(id);
 		}
 
 		public async Task<string?> GetRoleNameAsync(long id)

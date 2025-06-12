@@ -10,6 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Mapster;
+using Application.DTOs.Token;
 
 namespace Application.Services
 {
@@ -24,38 +25,69 @@ namespace Application.Services
 			_unitOfWorks = unitOfWorks;
 		}
 
-		private string GenerateToken(User user, string roleName)
+		private async Task<TokenResponse> GenerateToken(User user, string roleName)
 		{
-			var key = Encoding.UTF8.GetBytes(_config["Jwt:super_secret_key_123456"]);
-			var credentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
+			var secret = _config["Jwt:Token"]
+				?? throw new InvalidOperationException("JWT Token is missing in configuration.");
+
+			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
+			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
 			var claims = new[]
 			{
-				new Claim(ClaimTypes.Name, user.Email),
-				new Claim(ClaimTypes.Role, roleName)
+		new Claim(ClaimTypes.Name, user.Email),
+		new Claim(ClaimTypes.Role, roleName)
+	};
+
+			var accessTokenExpiry = DateTime.UtcNow.AddMinutes(30);
+			var refreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+
+			var accessToken = new JwtSecurityTokenHandler().WriteToken(new JwtSecurityToken(
+				issuer: _config["Jwt:ValidIssuer"],
+				audience: _config["Jwt:ValidAudience"],
+				claims: claims,
+				expires: accessTokenExpiry,
+				signingCredentials: creds
+			));
+
+			var tokenDto = new TokenCreateDTO
+			{
+				UserId = user.Id,
+				Token = accessToken,
+				ExpiryDate = accessTokenExpiry,
+				RefreshToken = Guid.NewGuid().ToString("N"),
+				RefreshTokenExpiry = refreshTokenExpiry
 			};
 
-			var token = new JwtSecurityToken(
-				issuer: _config["Jwt:EduSyncIssuer"],
-				audience: _config["Jwt:EduSyncAudience"],
-				claims: claims,
-				expires: DateTime.UtcNow.AddMinutes(60),
-				signingCredentials: credentials);
+			var userToken = tokenDto.Adapt<UserToken>();
+			userToken.CreatedAt = DateTime.UtcNow;
 
-			return new JwtSecurityTokenHandler().WriteToken(token);
+			await _unitOfWorks.UserToken.AddAsync(userToken);
+			await _unitOfWorks.SaveChangesAsync();
+
+			return new TokenResponse
+			{
+				AccessToken = tokenDto.Token,
+				AccessTokenExpiry = tokenDto.ExpiryDate,
+				RefreshToken = tokenDto.RefreshToken,
+				RefreshTokenExpiry = tokenDto.RefreshTokenExpiry
+			};
 		}
 
-		public async Task<BaseResponse<string>> LoginAsync(LoginDTO loginDto)
+
+
+		public async Task<BaseResponse<TokenResponse>> LoginAsync(LoginDTO loginDto)
 		{
-			var user = await _unitOfWorks.User.GetByUserAsync(loginDto.Username);
+			var user = await _unitOfWorks.User.GetByUserAsync(loginDto.Email);
 			if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash))
-				return BaseResponse<string>.Failure("Sai thông tin đăng nhập");
+				return BaseResponse<TokenResponse>.Failure("Sai thông tin đăng nhập");
 
 			var role = await _unitOfWorks.Role.GetByIdAsync(user.RoleId);
-			var token = GenerateToken(user, role?.Name ?? "User");
+			var token = await GenerateToken(user, role?.Name ?? "User");
 
-			return BaseResponse<string>.SuccessResponse(token, null, "Đăng nhập thành công");
+			return BaseResponse<TokenResponse>.SuccessResponse(token, null, "Đăng nhập thành công");
 		}
+
 
 		public async Task<BaseResponse<object>> RegisterAsync(RegisterDTO registerDto)
 		{
@@ -65,29 +97,53 @@ namespace Application.Services
 			if (registerDto.RoleId is not (2 or 3))
 				return BaseResponse<object>.Failure("Vai trò không hợp lệ (chỉ chấp nhận Tutor hoặc Student)");
 
-			// using Mapster map DTO and Entity
 			var newUser = registerDto.Adapt<User>();
 			newUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 			newUser.CreatedAt = DateTime.UtcNow;
 
 			await _unitOfWorks.User.AddAsync(newUser);
+			await _unitOfWorks.SaveChangesAsync();
 
 			switch (registerDto.RoleId)
 			{
 				case 2:
-					await _unitOfWorks.TuTor.AddAsync(new Tutor { UserId = newUser.Id, CreatedAt = DateTime.UtcNow });
+					await _unitOfWorks.TuTor.AddAsync(new Tutor
+					{
+						Id = newUser.Id,           
+						UserId = newUser.Id,
+						CreatedAt = DateTime.UtcNow
+					});
 					break;
 				case 3:
-					await _unitOfWorks.Student.AddAsync(new Student { UserId = newUser.Id, CreatedAt = DateTime.UtcNow });
+					await _unitOfWorks.Student.AddAsync(new Student
+					{
+						Id = newUser.Id,           
+						UserId = newUser.Id,
+						CreatedAt = DateTime.UtcNow
+					});
 					break;
 			}
 
-			await _unitOfWorks.SaveChangesAsync();
+			await _unitOfWorks.SaveChangesAsync(); 
 
 			return BaseResponse<object>.SuccessResponse(
 				new { UserId = newUser.Id },
 				message: "Đăng ký thành công"
 			);
 		}
+		public async Task<BaseResponse<string>> LogoutAsync(string token)
+		{
+			var existingToken = await _unitOfWorks.UserToken
+				.FirstOrDefaultAsync(t => t.Token == token);
+
+			if (existingToken == null)
+				return BaseResponse<string>.Failure("Token không hợp lệ hoặc đã bị thu hồi.");
+
+			_unitOfWorks.UserToken.RemoveAsync(existingToken);
+			await _unitOfWorks.SaveChangesAsync();
+
+			return BaseResponse<string>.SuccessResponse(null, null, "Đăng xuất thành công");
+		}
+
 	}
 }

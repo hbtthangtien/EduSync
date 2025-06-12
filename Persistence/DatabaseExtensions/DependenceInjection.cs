@@ -33,6 +33,7 @@ namespace Persistence.DatabaseExtensions
 			services.AddScoped<IStudentRepository, StudentRepository>();
 			services.AddScoped<ITuTorRepository, TuTorRepository>();
 			services.AddScoped<IAuthService, AuthService>();
+			services.AddScoped<IUserTokenRepository, UserTokenRepository>();
 
 			//unit of work
 			services.AddScoped<IUnitOfWork, UnitOfWork>();

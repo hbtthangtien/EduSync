@@ -187,6 +187,9 @@ namespace Persistence.Migrations
                         .HasColumnType("bigint")
                         .HasDefaultValue(2L);
 
+                    b.Property<long>("TutorId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -196,6 +199,8 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedByTutorId");
+
+                    b.HasIndex("TutorId");
 
                     b.ToTable("Courses");
                 });
@@ -452,7 +457,7 @@ namespace Persistence.Migrations
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("CertificateId")
+                    b.Property<long?>("CertificateId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -584,6 +589,13 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("RefreshToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Token")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -655,7 +667,7 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -700,7 +712,15 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.Tutor", "Tutor")
+                        .WithMany("Courses")
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CreatedByTutor");
+
+                    b.Navigation("Tutor");
                 });
 
             modelBuilder.Entity("Domain.Entities.CourseCancellation", b =>
@@ -786,11 +806,10 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Certificate", "Certificate")
                         .WithMany()
                         .HasForeignKey("CertificateId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithOne()
+                        .WithOne("Tutor")
                         .HasForeignKey("Domain.Entities.Tutor", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -868,6 +887,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
                 {
+                    b.Navigation("Courses");
+
                     b.Navigation("Rating")
                         .IsRequired();
 
@@ -876,6 +897,9 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
+                    b.Navigation("Tutor")
+                        .IsRequired();
+
                     b.Navigation("UserTokens");
                 });
 #pragma warning restore 612, 618

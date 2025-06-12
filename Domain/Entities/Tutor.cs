@@ -11,11 +11,12 @@ namespace Domain.Entities
 	{
 		public long Id { get; set; }
 		public long? RatingId { get; set; }
-		public long CertificateId { get; set; }
+		public long? CertificateId { get; set; }
 		public ICollection<Slot> Slots { get; set; }
 		public User User { get; set; }
 		public long UserId { get; set; }
 		public Rating Rating { get; set; }
+		public ICollection<Course> Courses { get; set; }
 		public Certificate Certificate { get; set; }
 	}
 }

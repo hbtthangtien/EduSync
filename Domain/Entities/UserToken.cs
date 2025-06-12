@@ -16,7 +16,8 @@ namespace Domain.Entities
 			[Required]
 			[MaxLength(500)]
 			public string Token { get; set; } = null!;
-
+			public string RefreshToken { get; set; } = null!;
+			public DateTime RefreshTokenExpiry { get; set; }
 			public DateTime ExpiryDate { get; set; }
 		}
 }

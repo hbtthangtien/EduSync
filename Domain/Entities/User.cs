@@ -16,6 +16,7 @@ namespace Domain.Entities
 		public string Username { get; set; }
 		public string PasswordHash { get; set; }
 		public Role Role { get; set; }
+		public Tutor Tutor { get; set; }
 		public virtual ICollection<UserToken> UserTokens { get; set; } = new List<UserToken>();
 	}
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitTutorSchema : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -112,6 +112,8 @@ namespace Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     Token = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RefreshTokenExpiry = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ExpiryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -224,7 +226,7 @@ namespace Persistence.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false),
                     RatingId = table.Column<long>(type: "bigint", nullable: true),
-                    CertificateId = table.Column<long>(type: "bigint", nullable: false),
+                    CertificateId = table.Column<long>(type: "bigint", nullable: true),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -260,6 +262,7 @@ namespace Persistence.Migrations
                     IsTrialAvailable = table.Column<bool>(type: "bit", nullable: false),
                     TrialSessions = table.Column<long>(type: "bigint", nullable: false, defaultValue: 2L),
                     ServiceFeePercentage = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 5m),
+                    TutorId = table.Column<long>(type: "bigint", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -274,6 +277,12 @@ namespace Persistence.Migrations
                         principalTable: "Tutors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Courses_Tutors_TutorId",
+                        column: x => x.TutorId,
+                        principalTable: "Tutors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -468,6 +477,11 @@ namespace Persistence.Migrations
                 column: "CreatedByTutorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Courses_TutorId",
+                table: "Courses",
+                column: "TutorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Payments_UserId",
                 table: "Payments",
                 column: "UserId");
@@ -529,7 +543,7 @@ namespace Persistence.Migrations
                 column: "CourseId",
                 principalTable: "Courses",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Certificates_Tutors_TutorId",

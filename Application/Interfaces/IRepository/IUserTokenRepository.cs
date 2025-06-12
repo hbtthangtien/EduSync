@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Interfaces.IRepository
 {
-	public interface IUserRepository : IBaseRepository<User>
+	public interface IUserTokenRepository : IBaseRepository<UserToken>
 	{
-		Task<User?> GetByUserAsync(string email);
-		bool Exists(string username);
+		Task<UserToken?> FirstOrDefaultAsync(Expression<Func<UserToken, bool>> predicate);
+
 	}
 }
