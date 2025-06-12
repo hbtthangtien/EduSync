@@ -1,39 +1,41 @@
+﻿using Persistence.DatabaseConfigs;
+using Infrastructure.Extensions;
+using Persistence.DatabaseExtensions;
 using Microsoft.EntityFrameworkCore;
-using Persistence.DatabaseConfigs;
-using System;
 
 namespace Presentation
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+			builder.Services.AddSwaggerGen();
+			builder.Services.AddDatabaseInjection(builder.Configuration);
+			builder.Services.AddRepositories();
+			builder.Services.AddAuthenticationByJwt(builder.Configuration);
+			builder.Services.InitialValueConfig(builder.Configuration);
+			builder.Services.AddServices();
+			builder.Services.AddConfiguredControllers();
 			builder.Services.AddDbContext<EduSyncContext>(options =>
-                options.UseSqlServer("Server=DUONG-MEEP\\MSSQLSERVER01;Database=EduSyncDb;Trusted_Connection=True;TrustServerCertificate=True;"));
+			{
+			options.UseSqlServer(builder.Configuration.GetConnectionString("localmssql"));
+			});
 			var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-
+			//seed initial data_role
+			await app.SeedInitialDataAsync();
+			app.UseHttpsRedirection();
+			app.UseAuthentication();
+			app.UseAuthorization();
+			if (app.Environment.IsDevelopment())
+			{
+				app.UseSwagger();
+				app.UseSwaggerUI();
+			}
+			app.MapControllers();
             app.Run();
         }
     }

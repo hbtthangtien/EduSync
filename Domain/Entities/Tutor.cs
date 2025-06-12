@@ -14,6 +14,7 @@ namespace Domain.Entities
 		public long CertificateId { get; set; }
 		public ICollection<Slot> Slots { get; set; }
 		public User User { get; set; }
+		public long UserId { get; set; }
 		public Rating Rating { get; set; }
 		public Certificate Certificate { get; set; }
 	}

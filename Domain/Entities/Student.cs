@@ -12,6 +12,7 @@ namespace Domain.Entities
 		public long Id { get; set; }
 		public DateTime RegistrationDate { get; set; }
 		public ICollection<Slot> Slots { get; set; }
+		public long UserId { get; set; }
 		public User User { get; set; }
 	}
 }
