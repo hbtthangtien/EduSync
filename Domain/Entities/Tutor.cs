@@ -9,7 +9,7 @@ namespace Domain.Entities
 {
 	public class Tutor : BaseEntity
 	{
-		
+		public BioTutor? BioTutor { get; set; }
 		public User User { get; set; }
 		public long UserId { get; set; }
 		public ICollection<Rating> Ratings { get; set; } = new List<Rating>();

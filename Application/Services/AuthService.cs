@@ -108,16 +108,14 @@ namespace Application.Services
 			{
 				case 2:
 					await _unitOfWorks.TuTors.AddAsync(new Tutor
-					{
-						Id = newUser.Id,           
+					{       
 						UserId = newUser.Id,
 						CreatedAt = DateTime.UtcNow
 					});
 					break;
 				case 3:
 					await _unitOfWorks.Students.AddAsync(new Student
-					{
-						Id = newUser.Id,           
+					{       
 						UserId = newUser.Id,
 						CreatedAt = DateTime.UtcNow
 					});

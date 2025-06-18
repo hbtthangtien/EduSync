@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618065654_add_BioTutor_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Persistence\\Migrations\\20250618065654_add_BioTutor_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseconfigs\\edusynccontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseconfigs\\edusynccontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\tutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\biotutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\biotutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\enums\\coursestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\coursestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|e:\\documents\\c#\\sp_exe\\edusync\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|e:\\documents\\c#\\sp_exe\\edusync\\infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +43,76 @@
       "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618064057_seeding_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Persistence\\Migrations\\20250618064057_seeding_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseextensions\\dbseeder_seedingtutorsandcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dbseeder_seedingtutorsandcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\weeklyschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\weeklyschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\usertoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\usertoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\slot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\slot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\coursecancellation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\coursecancellation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\activationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\activationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\commons\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\commons\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\commons\\iaudiable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\commons\\iaudiable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|e:\\documents\\c#\\sp_exe\\edusync\\application\\services\\iusercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\iusercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|e:\\documents\\c#\\sp_exe\\edusync\\infrastructure\\externalservices\\usercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\externalservices\\usercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +137,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\repositories\\ratingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\ratingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|e:\\documents\\c#\\sp_exe\\edusync\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|e:\\documents\\c#\\sp_exe\\edusync\\application\\iunitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,26 +179,6 @@
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\iactivationrequestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\activationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\activationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618025950_initials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Persistence\\Migrations\\20250618025950_initials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\weeklyschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\weeklyschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\slot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\slot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|e:\\documents\\c#\\sp_exe\\edusync\\application\\interfaces\\irepository\\itutorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\itutorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -126,21 +202,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Program.cs",
-              "RelativeDocumentMoniker": "Presentation\\Program.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Program.cs",
-              "RelativeToolTip": "Presentation\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T04:14:47.458Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -148,19 +211,331 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20250618065654_add_BioTutor_table.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618065654_add_BioTutor_table.cs",
+              "RelativeDocumentMoniker": "Persistence\\Migrations\\20250618065654_add_BioTutor_table.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618065654_add_BioTutor_table.cs",
+              "RelativeToolTip": "Persistence\\Migrations\\20250618065654_add_BioTutor_table.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:56:54.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EduSyncContextFactory.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContextFactory.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseConfigs\\EduSyncContextFactory.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContextFactory.cs",
+              "RelativeToolTip": "Persistence\\DatabaseConfigs\\EduSyncContextFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:55:07.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BioTutor.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\BioTutor.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\BioTutor.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\BioTutor.cs",
+              "RelativeToolTip": "Domain\\Entities\\BioTutor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:51:37.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourseStatus.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Enums\\CourseStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\CourseStatus.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Enums\\CourseStatus.cs",
+              "RelativeToolTip": "Domain\\Enums\\CourseStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:12:28.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EduSyncContext.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "RelativeToolTip": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAHYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T16:10:38.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Tutor.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Tutor.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Tutor.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Tutor.cs",
+              "RelativeToolTip": "Domain\\Entities\\Tutor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:11:57.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "Presentation\\Program.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Program.cs",
+              "RelativeToolTip": "Presentation\\Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAMwBkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T04:14:47.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependenceInjection.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "RelativeToolTip": "Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAswCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T04:10:26.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserToken.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\UserToken.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\UserToken.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\UserToken.cs",
+              "RelativeToolTip": "Domain\\Entities\\UserToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:12:14.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Enums\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "Domain\\Enums\\PaymentStatus.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Enums\\PaymentStatus.cs",
+              "RelativeToolTip": "Domain\\Enums\\PaymentStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:12:33.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "DependenceInjection.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Extensions\\DependenceInjection.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Extensions\\DependenceInjection.cs",
               "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Extensions\\DependenceInjection.cs",
               "RelativeToolTip": "Infrastructure\\Extensions\\DependenceInjection.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwD4AAAACAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAABcAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T04:17:12.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\AuthService.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "Application\\Services\\AuthService.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAQwHUAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T02:54:33.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20250618064057_seeding_data.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618064057_seeding_data.cs",
+              "RelativeDocumentMoniker": "Persistence\\Migrations\\20250618064057_seeding_data.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618064057_seeding_data.cs",
+              "RelativeToolTip": "Persistence\\Migrations\\20250618064057_seeding_data.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:40:57.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DbSeeder_SeedingTutorsAndCourse.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "RelativeToolTip": "Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAYwGsAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:40:42.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Student.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Student.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Student.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Student.cs",
+              "RelativeToolTip": "Domain\\Entities\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:11:52.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Rating.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Rating.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Rating.cs",
+              "RelativeToolTip": "Domain\\Entities\\Rating.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:11:21.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Payment.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Payment.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Payment.cs",
+              "RelativeToolTip": "Domain\\Entities\\Payment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:11:22.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Course.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Course.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Course.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Course.cs",
+              "RelativeToolTip": "Domain\\Entities\\Course.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAkwB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:10:51.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CourseCancellation.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\CourseCancellation.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\CourseCancellation.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\CourseCancellation.cs",
+              "RelativeToolTip": "Domain\\Entities\\CourseCancellation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:11:06.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WeeklySchedule.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\WeeklySchedule.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
+              "RelativeToolTip": "Domain\\Entities\\WeeklySchedule.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T02:52:07.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Content.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Content.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Content.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Content.cs",
+              "RelativeToolTip": "Domain\\Entities\\Content.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:10:49.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Certificate.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Certificate.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Certificate.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Certificate.cs",
+              "RelativeToolTip": "Domain\\Entities\\Certificate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:10:42.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IAudiable.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\IAudiable.cs",
+              "RelativeDocumentMoniker": "Domain\\Commons\\IAudiable.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\IAudiable.cs",
+              "RelativeToolTip": "Domain\\Commons\\IAudiable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:09:42.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Domain\\Commons\\BaseEntity.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Commons\\BaseEntity.cs",
+              "RelativeToolTip": "Domain\\Commons\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:09:36.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Slot.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Slot.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Slot.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Slot.cs",
+              "RelativeToolTip": "Domain\\Entities\\Slot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T02:51:34.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "ContentRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\ContentRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\ContentRepository.cs",
@@ -168,25 +543,48 @@
               "RelativeToolTip": "Persistence\\Repositories\\ContentRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T04:15:12.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T04:15:12.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DependenceInjection.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs",
-              "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DependenceInjection.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs*",
-              "RelativeToolTip": "Persistence\\DatabaseExtensions\\DependenceInjection.cs*",
-              "ViewState": "AQIAABoAAAAAAAAAAADwvyIAAAAAAAAA",
+              "DocumentIndex": 23,
+              "Title": "ActivationRequest.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\ActivationRequest.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\ActivationRequest.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\ActivationRequest.cs",
+              "RelativeToolTip": "Domain\\Entities\\ActivationRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T04:10:26.477Z",
+              "WhenOpened": "2025-06-18T03:23:07.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 26,
+              "Title": "IUserContextService.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\IUserContextService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\IUserContextService.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\IUserContextService.cs",
+              "RelativeToolTip": "Application\\Services\\IUserContextService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T04:18:40.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UserContextService.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\ExternalServices\\UserContextService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\ExternalServices\\UserContextService.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\ExternalServices\\UserContextService.cs",
+              "RelativeToolTip": "Infrastructure\\ExternalServices\\UserContextService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T04:18:58.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "WeeklyScheduleRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\WeeklyScheduleRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\WeeklyScheduleRepository.cs",
@@ -194,12 +592,11 @@
               "RelativeToolTip": "Persistence\\Repositories\\WeeklyScheduleRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T04:00:38.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T04:00:38.403Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 32,
               "Title": "SlotRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\SlotRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\SlotRepository.cs",
@@ -207,12 +604,11 @@
               "RelativeToolTip": "Persistence\\Repositories\\SlotRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:59:43.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:59:43.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 33,
               "Title": "RatingRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\RatingRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\RatingRepository.cs",
@@ -220,12 +616,11 @@
               "RelativeToolTip": "Persistence\\Repositories\\RatingRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:59:06.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:59:06.034Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 28,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\UnitOfWorks\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Persistence\\UnitOfWorks\\UnitOfWork.cs",
@@ -233,12 +628,11 @@
               "RelativeToolTip": "Persistence\\UnitOfWorks\\UnitOfWork.cs",
               "ViewState": "AQIAADEAAAAAAAAAAAAIwEMAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:11:58.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:11:58.049Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 30,
               "Title": "CourseRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\CourseRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\CourseRepository.cs",
@@ -246,12 +640,11 @@
               "RelativeToolTip": "Persistence\\Repositories\\CourseRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T04:04:52.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T04:04:52.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 34,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\IUnitOfWorks\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Application\\IUnitOfWorks\\IUnitOfWork.cs",
@@ -259,12 +652,11 @@
               "RelativeToolTip": "Application\\IUnitOfWorks\\IUnitOfWork.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAA7wBgAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:42:51.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:42:51.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 35,
               "Title": "IWeeklyScheduleRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IWeeklyScheduleRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IWeeklyScheduleRepository.cs",
@@ -272,12 +664,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\IWeeklyScheduleRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:39:53.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:39:53.339Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 36,
               "Title": "ISlotRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\ISlotRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ISlotRepository.cs",
@@ -285,12 +676,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\ISlotRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:38:11.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:38:11.729Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 37,
               "Title": "IRatingRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IRatingRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IRatingRepository.cs",
@@ -298,12 +688,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\IRatingRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:37:24.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:37:24.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 38,
               "Title": "IPaymentRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IPaymentRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IPaymentRepository.cs",
@@ -311,25 +700,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\IPaymentRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:36:03.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:36:03.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\AuthService.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\AuthService.cs",
-              "RelativeToolTip": "Application\\Services\\AuthService.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAQwI0AAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T02:54:33.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 39,
               "Title": "ICourseCancellationRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\ICourseCancellationRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ICourseCancellationRepository.cs",
@@ -337,12 +712,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\ICourseCancellationRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:33:52.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:33:52.97Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 40,
               "Title": "ICourseRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\ICourseRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ICourseRepository.cs",
@@ -350,12 +724,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\ICourseRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:26:52.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:26:52.916Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 41,
               "Title": "IContentRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IContentRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IContentRepository.cs",
@@ -363,12 +736,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\IContentRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:26:03.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:26:03.452Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 42,
               "Title": "ICertificateRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\ICertificateRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ICertificateRepository.cs",
@@ -376,25 +748,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\ICertificateRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:24:27.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:24:27.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ActivationRequest.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\ActivationRequest.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\ActivationRequest.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\ActivationRequest.cs",
-              "RelativeToolTip": "Domain\\Entities\\ActivationRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:23:07.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 43,
               "Title": "IActivationRequestRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IActivationRequestRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IActivationRequestRepository.cs",
@@ -402,64 +760,11 @@
               "RelativeToolTip": "Application\\Interfaces\\IRepository\\IActivationRequestRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:16:08.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T03:16:08.582Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20250618025950_initials.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618025950_initials.cs",
-              "RelativeDocumentMoniker": "Persistence\\Migrations\\20250618025950_initials.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618025950_initials.cs",
-              "RelativeToolTip": "Persistence\\Migrations\\20250618025950_initials.cs",
-              "ViewState": "AQIAAEMCAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T02:59:50.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "WeeklySchedule.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\WeeklySchedule.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
-              "RelativeToolTip": "Domain\\Entities\\WeeklySchedule.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAQwBAAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T02:52:07.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Slot.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Slot.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Slot.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Slot.cs",
-              "RelativeToolTip": "Domain\\Entities\\Slot.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAABEAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T02:51:34.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "EduSyncContext.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
-              "RelativeDocumentMoniker": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
-              "RelativeToolTip": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAYwLMAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T16:10:38.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 44,
               "Title": "ITuTorRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\ITuTorRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ITuTorRepository.cs",
@@ -471,7 +776,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 45,
               "Title": "IStudentRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IStudentRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IStudentRepository.cs",
@@ -483,7 +788,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 46,
               "Title": "IRoleRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IRoleRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IRoleRepository.cs",
@@ -495,7 +800,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 47,
               "Title": "IBaseRepository.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IRepository\\IBaseRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IBaseRepository.cs",

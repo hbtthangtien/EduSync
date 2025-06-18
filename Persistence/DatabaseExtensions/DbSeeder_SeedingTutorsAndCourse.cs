@@ -1,0 +1,110 @@
+﻿using Domain.Entities;
+using Domain.Enums;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Persistence.DatabaseExtensions
+{
+	public static class DbSeeder_SeedingTutorsAndCourse
+	{
+		public static void Seed(this ModelBuilder modelBuilder)
+		{
+			// Cấu hình precision cho decimal
+			modelBuilder.Entity<Course>()
+				.Property(c => c.ServiceFeePercentage)
+				.HasPrecision(5, 2);
+
+			modelBuilder.Entity<Payment>()
+				.Property(p => p.Amount)
+				.HasPrecision(18, 2);
+
+			// Dùng thời gian cố định để tránh lỗi PendingModelChangesWarning
+			var createdDate = new DateTime(2025, 1, 1, 9, 0, 0);
+
+			// Seed 10 IELTS Courses
+			var courses = Enumerable.Range(1, 10).Select(i => new Course
+			{
+				Id = i,
+				Title = $"IELTS Preparation Course {i}",
+				Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+				CreatedByTutorId = 1,
+				IsTrialAvailable = true,
+				TrialSessions = 2,
+				PricePerSession = 150,
+				ServiceFeePercentage = 10,
+				Status = CourseStatus.Published,
+				CreatedAt = createdDate
+			});
+			modelBuilder.Entity<Course>().HasData(courses);
+
+			// Seed 2 Slots per Course => 20 slots
+			var slots = new List<Slot>();
+			int slotId = 1;
+			for (int i = 1; i <= 10; i++)
+			{
+				for (int j = 0; j < 2; j++)
+				{
+					slots.Add(new Slot
+					{
+						Id = slotId,
+						CourseId = i,
+						TutorId = 1,
+						StudentId = null,
+						NumberOfSlot = 1,
+						DurationSession = TimeSpan.FromMinutes(90),
+						IsBooked = false,
+						IsTrial = j == 0,
+						MeetUrl = $"https://meetlink.com/ielts-{i}-slot{j + 1}",
+						CreatedAt = createdDate
+					});
+					slotId++;
+				}
+			}
+			modelBuilder.Entity<Slot>().HasData(slots);
+
+			// Seed 30 Content per Course => 300 content
+			var contents = new List<Content>();
+			int contentId = 1;
+			for (int i = 1; i <= 10; i++)
+			{
+				for (int j = 1; j <= 30; j++)
+				{
+					contents.Add(new Content
+					{
+						Id = contentId++,
+						CourseId = i,
+						ContentType = j % 2 == 0 ? "Document" : "Video",
+						Descriptions = $"IELTS Lesson {j} for Course {i}.",
+						CreatedAt = createdDate
+					});
+				}
+			}
+			modelBuilder.Entity<Content>().HasData(contents);
+
+			// Seed 30 WeeklySchedules per Slot => 600 schedules
+			var weeklySchedules = new List<WeeklySchedule>();
+			int scheduleId = 1;
+			for (int i = 1; i <= 20; i++) // 20 slots total
+			{
+				for (int j = 0; j < 30; j++)
+				{
+					weeklySchedules.Add(new WeeklySchedule
+					{
+						Id = scheduleId++,
+						CourseId = slots[i - 1].CourseId,
+						SlotId = i,
+						StartTime = createdDate.AddDays(j),
+						EndTime = createdDate.AddDays(j).AddMinutes(90),
+						DayOfWeek = (DayOfWeek)(j % 7),
+						CreatedAt = createdDate
+					});
+				}
+			}
+			modelBuilder.Entity<WeeklySchedule>().HasData(weeklySchedules);
+		}
+	}
+}

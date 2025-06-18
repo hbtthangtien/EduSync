@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence.DatabaseConfigs;
 
@@ -11,9 +12,11 @@ using Persistence.DatabaseConfigs;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EduSyncContext))]
-    partial class EduSyncContextModelSnapshot : ModelSnapshot
+    [Migration("20250618064057_seeding_data")]
+    partial class seeding_data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,45 +67,6 @@ namespace Persistence.Migrations
                     b.HasIndex("TutorId");
 
                     b.ToTable("ActivationRequests");
-                });
-
-            modelBuilder.Entity("Domain.Entities.BioTutor", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Introduces")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Specializations")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("TutorId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TutorId")
-                        .IsUnique();
-
-                    b.ToTable("BioTutor");
                 });
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
@@ -9462,17 +9426,6 @@ namespace Persistence.Migrations
                     b.Navigation("Tutor");
                 });
 
-            modelBuilder.Entity("Domain.Entities.BioTutor", b =>
-                {
-                    b.HasOne("Domain.Entities.Tutor", "Tutor")
-                        .WithOne("BioTutor")
-                        .HasForeignKey("Domain.Entities.BioTutor", "TutorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tutor");
-                });
-
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
@@ -9698,8 +9651,6 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
                 {
                     b.Navigation("ActivationRequests");
-
-                    b.Navigation("BioTutor");
 
                     b.Navigation("Certificates");
 

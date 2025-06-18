@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Persistence.DatabaseExtensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -36,7 +37,7 @@ namespace Persistence.DatabaseConfigs
 			modelBuilder.Entity<User>(entity =>
 			{
 				entity.HasOne(u => u.Role)
-					.WithMany()
+					.WithMany(e => e.Users)
 					.HasForeignKey(u => u.RoleId)
 					.OnDelete(DeleteBehavior.Restrict);
 
@@ -112,6 +113,10 @@ namespace Persistence.DatabaseConfigs
 					.WithOne(e => e.Tutor)
 					.HasForeignKey(e => e.TutorId)
 					.OnDelete(DeleteBehavior.Restrict);
+
+				entity.HasOne(e => e.BioTutor)
+					.WithOne(e => e.Tutor)
+					.HasForeignKey<BioTutor>(e => e.TutorId);
 			});
 
 			modelBuilder.Entity<ActivationRequest>(entity =>
@@ -180,6 +185,8 @@ namespace Persistence.DatabaseConfigs
 					.HasForeignKey(e => e.SlotId)
 					.OnDelete(DeleteBehavior.Restrict);
 			});
+
+			modelBuilder.Seed();
 		}
 	}
 }
