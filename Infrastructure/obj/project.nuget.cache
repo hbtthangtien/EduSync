@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qTTlGoZUdFikKdJ0cTTveTR4HcYzIoMUleqrea0QKfZ6mCOMnO5mBag9rlSp6jJeZsE9y6RRWyIkPBoC8wzDSA==",
+  "dgSpecHash": "JgernEGmwYb8q8LzEnriGWFJxeUVH/MR48k0aWO2geYKvC5f0kZ06eCotSTs9ADkmtTg9nC3+81c6ATq8FsQ4g==",
   "success": true,
   "projectFilePath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -68,12 +68,5 @@
     "C:\\Users\\hbtth\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

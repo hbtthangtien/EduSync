@@ -1,37 +1,39 @@
 {
   "version": 2,
-  "dgSpecHash": "XI3Oy/N34VeH9MmHpPnFkricrvXYz3PtAQYasbhBOHYeX5FHEGpXT1gG7ii9isG0ItnIRtK9pm5AsV/lbq0qAw==",
+  "dgSpecHash": "OhK0CBRCHHwWi0lrfzmnu5TX1dcUYaYhJlv63uDxxBYoQ1LGhNaT0RJG4yxslktKDQfPCk/wP40tUsRePPU5FQ==",
   "success": true,
   "projectFilePath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hbtth\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.5\\microsoft.entityframeworkcore.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.5\\microsoft.entityframeworkcore.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.5\\microsoft.entityframeworkcore.analyzers.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.5\\microsoft.extensions.caching.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.5\\microsoft.extensions.caching.memory.9.0.5.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.6\\microsoft.extensions.configuration.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.6\\microsoft.extensions.configuration.abstractions.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.6\\microsoft.extensions.configuration.fileextensions.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.6\\microsoft.extensions.configuration.json.9.0.6.nupkg.sha512",
-    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.5\\microsoft.extensions.dependencyinjection.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.6\\microsoft.extensions.fileproviders.abstractions.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.6\\microsoft.extensions.fileproviders.physical.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.6\\microsoft.extensions.filesystemglobbing.9.0.6.nupkg.sha512",
-    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.logging\\9.0.5\\microsoft.extensions.logging.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.5\\microsoft.extensions.logging.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.options\\9.0.5\\microsoft.extensions.options.9.0.5.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.12.0\\microsoft.identitymodel.abstractions.8.12.0.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.12.0\\microsoft.identitymodel.jsonwebtokens.8.12.0.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.identitymodel.logging\\8.12.0\\microsoft.identitymodel.logging.8.12.0.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.12.0\\microsoft.identitymodel.tokens.8.12.0.nupkg.sha512",
+    "C:\\Users\\hbtth\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.5\\system.diagnostics.diagnosticsource.9.0.5.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.12.0\\system.identitymodel.tokens.jwt.8.12.0.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\system.io.pipelines\\9.0.6\\system.io.pipelines.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\system.text.encodings.web\\9.0.6\\system.text.encodings.web.9.0.6.nupkg.sha512",
     "C:\\Users\\hbtth\\.nuget\\packages\\system.text.json\\9.0.6\\system.text.json.9.0.6.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
