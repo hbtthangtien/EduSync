@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.IRepository;
 using Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Persistence.DatabaseConfigs;
 using System;
@@ -13,9 +14,20 @@ namespace Persistence.Repositories
 {
 	public class UserRepository : BaseRepository<User>, IUserRepository
 	{
-		public UserRepository(EduSyncContext context) : base(context) { }
+		private readonly IHttpContextAccessor _httpContextAccessor;
+		public UserRepository(EduSyncContext context, IHttpContextAccessor httpContextAccessor) : base(context)
+		{
+			_httpContextAccessor = httpContextAccessor;
 
+		}
+		public long GetUserId()
+		{
+			var userIdClaim = _httpContextAccessor.HttpContext?.User?.FindFirst("sub")?.Value;
+			if (long.TryParse(userIdClaim, out var userId))
+				return userId;
 
+			throw new UnauthorizedAccessException("UserId không hợp lệ hoặc chưa đăng nhập.");
+		}
 		public async Task AddAsync(User entity)
 		{
 			await _context.Users.AddAsync(entity);
@@ -29,7 +41,6 @@ namespace Persistence.Repositories
 		public async Task<User?> GetByUserAsync(string email)
 		{
 			return await _context.Users
-				.Include(u => u.Role)
 				.FirstOrDefaultAsync(u => u.Email == email);
 		}
 

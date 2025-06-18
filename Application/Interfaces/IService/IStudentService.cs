@@ -1,0 +1,16 @@
+﻿using Application.DTOs.Commons;
+using Application.DTOs.RegisterTutor;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application.Interfaces.IService
+{
+	public interface IStudentService
+	{
+		Task<BaseResponse<string>> RegisterTutorAsync(RegisterTutorDTO registerTutor);
+
+	}
+}

@@ -22,7 +22,6 @@ namespace Presentation.Controllers
 			Ok(await _authService.RegisterAsync(dto));
 
 		[HttpPost("logout")]
-		//[Authorize]
 		public async Task<IActionResult> Logout()
 		{
 			var token = HttpContext.Request.Headers["Authorization"].ToString()

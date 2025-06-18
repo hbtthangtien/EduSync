@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OIKKrw3agNSEKfQpMx5ieeKThv4OWmWJtuqjknl6xaGz09ro4mqPd0QJFVSdN+o+W51y3Cuwgj2VOsH6UWK3Bw==",
+  "dgSpecHash": "Zj4JZ/UA0ds=",
   "success": true,
-  "projectFilePath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

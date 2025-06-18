@@ -11,6 +11,7 @@ namespace Domain.Entities
 	{
 		public long TutorId { get; set; }
 
+		public string Fullname { get; set; }
 		public string Specializations {  get; set; }
 
 		public string Introduces { get; set; }

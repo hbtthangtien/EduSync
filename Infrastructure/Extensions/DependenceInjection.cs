@@ -3,6 +3,7 @@ using Application.Services;
 using Domain.Configs;
 using Infrastructure.ExternalServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -22,6 +23,10 @@ namespace Infrastructure.Extensions
 			services.AddHttpContextAccessor();
 			services.AddScoped<IAuthService, AuthService>();
 			services.AddScoped<IUserContextService, UserContextService>();
+			services.AddScoped<IFileStorageService, LocalFileStorageService>();
+			services.AddScoped<ICousreService, CourseService>();
+
+
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{

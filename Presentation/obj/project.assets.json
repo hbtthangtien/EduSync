@@ -1842,6 +1842,8 @@
           "BCrypt.Net-Next": "4.0.3",
           "Domain": "1.0.0",
           "Mapster": "7.4.0",
+          "Microsoft.AspNetCore.Http.Features": "2.3.0",
+          "Microsoft.EntityFrameworkCore": "8.0.17",
           "Microsoft.Extensions.Configuration": "9.0.6",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
           "Microsoft.Extensions.Configuration.Json": "9.0.6",
@@ -5360,23 +5362,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hbtth\\.nuget\\packages\\": {},
-    "E:\\AppDownload\\Visual Studio Code Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Presentation.csproj",
       "projectName": "Presentation",
-      "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Presentation.csproj",
-      "packagesPath": "C:\\Users\\hbtth\\.nuget\\packages\\",
-      "outputPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Presentation.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\AppDownload\\Visual Studio Code Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hbtth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5392,11 +5394,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\Infrastructure.csproj"
             },
-            "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Persistence.csproj": {
-              "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Persistence.csproj"
+            "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Persistence.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Persistence.csproj"
             }
           }
         }
@@ -5454,16 +5456,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
