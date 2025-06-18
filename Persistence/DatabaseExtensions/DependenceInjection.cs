@@ -32,7 +32,6 @@ namespace Persistence.DatabaseExtensions
 			services.AddScoped<IRoleRepository, RoleRepository>();
 			services.AddScoped<IStudentRepository, StudentRepository>();
 			services.AddScoped<ITuTorRepository, TuTorRepository>();
-			services.AddScoped<IAuthService, AuthService>();
 			services.AddScoped<IUserTokenRepository, UserTokenRepository>();
 			services.AddScoped<IActivationRequestRepository, ActivationRequestRepository>();
 			services.AddScoped<ICertificateRepository, CertificateRepository>();
@@ -40,8 +39,9 @@ namespace Persistence.DatabaseExtensions
 			services.AddScoped<ICourseRepository, CourseRepository>();
 			services.AddScoped<IPaymentRepository,PaymentRepository>();
 			services.AddScoped<IRatingRepository, RatingRepository>();
-			services.AddScoped<IRoleRepository, RoleRepository>();
 			services.AddScoped<IWeeklyScheduleRepository, WeeklyScheduleRepository>();
+			services.AddScoped<IContentRepository, ContentRepository>();
+			services.AddScoped<ISlotRepository,SlotRepository>();
 			//unit of work
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 		}

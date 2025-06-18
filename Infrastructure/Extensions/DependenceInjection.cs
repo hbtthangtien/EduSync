@@ -1,4 +1,6 @@
-﻿using Domain.Configs;
+﻿using Application.Interfaces.IService;
+using Application.Services;
+using Domain.Configs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,8 @@ namespace Infrastructure.Extensions
 		public static void AddServices(this IServiceCollection services)
 		{
 			services.AddHttpContextAccessor();
+			services.AddScoped<IAuthService, AuthService>();
+			services.AddScoped<IUserContextService, IUserContextService>();
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{
@@ -57,5 +61,6 @@ namespace Infrastructure.Extensions
 			var jwtConfig = configuration.GetSection("JwtConfig");
 			services.Configure<JwtConfigs>(jwtConfig);
 		}
+		
 	}
 }
