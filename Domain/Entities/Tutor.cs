@@ -1,16 +1,19 @@
 ﻿using Domain.Commons;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-	public class Tutor : BaseEntity
+	public class Tutor : BaseEntityNoId
 	{
 		public BioTutor? BioTutor { get; set; }
 		public User User { get; set; }
+		[Key, ForeignKey("User")]
 		public long UserId { get; set; }
 		public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 		public ICollection<Course> Courses { get; set; } = new List<Course>();

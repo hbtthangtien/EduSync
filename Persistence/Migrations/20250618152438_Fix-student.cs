@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class initials : Migration
+    public partial class Fixstudent : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,9 +60,8 @@ namespace Persistence.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    RegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
+                    RegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -70,10 +69,10 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.Id);
+                    table.PrimaryKey("PK_Students", x => x.UserId);
                     table.ForeignKey(
-                        name: "FK_Students_Users_Id",
-                        column: x => x.Id,
+                        name: "FK_Students_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -83,8 +82,6 @@ namespace Persistence.Migrations
                 name: "Tutors",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -93,7 +90,7 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tutors", x => x.Id);
+                    table.PrimaryKey("PK_Tutors", x => x.UserId);
                     table.ForeignKey(
                         name: "FK_Tutors_Users_UserId",
                         column: x => x.UserId,
@@ -134,6 +131,7 @@ namespace Persistence.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TutorId = table.Column<long>(type: "bigint", nullable: false),
+                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Specializations = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Introduces = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -148,7 +146,7 @@ namespace Persistence.Migrations
                         name: "FK_BioTutor_Tutors_TutorId",
                         column: x => x.TutorId,
                         principalTable: "Tutors",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -178,7 +176,7 @@ namespace Persistence.Migrations
                         name: "FK_Courses_Tutors_CreatedByTutorId",
                         column: x => x.CreatedByTutorId,
                         principalTable: "Tutors",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -205,13 +203,13 @@ namespace Persistence.Migrations
                         name: "FK_Ratings_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Ratings_Tutors_TutorId",
                         column: x => x.TutorId,
                         principalTable: "Tutors",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -244,7 +242,7 @@ namespace Persistence.Migrations
                         name: "FK_ActivationRequests_Tutors_TutorId",
                         column: x => x.TutorId,
                         principalTable: "Tutors",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -277,7 +275,7 @@ namespace Persistence.Migrations
                         name: "FK_Certificates_Tutors_TutorId",
                         column: x => x.TutorId,
                         principalTable: "Tutors",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -337,7 +335,7 @@ namespace Persistence.Migrations
                         name: "FK_CourseCancellations_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -373,12 +371,12 @@ namespace Persistence.Migrations
                         name: "FK_Slots_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
-                        principalColumn: "Id");
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_Slots_Tutors_TutorId",
                         column: x => x.TutorId,
                         principalTable: "Tutors",
-                        principalColumn: "Id",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -466,12 +464,17 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CreatedAt", "DeletedAt", "Email", "PasswordHash", "RoleId", "UpdatedAt", "UpdatedBy", "Username" },
-                values: new object[] { 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, "tutor1@example.com", "hashedpassword", 2L, null, null, "tutor1" });
+                values: new object[] { 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, "tutor1@example.com", "Password123@", 2L, null, null, "tutor1" });
 
             migrationBuilder.InsertData(
                 table: "Tutors",
-                columns: new[] { "Id", "CreatedAt", "DeletedAt", "UpdatedAt", "UpdatedBy", "UserId" },
-                values: new object[] { 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, null, null, 1L });
+                columns: new[] { "UserId", "CreatedAt", "DeletedAt", "UpdatedAt", "UpdatedBy" },
+                values: new object[] { 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, null, null });
+
+            migrationBuilder.InsertData(
+                table: "BioTutor",
+                columns: new[] { "Id", "CreatedAt", "DeletedAt", "Fullname", "Introduces", "Specializations", "TutorId", "UpdatedAt", "UpdatedBy" },
+                values: new object[] { 1L, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bùi Đức Tùng", "Tôi là bậc thầy IELTS", "IELTS", 1L, null, null });
 
             migrationBuilder.InsertData(
                 table: "Courses",
@@ -1518,12 +1521,6 @@ namespace Persistence.Migrations
                 name: "IX_Slots_TutorId",
                 table: "Slots",
                 column: "TutorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tutors_UserId",
-                table: "Tutors",
-                column: "UserId",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",

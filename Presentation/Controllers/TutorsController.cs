@@ -1,4 +1,5 @@
-﻿using Application.Interfaces.IService;
+﻿using Application.DTOs.Tutors.Bio;
+using Application.Interfaces.IService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,11 @@ namespace Presentation.Controllers
 		{
 			_tutorService = tutorService;
 		}
-
+		[HttpPut("{id}/bio")]
+		public async Task<IActionResult> UpdateBioTutors(BioUpdate request)
+		{
+			var data = await _tutorService.UpdateBioTutors(request);
+			return Ok(data);
+		}
 	}
 }

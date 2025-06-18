@@ -39,30 +39,35 @@ namespace Persistence.DatabaseExtensions
 				new Role { Id = 2, Name = "Tutor", CreatedAt = createdDate, UpdatedAt = createdDate },
 				new Role { Id = 3, Name = "Student", CreatedAt = createdDate, UpdatedAt = createdDate }
 			);
-
+			var user = new User
+			{
+				Id = 1,
+				Email = "tutor1@example.com",
+				Username = "tutor1",
+				PasswordHash = "Password123@",
+				RoleId = 2, // assuming 2 = Tutor
+				CreatedAt = createdDate
+			};
 			// Seed User
-			modelBuilder.Entity<User>().HasData(
-				new User
-				{
-					Id = 1,
-					Email = "tutor1@example.com",
-					Username = "tutor1",
-					PasswordHash = "hashedpassword",
-					RoleId = 2, // assuming 2 = Tutor
-					CreatedAt = createdDate
-				}
-			);
+			modelBuilder.Entity<User>().HasData(user);
 
 			// Seed Tutor
 			modelBuilder.Entity<Tutor>().HasData(
 				new Tutor
 				{
-					Id = 1,
 					UserId = 1,
 					CreatedAt = createdDate
 				}
 			);
 
+			modelBuilder.Entity<BioTutor>().HasData(new BioTutor
+			{
+				Id = 1,
+				TutorId =1,
+				Fullname = "Bùi Đức Tùng",
+				Introduces = "Tôi là bậc thầy IELTS",
+				Specializations = "IELTS"
+			});
 			// Seed 10 IELTS Courses
 			var courses = Enumerable.Range(1, 10).Select(i => new Course
 			{
@@ -104,7 +109,6 @@ namespace Persistence.DatabaseExtensions
 			}
 			modelBuilder.Entity<Slot>().HasData(slots);
 
-			// Seed 30 Content per Course => 300 content
 			var contents = new List<Content>();
 			int contentId = 1;
 			for (int i = 1; i <= 10; i++)
@@ -123,10 +127,9 @@ namespace Persistence.DatabaseExtensions
 			}
 			modelBuilder.Entity<Content>().HasData(contents);
 
-			// Seed 30 WeeklySchedules per Slot => 600 schedules
 			var weeklySchedules = new List<WeeklySchedule>();
 			int scheduleId = 1;
-			for (int i = 1; i <= 20; i++) // 20 slots total
+			for (int i = 1; i <= 20; i++) 
 			{
 				for (int j = 0; j < 30; j++)
 				{
