@@ -107,6 +107,17 @@ namespace Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("BioTutor");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Fullname = "Bùi Đức Tùng",
+                            Introduces = "Tôi là bậc thầy IELTS",
+                            Specializations = "IELTS",
+                            TutorId = 1L
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
@@ -3282,7 +3293,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Student", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -3300,21 +3311,15 @@ namespace Persistence.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
                     b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -3328,22 +3333,15 @@ namespace Persistence.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasKey("UserId");
 
                     b.ToTable("Tutors");
 
                     b.HasData(
                         new
                         {
-                            Id = 1L,
-                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 1L
+                            UserId = 1L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -3400,7 +3398,7 @@ namespace Persistence.Migrations
                             Id = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tutor1@example.com",
-                            PasswordHash = "hashedpassword",
+                            PasswordHash = "Password123@",
                             RoleId = 2L,
                             Username = "tutor1"
                         });
@@ -9650,7 +9648,7 @@ namespace Persistence.Migrations
                 {
                     b.HasOne("Domain.Entities.User", "User")
                         .WithOne("Student")
-                        .HasForeignKey("Domain.Entities.Student", "Id")
+                        .HasForeignKey("Domain.Entities.Student", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

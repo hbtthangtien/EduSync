@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Commons
 {
-	public class BaseEntityNoId
+	public class BaseEntityNoId : IAudiable
 	{
 		public DateTime CreatedAt { get; set; }
 		public DateTime? UpdatedAt { get; set; }

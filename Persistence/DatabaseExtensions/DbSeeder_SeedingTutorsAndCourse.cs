@@ -39,30 +39,35 @@ namespace Persistence.DatabaseExtensions
 				new Role { Id = 2, Name = "Tutor", CreatedAt = createdDate, UpdatedAt = createdDate },
 				new Role { Id = 3, Name = "Student", CreatedAt = createdDate, UpdatedAt = createdDate }
 			);
-
+			var user = new User
+			{
+				Id = 1,
+				Email = "tutor1@example.com",
+				Username = "tutor1",
+				PasswordHash = "Password123@",
+				RoleId = 2, // assuming 2 = Tutor
+				CreatedAt = createdDate
+			};
 			// Seed User
-			modelBuilder.Entity<User>().HasData(
-				new User
-				{
-					Id = 1,
-					Email = "tutor1@example.com",
-					Username = "tutor1",
-					PasswordHash = BCrypt.Net.BCrypt.HashPassword("Password123@"),
-					RoleId = 2, // assuming 2 = Tutor
-					CreatedAt = createdDate
-				}
-			);
+			modelBuilder.Entity<User>().HasData(user);
 
 			// Seed Tutor
 			modelBuilder.Entity<Tutor>().HasData(
 				new Tutor
 				{
-					Id = 1,
 					UserId = 1,
 					CreatedAt = createdDate
 				}
 			);
 
+			modelBuilder.Entity<BioTutor>().HasData(new BioTutor
+			{
+				Id = 1,
+				TutorId =1,
+				Fullname = "Bùi Đức Tùng",
+				Introduces = "Tôi là bậc thầy IELTS",
+				Specializations = "IELTS"
+			});
 			// Seed 10 IELTS Courses
 			var courses = Enumerable.Range(1, 10).Select(i => new Course
 			{

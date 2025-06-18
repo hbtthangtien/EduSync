@@ -36,7 +36,7 @@ namespace Application.Services
 			}
 			
 			await _unitOfWork.SaveChangesAsync();
-			return IdResponse.SuccessResponse(tutor.Id, "Update success");
+			return IdResponse.SuccessResponse(tutor.UserId, "Update success");
 		}
 	}
 }
