@@ -12,8 +12,8 @@ using Persistence.DatabaseConfigs;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EduSyncContext))]
-    [Migration("20250618065654_add_BioTutor_table")]
-    partial class add_BioTutor_table
+    [Migration("20250618075621_initials")]
+    partial class initials
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -2956,6 +2956,29 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Admin",
+                            UpdatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Tutor",
+                            UpdatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Student",
+                            UpdatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Slot", b =>
@@ -2975,8 +2998,8 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("DurationSession")
-                        .HasColumnType("time");
+                    b.Property<long>("DurationSession")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsBooked")
                         .HasColumnType("bit");
@@ -3019,7 +3042,7 @@ namespace Persistence.Migrations
                             Id = 1L,
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-1-slot1",
@@ -3031,7 +3054,7 @@ namespace Persistence.Migrations
                             Id = 2L,
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-1-slot2",
@@ -3043,7 +3066,7 @@ namespace Persistence.Migrations
                             Id = 3L,
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-2-slot1",
@@ -3055,7 +3078,7 @@ namespace Persistence.Migrations
                             Id = 4L,
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-2-slot2",
@@ -3067,7 +3090,7 @@ namespace Persistence.Migrations
                             Id = 5L,
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-3-slot1",
@@ -3079,7 +3102,7 @@ namespace Persistence.Migrations
                             Id = 6L,
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-3-slot2",
@@ -3091,7 +3114,7 @@ namespace Persistence.Migrations
                             Id = 7L,
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-4-slot1",
@@ -3103,7 +3126,7 @@ namespace Persistence.Migrations
                             Id = 8L,
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-4-slot2",
@@ -3115,7 +3138,7 @@ namespace Persistence.Migrations
                             Id = 9L,
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-5-slot1",
@@ -3127,7 +3150,7 @@ namespace Persistence.Migrations
                             Id = 10L,
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-5-slot2",
@@ -3139,7 +3162,7 @@ namespace Persistence.Migrations
                             Id = 11L,
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-6-slot1",
@@ -3151,7 +3174,7 @@ namespace Persistence.Migrations
                             Id = 12L,
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-6-slot2",
@@ -3163,7 +3186,7 @@ namespace Persistence.Migrations
                             Id = 13L,
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-7-slot1",
@@ -3175,7 +3198,7 @@ namespace Persistence.Migrations
                             Id = 14L,
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-7-slot2",
@@ -3187,7 +3210,7 @@ namespace Persistence.Migrations
                             Id = 15L,
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-8-slot1",
@@ -3199,7 +3222,7 @@ namespace Persistence.Migrations
                             Id = 16L,
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-8-slot2",
@@ -3211,7 +3234,7 @@ namespace Persistence.Migrations
                             Id = 17L,
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-9-slot1",
@@ -3223,7 +3246,7 @@ namespace Persistence.Migrations
                             Id = 18L,
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-9-slot2",
@@ -3235,7 +3258,7 @@ namespace Persistence.Migrations
                             Id = 19L,
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-10-slot1",
@@ -3247,7 +3270,7 @@ namespace Persistence.Migrations
                             Id = 20L,
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            DurationSession = new TimeSpan(0, 1, 30, 0, 0),
+                            DurationSession = 54000000000L,
                             IsBooked = false,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-10-slot2",
@@ -3313,6 +3336,14 @@ namespace Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Tutors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1L
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -3361,6 +3392,17 @@ namespace Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "tutor1@example.com",
+                            PasswordHash = "hashedpassword",
+                            RoleId = 2L,
+                            Username = "tutor1"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.UserToken", b =>

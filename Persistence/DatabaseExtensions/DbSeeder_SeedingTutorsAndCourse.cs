@@ -22,8 +22,46 @@ namespace Persistence.DatabaseExtensions
 				.Property(p => p.Amount)
 				.HasPrecision(18, 2);
 
+			// Cấu hình chuyển đổi TimeSpan cho DurationSession
+			modelBuilder.Entity<Slot>()
+				.Property(s => s.DurationSession)
+				.HasConversion(
+					v => v.Ticks,
+					v => TimeSpan.FromTicks(v)
+				);
+
 			// Dùng thời gian cố định để tránh lỗi PendingModelChangesWarning
 			var createdDate = new DateTime(2025, 1, 1, 9, 0, 0);
+
+			// Seed Role
+			modelBuilder.Entity<Role>().HasData(
+				new Role { Id = 1, Name = "Admin", CreatedAt = createdDate, UpdatedAt = createdDate },
+				new Role { Id = 2, Name = "Tutor", CreatedAt = createdDate, UpdatedAt = createdDate },
+				new Role { Id = 3, Name = "Student", CreatedAt = createdDate, UpdatedAt = createdDate }
+			);
+
+			// Seed User
+			modelBuilder.Entity<User>().HasData(
+				new User
+				{
+					Id = 1,
+					Email = "tutor1@example.com",
+					Username = "tutor1",
+					PasswordHash = "hashedpassword",
+					RoleId = 2, // assuming 2 = Tutor
+					CreatedAt = createdDate
+				}
+			);
+
+			// Seed Tutor
+			modelBuilder.Entity<Tutor>().HasData(
+				new Tutor
+				{
+					Id = 1,
+					UserId = 1,
+					CreatedAt = createdDate
+				}
+			);
 
 			// Seed 10 IELTS Courses
 			var courses = Enumerable.Range(1, 10).Select(i => new Course
@@ -55,7 +93,7 @@ namespace Persistence.DatabaseExtensions
 						TutorId = 1,
 						StudentId = null,
 						NumberOfSlot = 1,
-						DurationSession = TimeSpan.FromMinutes(90),
+						DurationSession = new TimeSpan(0, 1, 30, 0),
 						IsBooked = false,
 						IsTrial = j == 0,
 						MeetUrl = $"https://meetlink.com/ielts-{i}-slot{j + 1}",
