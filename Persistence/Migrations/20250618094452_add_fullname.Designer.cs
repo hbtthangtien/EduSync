@@ -12,7 +12,7 @@ using Persistence.DatabaseConfigs;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EduSyncContext))]
-    [Migration("20250618094637_add_fullname")]
+    [Migration("20250618094452_add_fullname")]
     partial class add_fullname
     {
         /// <inheritdoc />

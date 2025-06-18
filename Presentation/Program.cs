@@ -2,6 +2,7 @@
 using Infrastructure.Extensions;
 using Persistence.DatabaseExtensions;
 using Microsoft.EntityFrameworkCore;
+using Presentation.Middleware;
 
 namespace Presentation
 {
@@ -28,6 +29,7 @@ namespace Presentation
 			//seed initial data_role
 			await app.SeedInitialDataAsync();
 			app.UseHttpsRedirection();
+			app.UseCors("AllowAllOrigins");
 			app.UseAuthentication();
 			app.UseAuthorization();
 			if (app.Environment.IsDevelopment())
@@ -35,6 +37,7 @@ namespace Presentation
 				app.UseSwagger();
 				app.UseSwaggerUI();
 			}
+			app.UseMiddleware<ExceptionCatchGlobal>();
 			app.MapControllers();
             app.Run();
         }

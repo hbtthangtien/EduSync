@@ -37,6 +37,15 @@ namespace Application.DTOs.Commons
 				Errors = null
 			};
 		}
-
+		public static BaseResponse<T> ErrorResponse(string message, Dictionary<string, string>? errors = null)
+		{
+			return new BaseResponse<T>
+			{
+				Success = false,
+				Message = message,
+				Errors = errors,
+				Data = default
+			};
+		}
 	}
 }

@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="BackgroundServices\" />
-    <Folder Include="Middleware\" />
   </ItemGroup>
 
   <ItemGroup>

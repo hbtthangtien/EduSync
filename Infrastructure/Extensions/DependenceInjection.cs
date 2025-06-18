@@ -23,10 +23,9 @@ namespace Infrastructure.Extensions
 			services.AddHttpContextAccessor();
 			services.AddScoped<IAuthService, AuthService>();
 			services.AddScoped<IUserContextService, UserContextService>();
+			services.AddScoped<ITutorService, TutorService>();
 			services.AddScoped<IFileStorageService, LocalFileStorageService>();
 			services.AddScoped<ICousreService, CourseService>();
-
-
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{
@@ -61,6 +60,20 @@ namespace Infrastructure.Extensions
 				});
 
 			return services;
+		}
+		public static void SetCorsForAPI(this IServiceCollection services)
+		{
+			services.AddCors(options =>
+			{
+				options.AddPolicy("AllowAllOrigins",
+					policy =>
+					{
+						policy.AllowAnyOrigin()
+							  .AllowAnyHeader()
+							  .AllowAnyMethod();
+					}
+					);
+			});
 		}
 		public static void InitialValueConfig(this IServiceCollection services, IConfiguration configuration)
 		{

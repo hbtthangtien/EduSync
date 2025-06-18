@@ -725,7 +725,6 @@
           "Domain": "1.0.0",
           "Mapster": "7.4.0",
           "Microsoft.AspNetCore.Http.Features": "2.3.0",
-          "Microsoft.EntityFrameworkCore": "9.0.5",
           "Microsoft.Extensions.Configuration": "9.0.6",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.6",
           "Microsoft.Extensions.Configuration.Json": "9.0.6",
@@ -737,6 +736,9 @@
         }
       },
       "Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.5"
+        },
         "runtime": {
           "Domain.dll": {}
         }
