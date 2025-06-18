@@ -9,12 +9,12 @@ namespace Domain.Entities
 {
 	public class WeeklySchedule : BaseEntity
 	{
-		public long Id { get; set; }
 		public long CourseId { get; set; }
-		public string DayOfWeek { get; set; }
-		public TimeSpan StartTime { get; set; }
-		public TimeSpan EndTime { get; set; }
-
-		public Course Course { get; set; }
+		public long SlotId { get; set; }
+		public DateTime StartTime { get; set; }
+		public DateTime EndTime { get; set; }
+		public DayOfWeek DayOfWeek { get; set; }
+		public Course? Course { get; set; }
+		public Slot? Slot { get; set; }
 	}
 }

@@ -9,11 +9,9 @@ namespace Domain.Entities
 {
 	public class Content : BaseEntity
 	{
-		public long Id { get; set; }
 		public long CourseId { get; set; }
 		public string ContentType { get; set; }
-		public string ContentUrl { get; set; }
-
-		public Course Course { get; set; }
+		public string Descriptions { get; set; }
+		public Course? Course { get; set; }
 	}
 }

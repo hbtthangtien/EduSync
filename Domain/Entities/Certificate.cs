@@ -9,14 +9,12 @@ namespace Domain.Entities
 {
 	public class Certificate : BaseEntity
 	{
-		public long Id { get; set; }
 		public long TutorId { get; set; }
+		public long CourseId { get; set; }
 		public string CertificateUrl { get; set; }
 		public bool IsVerified { get; set; }
-		public long? VerifiedByAdminId { get; set; }
 		public DateTime? VerifiedDate { get; set; }
-
-		public Tutor Tutor { get; set; }
-		public User VerifiedByAdmin { get; set; }
+		public Tutor? Tutor { get; set; }
+		public Course? Course { get; set; }
 	}
 }

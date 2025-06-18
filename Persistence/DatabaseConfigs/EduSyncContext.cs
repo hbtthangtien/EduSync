@@ -16,6 +16,7 @@ namespace Persistence.DatabaseConfigs
 		public EduSyncContext(DbContextOptions<EduSyncContext> options) : base(options) { }
 
 		public DbSet<User> Users { get; set; }
+		public DbSet<UserToken> UserTokens { get; set; }
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<Student> Students { get; set; }
 		public DbSet<Tutor> Tutors { get; set; }
@@ -26,180 +27,159 @@ namespace Persistence.DatabaseConfigs
 		public DbSet<Content> Contents { get; set; }
 		public DbSet<Slot> Slots { get; set; }
 		public DbSet<WeeklySchedule> WeeklySchedules { get; set; }
-
-		public DbSet<CourseCancellation> CourseCancellations { get; set; } 
-		public DbSet<ActivationRequest> ActivationRequests { get; set; } 
-		public DbSet<TutorPayment> TutorPayments { get; set; } 
-
+		public DbSet<CourseCancellation> CourseCancellations { get; set; }
+		public DbSet<ActivationRequest> ActivationRequests { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<User>()
-				.HasOne(u => u.Role)
-				.WithMany()
-				.HasForeignKey(u => u.RoleId)
-				.OnDelete(DeleteBehavior.Restrict);
+			// Existing configurations
+			modelBuilder.Entity<User>(entity =>
+			{
+				entity.HasOne(u => u.Role)
+					.WithMany()
+					.HasForeignKey(u => u.RoleId)
+					.OnDelete(DeleteBehavior.Restrict);
 
-			modelBuilder.Entity<Student>()
-				.HasOne(s => s.User)
-				.WithOne()
-				.HasForeignKey<Student>(s => s.Id)
-				.OnDelete(DeleteBehavior.Cascade);
+				entity.HasOne(u => u.Student)
+					  .WithOne(u => u.User)
+					  .HasForeignKey<Student>(e => e.UserId);
 
-			modelBuilder.Entity<Rating>()
-				.HasOne(r => r.Tutor)
-				.WithOne(t => t.Rating) 
-				.HasForeignKey<Rating>(r => r.TutorId)
-				.OnDelete(DeleteBehavior.Restrict); 
-			
-			modelBuilder.Entity<Tutor>()
-				.HasOne(t => t.User)
-				.WithOne()
-				.HasForeignKey<Tutor>(t => t.Id)
-				.OnDelete(DeleteBehavior.Cascade);
+				entity.HasOne(e => e.Tutor)
+					.WithOne(e => e.User)
+					.HasForeignKey<Tutor>(e => e.UserId);
 
-			modelBuilder.Entity<Tutor>()
-				.HasOne(t => t.Certificate)
-				.WithMany()
-				.HasForeignKey(t => t.CertificateId)
-				.OnDelete(DeleteBehavior.Restrict);
+				entity.HasMany(e => e.UserTokens)
+					.WithOne(e => e.User)
+					.HasForeignKey(e => e.UserId);
 
-			//modelBuilder.Entity<Tutor>()
-			//	.HasOne(t => t.Rating)
-			//	.WithOne()
-			//	.HasForeignKey<Tutor>(t => t.RatingId)
-			//	.OnDelete(DeleteBehavior.SetNull);
+				entity.HasMany(e => e.Payments)
+					.WithOne(e => e.User)
+					.HasForeignKey(e => e.UserId);
 
-			modelBuilder.Entity<Certificate>()
-				.HasOne(c => c.Tutor)
-				.WithMany()
-				.HasForeignKey(c => c.TutorId)
-				.OnDelete(DeleteBehavior.Restrict); 
+				entity.HasIndex(e => e.Email).IsUnique(true);
+				entity.HasIndex(e => e.Username).IsUnique(true);
+			});
 
-			modelBuilder.Entity<Certificate>()
-				.HasOne(c => c.VerifiedByAdmin)
-				.WithMany()
-				.HasForeignKey(c => c.VerifiedByAdminId)
-				.OnDelete(DeleteBehavior.SetNull);
+			modelBuilder.Entity<Student>(entity =>
+			{
+				entity.HasOne(s => s.User)
+					.WithOne(e => e.Student)
+					.HasForeignKey<Student>(s => s.Id)
+					.OnDelete(DeleteBehavior.Cascade);
 
-			modelBuilder.Entity<Payment>()
-				.HasOne(p => p.User)
-				.WithMany()
-				.HasForeignKey(p => p.UserId)
-				.OnDelete(DeleteBehavior.Cascade);
+				entity.HasMany(e => e.CourseCancellations)
+					.WithOne(e => e.Student)
+					.HasForeignKey(e => e.StudentId);
 
-			modelBuilder.Entity<Course>()
-				.HasOne(c => c.CreatedByTutor)
-				.WithMany()
-				.HasForeignKey(c => c.CreatedByTutorId)
-				.OnDelete(DeleteBehavior.Restrict); 
+				entity.HasMany(e => e.Ratings)
+					.WithOne(e => e.Student)
+					.HasForeignKey(e => e.StudentId);
+
+				entity.HasMany(e => e.Slots)
+					.WithOne(e => e.Student)
+					.HasForeignKey(e => e.StudentId);
 
 
-			modelBuilder.Entity<Content>()
-				.HasOne(c => c.Course)
-				.WithMany(c => c.Contents)
-				.HasForeignKey(c => c.CourseId)
-				.OnDelete(DeleteBehavior.Restrict);
+			});
 
-			modelBuilder.Entity<Course>()
-				.HasMany(c => c.Slots)
-				.WithOne()
-				.HasForeignKey(s => s.CourseId)
-				.OnDelete(DeleteBehavior.Cascade);
+			modelBuilder.Entity<Tutor>(entity =>
+			{
+				entity.HasMany(e => e.Ratings)
+					.WithOne(e => e.Tutor)
+					.HasForeignKey(e => e.TutorId)
+					.OnDelete(DeleteBehavior.Restrict);
 
-			modelBuilder.Entity<Course>()
-				.HasMany(c => c.WeeklySchedules)
-				.WithOne()
-				.HasForeignKey(ws => ws.CourseId)
-				.OnDelete(DeleteBehavior.Cascade);
+				entity.HasMany(e => e.Courses)
+					.WithOne(e => e.CreatedByTutor)
+					.HasForeignKey(e => e.CreatedByTutorId)
+					.OnDelete(DeleteBehavior.Restrict);
 
-			//modelBuilder.Entity<Slot>()
-			//	.HasOne(s => s.Course)
-			//	.WithMany(c => c.Slots)
-			//	.HasForeignKey(s => s.CourseId)
-			//	.OnDelete(DeleteBehavior.Cascade);
+				entity.HasMany(e => e.Certificates)
+					.WithOne(e => e.Tutor)
+					.HasForeignKey(e => e.TutorId)
+					.OnDelete(DeleteBehavior.Restrict);
 
-			//modelBuilder.Entity<Slot>()
-			//	.HasOne(s => s.Tutor)
-			//	.WithMany()
-			//	.HasForeignKey(s => s.TutorId)
-			//	.OnDelete(DeleteBehavior.Cascade);
+				entity.HasMany(e => e.Students)
+					.WithMany()
+					.UsingEntity<Slot>();
 
-			//modelBuilder.Entity<Slot>()
-			//	.HasOne(s => s.Student)
-			//	.WithMany()
-			//	.HasForeignKey(s => s.StudentId)
-			//	.OnDelete(DeleteBehavior.SetNull);
+				entity.HasMany(e => e.Slots)
+					.WithOne(e => e.Tutor)
+					.HasForeignKey(e => e.TutorId)
+					.OnDelete(DeleteBehavior.Restrict);
 
-			modelBuilder.Entity<WeeklySchedule>()
-				.HasOne(ws => ws.Course)
-				.WithMany(c => c.WeeklySchedules)
-				.HasForeignKey(ws => ws.CourseId)
-				.OnDelete(DeleteBehavior.Cascade);
+				entity.HasMany(e => e.ActivationRequests)
+					.WithOne(e => e.Tutor)
+					.HasForeignKey(e => e.TutorId)
+					.OnDelete(DeleteBehavior.Restrict);
+			});
 
-			modelBuilder.Entity<CourseCancellation>()
-				.HasOne(cc => cc.Student)
-				.WithMany()
-				.HasForeignKey(cc => cc.StudentId)
-				.OnDelete(DeleteBehavior.Cascade);
+			modelBuilder.Entity<ActivationRequest>(entity =>
+			{
+				entity.HasOne(e => e.Course)
+					.WithMany()
+					.HasForeignKey(e => e.CourseId)
+					.OnDelete(DeleteBehavior.Restrict);
+			});
 
-			modelBuilder.Entity<CourseCancellation>()
-				.HasOne(cc => cc.Payment)
-				.WithMany()
-				.HasForeignKey(cc => cc.PaymentId)
-				.OnDelete(DeleteBehavior.Restrict);
+			modelBuilder.Entity<Certificate>(entity =>
+			{
+				entity.HasOne(e => e.Course)
+					.WithMany(e => e.Certificates)
+					.HasForeignKey(e => e.CourseId);
 
-			modelBuilder.Entity<ActivationRequest>()
-				.HasOne(ar => ar.Course)
-				.WithMany()
-				.HasForeignKey(ar => ar.CourseId)
-				.OnDelete(DeleteBehavior.Cascade);
+				entity.HasOne(e => e.Tutor)
+					.WithMany(e => e.Certificates)
+					.HasForeignKey(e => e.TutorId);
+			});
 
-			modelBuilder.Entity<ActivationRequest>()
-				.HasOne(ar => ar.Admin)
-				.WithMany()
-				.HasForeignKey(ar => ar.AdminId)
-				.OnDelete(DeleteBehavior.SetNull);
+			modelBuilder.Entity<Content>(entity =>
+			{
+				entity.HasOne(e => e.Course)
+					.WithMany(e => e.Contents)
+					.HasForeignKey(e => e.CourseId);
+			});
 
-			modelBuilder.Entity<TutorPayment>()
-				.HasOne(tp => tp.Tutor)
-				.WithMany()
-				.HasForeignKey(tp => tp.TutorId)
-				.OnDelete(DeleteBehavior.Cascade);
+			modelBuilder.Entity<Course>(entity =>
+			{
+				entity.HasMany(e => e.Slots)
+					.WithOne(e => e.Course)
+					.HasForeignKey(e => e.CourseId);
 
-			modelBuilder.Entity<TutorPayment>()
-				.HasOne(tp => tp.Payment)
-				.WithMany()
-				.HasForeignKey(tp => tp.PaymentId)
-				.OnDelete(DeleteBehavior.Restrict);
+				entity.HasMany(e => e.WeeklySchedules)
+					.WithOne(e => e.Course)
+					.HasForeignKey(e => e.CourseId);
+			});
 
-			modelBuilder.Entity<Course>()
-				.Property(c => c.TrialSessions)
-				.HasDefaultValue(2);
+			modelBuilder.Entity<CourseCancellation>(entity =>
+			{
+				entity.HasOne(e => e.Student)
+					.WithMany(e => e.CourseCancellations)
+					.HasForeignKey(e => e.StudentId);
 
-			modelBuilder.Entity<Course>()
-				.Property(c => c.ServiceFeePercentage)
-				.HasDefaultValue(5);
+				entity.HasOne<Payment>()
+					.WithOne(e => e.CourseCancellation)
+					.HasForeignKey<Payment>(e => e.CourseCancellationId);
 
-			modelBuilder.Entity<Slot>()
-				.HasOne(s => s.Course)
-				.WithMany(c => c.Slots)
-				.HasForeignKey(s => s.CourseId)
-				.OnDelete(DeleteBehavior.Restrict); 
+				entity.HasOne(e => e.Course)
+					.WithMany(e => e.CourseCancellations)
+					.HasForeignKey(e => e.CourseId);
+			});
 
-			modelBuilder.Entity<Slot>()
-				.HasOne(s => s.Tutor)
-				.WithMany(t => t.Slots)
-				.HasForeignKey(s => s.TutorId)
-				.OnDelete(DeleteBehavior.Restrict);
+			modelBuilder.Entity<Payment>(entity =>
+			{
+				entity.HasOne(e => e.Course)
+					.WithMany()
+					.HasForeignKey(e => e.CourseId);
+			});
 
-			modelBuilder.Entity<Slot>()
-				.HasOne(s => s.Student)
-				.WithMany(st => st.Slots)
-				.HasForeignKey(s => s.StudentId)
-				.OnDelete(DeleteBehavior.SetNull);
-
+			modelBuilder.Entity<Slot>(entity =>
+			{
+				entity.HasMany(e => e.WeeklySchedules)
+					.WithOne(e => e.Slot)
+					.HasForeignKey(e => e.SlotId)
+					.OnDelete(DeleteBehavior.Restrict);
+			});
 		}
 	}
 }
-

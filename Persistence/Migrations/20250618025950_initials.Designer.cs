@@ -12,8 +12,8 @@ using Persistence.DatabaseConfigs;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EduSyncContext))]
-    [Migration("20250610162929_InitialCreate_FirstTime")]
-    partial class InitialCreate_FirstTime
+    [Migration("20250618025950_initials")]
+    partial class initials
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,9 +36,6 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("ActivationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long?>("AdminId")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("CourseId")
                         .HasColumnType("bigint");
 
@@ -54,6 +51,9 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long>("TutorId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -62,9 +62,9 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdminId");
-
                     b.HasIndex("CourseId");
+
+                    b.HasIndex("TutorId");
 
                     b.ToTable("ActivationRequests");
                 });
@@ -80,6 +80,9 @@ namespace Persistence.Migrations
                     b.Property<string>("CertificateUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("CourseId")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -99,17 +102,14 @@ namespace Persistence.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("VerifiedByAdminId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime?>("VerifiedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TutorId");
+                    b.HasIndex("CourseId");
 
-                    b.HasIndex("VerifiedByAdminId");
+                    b.HasIndex("TutorId");
 
                     b.ToTable("Certificates");
                 });
@@ -126,10 +126,6 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContentUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<long>("CourseId")
                         .HasColumnType("bigint");
 
@@ -138,6 +134,10 @@ namespace Persistence.Migrations
 
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Descriptions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -176,19 +176,21 @@ namespace Persistence.Migrations
                     b.Property<bool>("IsTrialAvailable")
                         .HasColumnType("bit");
 
+                    b.Property<double>("PricePerSession")
+                        .HasColumnType("float");
+
                     b.Property<decimal>("ServiceFeePercentage")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,2)")
-                        .HasDefaultValue(5m);
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("TrialSessions")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasDefaultValue(2L);
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -222,6 +224,9 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("CancellationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long>("CourseId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -230,9 +235,6 @@ namespace Persistence.Migrations
 
                     b.Property<bool>("IsRefunded")
                         .HasColumnType("bit");
-
-                    b.Property<long>("PaymentId")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Reason")
                         .IsRequired()
@@ -249,7 +251,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PaymentId");
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
 
@@ -267,19 +269,20 @@ namespace Persistence.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<long?>("CourseCancellationId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("CourseId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("QRCodeUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
@@ -294,6 +297,12 @@ namespace Persistence.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseCancellationId")
+                        .IsUnique()
+                        .HasFilter("[CourseCancellationId] IS NOT NULL");
+
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("UserId");
 
@@ -324,6 +333,9 @@ namespace Persistence.Migrations
                     b.Property<double>("Score")
                         .HasColumnType("float");
 
+                    b.Property<long>("StudentId")
+                        .HasColumnType("bigint");
+
                     b.Property<long>("TutorId")
                         .HasColumnType("bigint");
 
@@ -335,8 +347,9 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TutorId")
-                        .IsUnique();
+                    b.HasIndex("StudentId");
+
+                    b.HasIndex("TutorId");
 
                     b.ToTable("Ratings");
                 });
@@ -387,8 +400,8 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndDateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("DurationSession")
+                        .HasColumnType("time");
 
                     b.Property<bool>("IsBooked")
                         .HasColumnType("bit");
@@ -396,8 +409,12 @@ namespace Persistence.Migrations
                     b.Property<bool>("IsTrial")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("StartDateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("MeetUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<short>("NumberOfSlot")
+                        .HasColumnType("smallint");
 
                     b.Property<long?>("StudentId")
                         .HasColumnType("bigint");
@@ -442,6 +459,9 @@ namespace Persistence.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
                     b.ToTable("Students");
@@ -450,62 +470,16 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
                 {
                     b.Property<long>("Id")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CertificateId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("RatingId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CertificateId");
-
-                    b.ToTable("Tutors");
-                });
-
-            modelBuilder.Entity("Domain.Entities.TutorPayment", b =>
-                {
-                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("PaymentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("TutorId")
-                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -513,13 +487,15 @@ namespace Persistence.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("PaymentId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.HasIndex("TutorId");
-
-                    b.ToTable("TutorPayments");
+                    b.ToTable("Tutors");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -533,21 +509,21 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("RoleId")
+                    b.Property<long>("RoleId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("RoleId1")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -556,11 +532,60 @@ namespace Persistence.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("RoleId");
 
+                    b.HasIndex("RoleId1");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Domain.Entities.UserToken", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RefreshToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserTokens");
                 });
 
             modelBuilder.Entity("Domain.Entities.WeeklySchedule", b =>
@@ -577,18 +602,20 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DayOfWeek")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DayOfWeek")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("time");
+                    b.Property<long>("SlotId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -600,43 +627,47 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CourseId");
 
+                    b.HasIndex("SlotId");
+
                     b.ToTable("WeeklySchedules");
                 });
 
             modelBuilder.Entity("Domain.Entities.ActivationRequest", b =>
                 {
-                    b.HasOne("Domain.Entities.User", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Admin");
-
-                    b.Navigation("Course");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Certificate", b =>
-                {
                     b.HasOne("Domain.Entities.Tutor", "Tutor")
-                        .WithMany()
+                        .WithMany("ActivationRequests")
                         .HasForeignKey("TutorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.User", "VerifiedByAdmin")
-                        .WithMany()
-                        .HasForeignKey("VerifiedByAdminId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                    b.Navigation("Course");
 
                     b.Navigation("Tutor");
+                });
 
-                    b.Navigation("VerifiedByAdmin");
+            modelBuilder.Entity("Domain.Entities.Certificate", b =>
+                {
+                    b.HasOne("Domain.Entities.Course", "Course")
+                        .WithMany("Certificates")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Tutor", "Tutor")
+                        .WithMany("Certificates")
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Tutor");
                 });
 
             modelBuilder.Entity("Domain.Entities.Content", b =>
@@ -644,7 +675,7 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Contents")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -653,7 +684,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
                     b.HasOne("Domain.Entities.Tutor", "CreatedByTutor")
-                        .WithMany()
+                        .WithMany("Courses")
                         .HasForeignKey("CreatedByTutorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -663,41 +694,61 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.CourseCancellation", b =>
                 {
-                    b.HasOne("Domain.Entities.Payment", "Payment")
-                        .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                    b.HasOne("Domain.Entities.Course", "Course")
+                        .WithMany("CourseCancellations")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Student", "Student")
-                        .WithMany()
+                        .WithMany("CourseCancellations")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Payment");
+                    b.Navigation("Course");
 
                     b.Navigation("Student");
                 });
 
             modelBuilder.Entity("Domain.Entities.Payment", b =>
                 {
-                    b.HasOne("Domain.Entities.User", "User")
+                    b.HasOne("Domain.Entities.CourseCancellation", "CourseCancellation")
+                        .WithOne()
+                        .HasForeignKey("Domain.Entities.Payment", "CourseCancellationId");
+
+                    b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany()
+                        .HasForeignKey("CourseId");
+
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("Payments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("CourseCancellation");
 
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.Rating", b =>
                 {
+                    b.HasOne("Domain.Entities.Student", "Student")
+                        .WithMany("Ratings")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Domain.Entities.Tutor", "Tutor")
-                        .WithOne("Rating")
-                        .HasForeignKey("Domain.Entities.Rating", "TutorId")
+                        .WithMany("Ratings")
+                        .HasForeignKey("TutorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Student");
 
                     b.Navigation("Tutor");
                 });
@@ -707,13 +758,12 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Slots")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Student", "Student")
                         .WithMany("Slots")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .HasForeignKey("StudentId");
 
                     b.HasOne("Domain.Entities.Tutor", "Tutor")
                         .WithMany("Slots")
@@ -731,7 +781,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Student", b =>
                 {
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithOne()
+                        .WithOne("Student")
                         .HasForeignKey("Domain.Entities.Student", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -741,40 +791,13 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
                 {
-                    b.HasOne("Domain.Entities.Certificate", "Certificate")
-                        .WithMany()
-                        .HasForeignKey("CertificateId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Domain.Entities.User", "User")
-                        .WithOne()
-                        .HasForeignKey("Domain.Entities.Tutor", "Id")
+                        .WithOne("Tutor")
+                        .HasForeignKey("Domain.Entities.Tutor", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Certificate");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Domain.Entities.TutorPayment", b =>
-                {
-                    b.HasOne("Domain.Entities.Payment", "Payment")
-                        .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Tutor", "Tutor")
-                        .WithMany()
-                        .HasForeignKey("TutorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Payment");
-
-                    b.Navigation("Tutor");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -782,9 +805,25 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Role", null)
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId1");
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("Domain.Entities.UserToken", b =>
+                {
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("UserTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.WeeklySchedule", b =>
@@ -795,29 +834,71 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.Slot", "Slot")
+                        .WithMany("WeeklySchedules")
+                        .HasForeignKey("SlotId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Course");
+
+                    b.Navigation("Slot");
                 });
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
+                    b.Navigation("Certificates");
+
                     b.Navigation("Contents");
+
+                    b.Navigation("CourseCancellations");
 
                     b.Navigation("Slots");
 
                     b.Navigation("WeeklySchedules");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Role", b =>
+                {
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Slot", b =>
+                {
+                    b.Navigation("WeeklySchedules");
+                });
+
             modelBuilder.Entity("Domain.Entities.Student", b =>
                 {
+                    b.Navigation("CourseCancellations");
+
+                    b.Navigation("Ratings");
+
                     b.Navigation("Slots");
                 });
 
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
                 {
-                    b.Navigation("Rating")
-                        .IsRequired();
+                    b.Navigation("ActivationRequests");
+
+                    b.Navigation("Certificates");
+
+                    b.Navigation("Courses");
+
+                    b.Navigation("Ratings");
 
                     b.Navigation("Slots");
+                });
+
+            modelBuilder.Entity("Domain.Entities.User", b =>
+                {
+                    b.Navigation("Payments");
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Tutor");
+
+                    b.Navigation("UserTokens");
                 });
 #pragma warning restore 612, 618
         }

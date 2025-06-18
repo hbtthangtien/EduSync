@@ -9,12 +9,12 @@ namespace Domain.Entities
 {
 	public class Rating : BaseEntity
 	{
-		public long Id { get; set; }
 		public long TutorId { get; set; }
+		public long StudentId { get; set; }
 		public double Score { get; set; }
 		public string Comment { get; set; }
 		public DateTime CreatedDate { get; set; }
-
-		public Tutor Tutor { get; set; }
+		public Student? Student { get; set; }
+		public Tutor? Tutor { get; set; }
 	}
 }
