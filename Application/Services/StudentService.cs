@@ -32,6 +32,7 @@ namespace Application.Services
 		public async Task<BaseResponse<string>> RegisterTutorAsync(RegisterTutorDTO registerTutor)
 		{
 			var userId = _userRepo.GetUserId();
+			var course = await _unitOfWorks.Courses.GetSingle(x => x.Title == "Khóa học mặc định");
 
 			if (await _unitOfWorks.Students.GetSingle(x => x.UserId == userId) is null)
 				return BaseResponse<string>.Failure("Tài khoản không hợp lệ hoặc chưa phải là học sinh.");
@@ -49,7 +50,7 @@ namespace Application.Services
 				CertificateUrl = certUrl,
 				IsVerified = true, 
 				CreatedAt = DateTime.UtcNow,
-				CourseId = 0 
+				CourseId = course.Id
 			};
 
 			tutor.Certificates = new List<Certificate> { certificate };
