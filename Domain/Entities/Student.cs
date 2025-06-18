@@ -1,10 +1,13 @@
 ﻿using Domain.Commons;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-	public class Student : BaseEntity
+	public class Student : BaseEntityNoId
 	{
-		public DateTime RegistrationDate { get; set; }	
+		public DateTime RegistrationDate { get; set; }
+		[Key, ForeignKey("User")]
 		public long UserId { get; set; }
 		public User? User { get; set; }
 		public ICollection<CourseCancellation> CourseCancellations { get; set; } = new List<CourseCancellation>();

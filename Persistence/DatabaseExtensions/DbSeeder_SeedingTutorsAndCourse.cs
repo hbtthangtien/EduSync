@@ -47,7 +47,7 @@ namespace Persistence.DatabaseExtensions
 					Id = 1,
 					Email = "tutor1@example.com",
 					Username = "tutor1",
-					PasswordHash = "hashedpassword",
+					PasswordHash = BCrypt.Net.BCrypt.HashPassword("Password123@"),
 					RoleId = 2, // assuming 2 = Tutor
 					CreatedAt = createdDate
 				}

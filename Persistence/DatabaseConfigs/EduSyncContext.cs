@@ -63,9 +63,11 @@ namespace Persistence.DatabaseConfigs
 
 			modelBuilder.Entity<Student>(entity =>
 			{
+				entity.HasKey(s => s.UserId);
+
 				entity.HasOne(s => s.User)
-					.WithOne(e => e.Student)
-					.HasForeignKey<Student>(s => s.Id)
+					.WithOne(u => u.Student)
+					.HasForeignKey<Student>(s => s.UserId) 
 					.OnDelete(DeleteBehavior.Cascade);
 
 				entity.HasMany(e => e.CourseCancellations)
@@ -79,9 +81,8 @@ namespace Persistence.DatabaseConfigs
 				entity.HasMany(e => e.Slots)
 					.WithOne(e => e.Student)
 					.HasForeignKey(e => e.StudentId);
-
-
 			});
+
 
 			modelBuilder.Entity<Tutor>(entity =>
 			{

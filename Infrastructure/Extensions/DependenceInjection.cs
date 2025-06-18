@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -26,6 +27,7 @@ namespace Infrastructure.Extensions
 			services.AddScoped<ITutorService, TutorService>();
 			services.AddScoped<IFileStorageService, LocalFileStorageService>();
 			services.AddScoped<ICousreService, CourseService>();
+			services.AddScoped<IStudentService, StudentService>();
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{
@@ -47,8 +49,11 @@ namespace Infrastructure.Extensions
                     ValidateLifetime = jwt.ValidateLifetime,
                     ClockSkew = TimeSpan.Zero,
                     ValidateIssuerSigningKey = jwt.ValidateIssuerSigningKey,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
-                };
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+					NameClaimType = ClaimTypes.NameIdentifier,
+					RoleClaimType = ClaimTypes.Role,
+
+				};
             });
 		}
 		public static IServiceCollection AddConfiguredControllers(this IServiceCollection services)

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ namespace Persistence.Repositories
 		}
 		public long GetUserId()
 		{
-			var userIdClaim = _httpContextAccessor.HttpContext?.User?.FindFirst("sub")?.Value;
+			var userIdClaim = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 			if (long.TryParse(userIdClaim, out var userId))
 				return userId;
 

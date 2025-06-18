@@ -32,12 +32,13 @@ namespace Application.Services
 
 			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
 			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
 			var claims = new[]
 			{
-		new Claim(ClaimTypes.Name, user.Email),
-		new Claim(ClaimTypes.Role, roleName)
-	};
+				new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), 
+				new Claim(ClaimTypes.Name, user.Email),
+				new Claim(ClaimTypes.Role, roleName)
+			};
+
 
 			var accessTokenExpiry = DateTime.UtcNow.AddMinutes(30);
 			var refreshTokenExpiry = DateTime.UtcNow.AddDays(7);
@@ -94,26 +95,29 @@ namespace Application.Services
 			if (await _unitOfWorks.Users.GetByUserAsync(registerDto.Email) is not null)
 				return BaseResponse<object>.Failure("Email đã tồn tại");
 
-				var newUser = registerDto.Adapt<User>();
+			var newUser = registerDto.Adapt<User>();
 			newUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 			newUser.CreatedAt = DateTime.UtcNow;
+			newUser.RoleId = 3; 
 
 			await _unitOfWorks.Users.AddAsync(newUser);
 			await _unitOfWorks.SaveChangesAsync();
 
-					await _unitOfWorks.Students.AddAsync(new Student
-					{       
-						UserId = newUser.Id,
-						CreatedAt = DateTime.UtcNow
-					});
+			await _unitOfWorks.Students.AddAsync(new Student
+			{
+				User = newUser,                       
+				RegistrationDate = DateTime.UtcNow,
+				CreatedAt = DateTime.UtcNow           
+			});
 
-			await _unitOfWorks.SaveChangesAsync(); 
+			await _unitOfWorks.SaveChangesAsync();
 
 			return BaseResponse<object>.SuccessResponse(
 				new { UserId = newUser.Id },
 				message: "Đăng ký thành công"
 			);
 		}
+
 		public async Task<BaseResponse<string>> LogoutAsync(string token)
 		{
 			var existingToken = await _unitOfWorks.UserTokens

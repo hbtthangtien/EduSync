@@ -47,26 +47,20 @@ namespace Application.Services
 			var certificate = new Certificate
 			{
 				CertificateUrl = certUrl,
-				IsVerified = false,
+				IsVerified = true, 
 				CreatedAt = DateTime.UtcNow,
-				CourseId = 0
-			};
-
-			var activationRequest = new ActivationRequest
-			{
-				RequestDate = DateTime.UtcNow,
-				Tutor = tutor
+				CourseId = 0 
 			};
 
 			tutor.Certificates = new List<Certificate> { certificate };
-			tutor.ActivationRequests = new List<ActivationRequest> { activationRequest };
 			tutor.BioTutor = bioTutor;
 
 			await _unitOfWorks.TuTors.AddAsync(tutor);
 			await _unitOfWorks.SaveChangesAsync();
 
-			return BaseResponse<string>.SuccessResponse("Đăng ký làm gia sư thành công, vui lòng chờ duyệt.");
+			return BaseResponse<string>.SuccessResponse("Bạn đã đăng ký làm gia sư thành công.");
 		}
+
 
 	}
 }

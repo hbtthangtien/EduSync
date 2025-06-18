@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.RegisterTutor
 {
-	public interface RegisterTutorDTO
+	public class RegisterTutorDTO
 	{
 		public string FullName { get; set; }
 		public string Specializations { get; set; }
