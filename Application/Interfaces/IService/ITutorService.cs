@@ -11,5 +11,7 @@ namespace Application.Interfaces.IService
 	public interface ITutorService
 	{
 		public Task<IdResponse> UpdateBioTutors(BioUpdate request);
+
+		//public Task<>
 	}
 }

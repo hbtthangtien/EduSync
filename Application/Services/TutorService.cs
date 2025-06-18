@@ -34,6 +34,7 @@ namespace Application.Services
 			{
 				tutor!.BioTutor!.Fullname = request.FullName;
 			}
+			
 			await _unitOfWork.SaveChangesAsync();
 			return IdResponse.SuccessResponse(tutor.Id, "Update success");
 		}
