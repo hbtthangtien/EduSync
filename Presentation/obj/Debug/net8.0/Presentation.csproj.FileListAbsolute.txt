@@ -351,7 +351,6 @@ C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presen
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.AssemblyInfo.cs
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\staticwebassets.build.json
@@ -557,3 +556,4 @@ E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\refint\Presentation
 E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\Presentation.pdb
 E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\Presentation.genruntimeconfig.cache
 E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\ref\Presentation.dll
+C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.MvcApplicationPartsAssemblyInfo.cs

@@ -34,7 +34,7 @@ namespace Infrastructure.ApplicationMappers
 
 			TypeAdapterConfig<RegisterTutorDTO, BioTutor>
 				.NewConfig()
-				.Map(dest => dest.Fullname, src => src.FullName)
+				.Map(dest => dest.Fullname, src => src.Fullname)
 				.Map(dest => dest.Specializations, src => src.Specializations)
 			.Map(dest => dest.Introduces, src => src.Introduces);
 		}

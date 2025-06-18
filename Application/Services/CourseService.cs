@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
 
 namespace Application.Services
 {
@@ -43,7 +44,12 @@ namespace Application.Services
 				},
 				IsTrialAvailable = course.IsTrialAvailable,
 				TrialSessions = course.TrialSessions,
-				PricePerSession = course.PricePerSession
+				PricePerSession = course.PricePerSession,
+
+				CourseContents = course.Contents?
+					.Select(c => c.Descriptions)
+					.ToList() ?? new List<string>()
+
 			};
 
 			return dto;

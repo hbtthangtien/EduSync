@@ -109,7 +109,6 @@ namespace Persistence.DatabaseExtensions
 			}
 			modelBuilder.Entity<Slot>().HasData(slots);
 
-			// Seed 30 Content per Course => 300 content
 			var contents = new List<Content>();
 			int contentId = 1;
 			for (int i = 1; i <= 10; i++)
@@ -128,10 +127,9 @@ namespace Persistence.DatabaseExtensions
 			}
 			modelBuilder.Entity<Content>().HasData(contents);
 
-			// Seed 30 WeeklySchedules per Slot => 600 schedules
 			var weeklySchedules = new List<WeeklySchedule>();
 			int scheduleId = 1;
-			for (int i = 1; i <= 20; i++) // 20 slots total
+			for (int i = 1; i <= 20; i++) 
 			{
 				for (int j = 0; j < 30; j++)
 				{

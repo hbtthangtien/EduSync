@@ -32,27 +32,17 @@ namespace Application.Services
 		public async Task<BaseResponse<string>> RegisterTutorAsync(RegisterTutorDTO registerTutor)
 		{
 			var userId = _userRepo.GetUserId();
+			var course = await _unitOfWorks.Courses.GetSingle(x => x.Title == "Khóa học mặc định");
 
 			if (await _unitOfWorks.Students.GetSingle(x => x.UserId == userId) is null)
 				return BaseResponse<string>.Failure("Tài khoản không hợp lệ hoặc chưa phải là học sinh.");
 
-			var certUrl = await _fileStorage.UploadFileAsync(registerTutor.CertificateFile);
 
 			var tutor = registerTutor.Adapt<Tutor>();
 			tutor.UserId = userId;
 
 			var bioTutor = registerTutor.Adapt<BioTutor>();
 			bioTutor.Tutor = tutor;
-
-			var certificate = new Certificate
-			{
-				CertificateUrl = certUrl,
-				IsVerified = true, 
-				CreatedAt = DateTime.UtcNow,
-				CourseId = 0 
-			};
-
-			tutor.Certificates = new List<Certificate> { certificate };
 			tutor.BioTutor = bioTutor;
 
 			await _unitOfWorks.TuTors.AddAsync(tutor);

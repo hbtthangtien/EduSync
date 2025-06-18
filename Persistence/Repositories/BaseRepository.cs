@@ -21,6 +21,14 @@ namespace Persistence.Repositories
 			_dbSet = _context.Set<T>();
 		}
 
+		public async Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null)
+		{
+			if (predicate != null)
+				return await _dbSet.CountAsync(predicate);
+
+			return await _dbSet.CountAsync();
+		}
+
 		public async Task AddAsync(T entity)
 		{
 			await _dbSet.AddAsync(entity);
