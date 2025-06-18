@@ -94,33 +94,18 @@ namespace Application.Services
 			if (await _unitOfWorks.Users.GetByUserAsync(registerDto.Email) is not null)
 				return BaseResponse<object>.Failure("Email đã tồn tại");
 
-			if (registerDto.RoleId is not (2 or 3))
-				return BaseResponse<object>.Failure("Vai trò không hợp lệ (chỉ chấp nhận Tutor hoặc Student)");
-
-			var newUser = registerDto.Adapt<User>();
+				var newUser = registerDto.Adapt<User>();
 			newUser.PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 			newUser.CreatedAt = DateTime.UtcNow;
 
 			await _unitOfWorks.Users.AddAsync(newUser);
 			await _unitOfWorks.SaveChangesAsync();
 
-			switch (registerDto.RoleId)
-			{
-				case 2:
-					await _unitOfWorks.TuTors.AddAsync(new Tutor
-					{       
-						UserId = newUser.Id,
-						CreatedAt = DateTime.UtcNow
-					});
-					break;
-				case 3:
 					await _unitOfWorks.Students.AddAsync(new Student
 					{       
 						UserId = newUser.Id,
 						CreatedAt = DateTime.UtcNow
 					});
-					break;
-			}
 
 			await _unitOfWorks.SaveChangesAsync(); 
 

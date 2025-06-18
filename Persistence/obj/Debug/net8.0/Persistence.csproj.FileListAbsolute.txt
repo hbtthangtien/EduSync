@@ -38,6 +38,12 @@ C:\Users\Admin\Desktop\source\repos\EduSync\Persistence\obj\Debug\net8.0\refint\
 C:\Users\Admin\Desktop\source\repos\EduSync\Persistence\obj\Debug\net8.0\Persistence.pdb
 C:\Users\Admin\Desktop\source\repos\EduSync\Persistence\obj\Debug\net8.0\Persistence.genruntimeconfig.cache
 C:\Users\Admin\Desktop\source\repos\EduSync\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.csproj.AssemblyReference.cache
+E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
+E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
+E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
+E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
 E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Persistence.deps.json
 E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Persistence.runtimeconfig.json
 E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Persistence.dll
@@ -46,12 +52,6 @@ E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Application.dll
 E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Domain.dll
 E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Application.pdb
 E:\Documents\C#\SP_Exe\EduSync\Persistence\bin\Debug\net8.0\Domain.pdb
-E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.csproj.AssemblyReference.cache
-E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
-E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
-E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
-E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
-E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
 E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date
 E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\Persistence.dll
 E:\Documents\C#\SP_Exe\EduSync\Persistence\obj\Debug\net8.0\refint\Persistence.dll
