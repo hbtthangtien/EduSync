@@ -101,9 +101,9 @@ namespace Persistence.DatabaseConfigs
 					.HasForeignKey(e => e.TutorId)
 					.OnDelete(DeleteBehavior.Restrict);
 
-				entity.HasMany(e => e.Students)
-					.WithMany()
-					.UsingEntity<Slot>();
+				//entity.HasMany(e => e.Students)
+				//	.WithMany()
+				//	.UsingEntity<Slot>();
 
 				entity.HasMany(e => e.Slots)
 					.WithOne(e => e.Tutor)
@@ -185,7 +185,23 @@ namespace Persistence.DatabaseConfigs
 					.WithOne(e => e.Slot)
 					.HasForeignKey(e => e.SlotId)
 					.OnDelete(DeleteBehavior.Restrict);
+
+				entity.HasOne(e => e.Student)
+					.WithMany(s => s.Slots)
+					.HasForeignKey(e => e.StudentId)
+					.OnDelete(DeleteBehavior.SetNull); 
+
+				entity.HasOne(e => e.Tutor)
+					.WithMany(t => t.Slots)
+					.HasForeignKey(e => e.TutorId)
+					.OnDelete(DeleteBehavior.Restrict);
+
+				entity.HasOne(e => e.Course)
+					.WithMany(c => c.Slots)
+					.HasForeignKey(e => e.CourseId)
+					.OnDelete(DeleteBehavior.Restrict);
 			});
+
 
 			modelBuilder.Seed();
 		}

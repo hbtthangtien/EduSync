@@ -3305,6 +3305,9 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long?>("TutorUserId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -3312,6 +3315,8 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("TutorUserId");
 
                     b.ToTable("Students");
                 });
@@ -9624,12 +9629,13 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Slots")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Student", "Student")
                         .WithMany("Slots")
-                        .HasForeignKey("StudentId");
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Domain.Entities.Tutor", "Tutor")
                         .WithMany("Slots")
@@ -9646,6 +9652,10 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Student", b =>
                 {
+                    b.HasOne("Domain.Entities.Tutor", null)
+                        .WithMany("Students")
+                        .HasForeignKey("TutorUserId");
+
                     b.HasOne("Domain.Entities.User", "User")
                         .WithOne("Student")
                         .HasForeignKey("Domain.Entities.Student", "UserId")
@@ -9752,6 +9762,8 @@ namespace Persistence.Migrations
                     b.Navigation("Ratings");
 
                     b.Navigation("Slots");
+
+                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>

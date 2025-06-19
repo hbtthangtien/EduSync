@@ -24,10 +24,11 @@ namespace Presentation
 			{
 			options.UseSqlServer(builder.Configuration.GetConnectionString("localmssql"));
 			});
+			builder.Services.SetCorsForAPI();
 			var app = builder.Build();
 
 			//seed initial data_role
-			await app.SeedInitialDataAsync();
+			//await app.SeedInitialDataAsync();
 			app.UseHttpsRedirection();
 			app.UseCors("AllowAllOrigins");
 			app.UseAuthentication();
