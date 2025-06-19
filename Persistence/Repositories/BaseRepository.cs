@@ -36,9 +36,10 @@ namespace Persistence.Repositories
 			await _dbSet.AddAsync(entity);
 		}
 
-		public void UpdateAsync(T entity)
+		public Task UpdateAsync(T entity)
 		{
 			_dbSet.Update(entity);
+			return Task.CompletedTask;
 		}
 
 		public void RemoveAsync(T entity)

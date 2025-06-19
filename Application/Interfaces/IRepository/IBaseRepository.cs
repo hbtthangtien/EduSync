@@ -13,7 +13,7 @@ namespace Application.Interfaces.IRepository
 		public IQueryable<T> GetInstance();
 		public Task<T?> GetSingle(Expression<Func<T, bool>> expression);
 		public Task AddAsync(T entity);
-		public void UpdateAsync(T entity);
+		public Task UpdateAsync(T entity);
 		public void RemoveAsync(T entity);
 		Task<T?> GetByIdAsync(long id);
 		public Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null);
