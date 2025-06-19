@@ -3,36 +3,96 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\presentation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\presentation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\interfaces\\irepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\interfaces\\irepository\\iusertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\iusertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\interfaces\\irepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\iunitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\iunitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\tutorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\tutorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\infrastructure\\applicationmappers\\mapsterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\applicationmappers\\mapsterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\homepageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\homepageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\extensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\presentation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\presentation.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\usertoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,28 +103,12 @@
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iservice\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\interfaces\\irepository\\iusertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\iusertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\iunitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\iunitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\dtos\\token\\tokenrefreshdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\dtos\\token\\tokenrefreshdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\dtos\\user\\admindashboardreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\dtos\\user\\admindashboardreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\infrastructure\\applicationmappers\\mapsterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DED2385-7681-4BA7-A94B-0D9424B43964}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\applicationmappers\\mapsterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,10 +137,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\controllers\\tutorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\tutorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -141,22 +181,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\dtos\\tutors\\tutordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\dtos\\tutors\\tutordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\interfaces\\irepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\services\\tutorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\services\\tutorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -219,24 +243,8 @@
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\interfaces\\irepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\interfaces\\irepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\dtos\\commons\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|solutionrelative:application\\dtos\\commons\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E717D2F-7BA8-4480-A088-4FDAED522B70}|Application\\Application.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\application\\dtos\\register\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -273,10 +281,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\persistence\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\repositories\\usertokenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|c:\\users\\admin\\desktop\\source\\repos\\edusync\\presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -320,7 +324,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -348,46 +352,219 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IBaseRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IRepository\\IBaseRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwBAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T16:10:25.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LocalFileStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\LocalFileStorageService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\LocalFileStorageService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\LocalFileStorageService.cs",
-              "RelativeToolTip": "Application\\Services\\LocalFileStorageService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T05:55:23.014Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "Presentation\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\appsettings.json",
+              "RelativeToolTip": "Presentation\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAB8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-18T08:18:56.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACIAAAABAAAA",
+              "DocumentIndex": 5,
+              "Title": "IUserTokenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T08:52:02.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FileController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\FileController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\FileController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\FileController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\FileController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:02:19.262Z",
+              "WhenOpened": "2025-06-18T08:34:13.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\Repositories\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "Persistence\\Repositories\\BaseRepository.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAA2wCcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T16:08:11.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserTokenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserTokenRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\Repositories\\UserTokenRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserTokenRepository.cs",
+              "RelativeToolTip": "Persistence\\Repositories\\UserTokenRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:23:00.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "Application\\Services\\AuthService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA4wCUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T02:54:33.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Domain\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:54:57.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserRepository.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IRepository\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:31:44.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Persistence\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwA8AAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:33:03.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\StudentService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\StudentService.cs",
+              "RelativeToolTip": "Application\\Services\\StudentService.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAmwD4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T02:38:42.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\IUnitOfWorks\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Application\\IUnitOfWorks\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\IUnitOfWorks\\IUnitOfWork.cs",
+              "RelativeToolTip": "Application\\IUnitOfWorks\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T03:42:51.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "RelativeToolTip": "Persistence\\UnitOfWorks\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T03:11:58.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\BaseService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\BaseService.cs",
+              "RelativeToolTip": "Application\\Services\\BaseService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:31:18.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Role.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Role.cs",
+              "RelativeToolTip": "Domain\\Entities\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T01:35:22.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AdminService.cs",
+              "RelativeToolTip": "Application\\Services\\AdminService.cs",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAwwD4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T03:07:10.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Student.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Student.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Student.cs",
+              "RelativeToolTip": "Domain\\Entities\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T06:11:52.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "DependenceInjection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\Extensions\\DependenceInjection.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Extensions\\DependenceInjection.cs",
@@ -400,20 +577,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\StudentService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\StudentService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\StudentService.cs",
-              "RelativeToolTip": "Application\\Services\\StudentService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACwAAAAaAAAA",
+              "DocumentIndex": 15,
+              "Title": "MapsterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
+              "RelativeToolTip": "Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAmwCcAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:38:42.582Z",
+              "WhenOpened": "2025-06-18T09:04:30.825Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
+              "Title": "TutorService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\TutorService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\TutorService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\TutorService.cs",
+              "RelativeToolTip": "Application\\Services\\TutorService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T02:50:44.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HomePageService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\HomePageService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\HomePageService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\HomePageService.cs",
+              "RelativeToolTip": "Application\\Services\\HomePageService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T07:06:57.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LocalFileStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\LocalFileStorageService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\LocalFileStorageService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\LocalFileStorageService.cs",
+              "RelativeToolTip": "Application\\Services\\LocalFileStorageService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCoAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T05:55:23.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Presentation\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Presentation\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:52:02.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "UserToken.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\UserToken.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\UserToken.cs",
@@ -426,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 22,
               "Title": "Presentation.http",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Presentation.http",
               "RelativeDocumentMoniker": "Presentation\\Presentation.http",
@@ -439,20 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\appsettings.json",
-              "RelativeDocumentMoniker": "Presentation\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\appsettings.json",
-              "RelativeToolTip": "Presentation\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-18T08:18:56.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\IAuthService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\IAuthService.cs",
@@ -465,46 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AuthService.cs",
-              "RelativeToolTip": "Application\\Services\\AuthService.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAAwIoAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T02:54:33.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IUserTokenRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IRepository\\IUserTokenRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T08:34:13.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\IUnitOfWorks\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "Application\\IUnitOfWorks\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\IUnitOfWorks\\IUnitOfWork.cs",
-              "RelativeToolTip": "Application\\IUnitOfWorks\\IUnitOfWork.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAADgvw8AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:42:51.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "TokenRefreshDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Token\\TokenRefreshDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Token\\TokenRefreshDTO.cs",
@@ -517,20 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AdminService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\AdminService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\AdminService.cs",
-              "RelativeToolTip": "Application\\Services\\AdminService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKIAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T03:07:10.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 26,
               "Title": "AdminDashboardReportDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\User\\AdminDashboardReportDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\AdminDashboardReportDTO.cs",
@@ -543,20 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "MapsterConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
-              "RelativeToolTip": "Infrastructure\\ApplicationMappers\\MapsterConfig.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAuwCsAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T09:04:30.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "EduSyncContext.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
               "RelativeDocumentMoniker": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
@@ -569,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 28,
               "Title": "Tutor.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Tutor.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Tutor.cs",
@@ -582,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "Course.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Course.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Course.cs",
@@ -595,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "BioTutor.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\BioTutor.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\BioTutor.cs",
@@ -608,7 +759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\AdminController.cs",
@@ -621,7 +772,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "UserSumaryDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\User\\UserSumaryDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserSumaryDTO.cs",
@@ -634,33 +785,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "TutorsController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\TutorsController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\TutorsController.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\TutorsController.cs",
               "RelativeToolTip": "Presentation\\Controllers\\TutorsController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAACQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T02:55:25.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Role.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Role.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Role.cs",
-              "RelativeToolTip": "Domain\\Entities\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T01:35:22.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 34,
               "Title": "PaymentStatus.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Enums\\PaymentStatus.cs",
               "RelativeDocumentMoniker": "Domain\\Enums\\PaymentStatus.cs",
@@ -673,7 +811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 36,
               "Title": "IAdminUserService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\IAdminUserService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\IAdminUserService.cs",
@@ -686,7 +824,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 35,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Payment.cs",
@@ -699,7 +837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 37,
               "Title": "CourseController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\CourseController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\CourseController.cs",
@@ -712,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 38,
               "Title": "CourseService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\CourseService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\CourseService.cs",
@@ -725,7 +863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 39,
               "Title": "ICousreService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\ICousreService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\ICousreService.cs",
@@ -738,7 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 40,
               "Title": "StudentController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Controllers\\StudentController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\StudentController.cs",
@@ -751,7 +889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 41,
               "Title": "IRoleRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IRoleRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IRoleRepository.cs",
@@ -764,7 +902,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 42,
               "Title": "CourseAdminDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Cousre\\CourseAdminDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Cousre\\CourseAdminDTO.cs",
@@ -777,7 +915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 43,
               "Title": "UserDetailDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\User\\UserDetailDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\User\\UserDetailDTO.cs",
@@ -790,7 +928,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 44,
               "Title": "TutorDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Tutors\\TutorDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Tutors\\TutorDTO.cs",
@@ -803,59 +941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IUserRepository.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IRepository\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T08:31:44.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwA8AAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T08:33:03.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "TutorService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\TutorService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\TutorService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Services\\TutorService.cs",
-              "RelativeToolTip": "Application\\Services\\TutorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:50:44.134Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\User.cs",
-              "RelativeToolTip": "Domain\\Entities\\User.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T08:54:57.312Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 46,
               "Title": "ActivationRequest.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\ActivationRequest.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\ActivationRequest.cs",
@@ -868,7 +954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 45,
               "Title": "Rating.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Rating.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Rating.cs",
@@ -881,7 +967,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 47,
               "Title": "CourseDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Cousre\\CourseDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Cousre\\CourseDTO.cs",
@@ -894,33 +980,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 48,
               "Title": "ITutorService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\ITutorService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\ITutorService.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\ITutorService.cs",
               "RelativeToolTip": "Application\\Interfaces\\IService\\ITutorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA9AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T02:50:17.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 49,
               "Title": "ISlotService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\ISlotService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\ISlotService.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IService\\ISlotService.cs",
               "RelativeToolTip": "Application\\Interfaces\\IService\\ISlotService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T02:50:00.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 50,
               "Title": "BioTutorDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Tutors\\Bio\\BioTutorDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Tutors\\Bio\\BioTutorDTO.cs",
@@ -933,7 +1019,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 51,
               "Title": "BioUpdate.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Tutors\\Bio\\BioUpdate.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Tutors\\Bio\\BioUpdate.cs",
@@ -946,7 +1032,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 52,
               "Title": "TutorCardDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Tutors\\TutorCardDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Tutors\\TutorCardDTO.cs",
@@ -959,7 +1045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 54,
               "Title": "CourseCardDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Cousre\\CourseCardDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Cousre\\CourseCardDTO.cs",
@@ -972,20 +1058,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 53,
               "Title": "Slot.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Slot.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Slot.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Slot.cs",
               "RelativeToolTip": "Domain\\Entities\\Slot.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAwA4AAAAlAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAwBAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T02:51:34.723Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 55,
               "Title": "CourseDetailDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Cousre\\CourseDetailDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Cousre\\CourseDetailDTO.cs",
@@ -998,7 +1084,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "ICourseRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\ICourseRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ICourseRepository.cs",
@@ -1011,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "CourseCancellation.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\CourseCancellation.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\CourseCancellation.cs",
@@ -1024,7 +1110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 58,
               "Title": "StudentRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\StudentRepository.cs",
               "RelativeDocumentMoniker": "Persistence\\Repositories\\StudentRepository.cs",
@@ -1037,7 +1123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 59,
               "Title": "IStudentRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IStudentRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IStudentRepository.cs",
@@ -1050,46 +1136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\BaseRepository.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAIAwwCAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T16:08:11.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\IBaseRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\IBaseRepository.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IRepository\\IBaseRepository.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-17T16:10:25.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Student.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Student.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Student.cs",
-              "RelativeToolTip": "Domain\\Entities\\Student.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T06:11:52.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "BaseResponse.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Commons\\BaseResponse.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Commons\\BaseResponse.cs",
@@ -1102,20 +1149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\UnitOfWorks\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Persistence\\UnitOfWorks\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\UnitOfWorks\\UnitOfWork.cs",
-              "RelativeToolTip": "Persistence\\UnitOfWorks\\UnitOfWork.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAA7wGkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T03:11:58.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "RegisterDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Register\\RegisterDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Register\\RegisterDTO.cs",
@@ -1128,7 +1162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "Content.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Content.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Content.cs",
@@ -1141,7 +1175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "Certificate.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\Certificate.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Certificate.cs",
@@ -1154,7 +1188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 64,
               "Title": "ITuTorRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Interfaces\\IRepository\\ITuTorRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IRepository\\ITuTorRepository.cs",
@@ -1167,7 +1201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "20250618152337_Fix-student.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Migrations\\20250618152337_Fix-student.cs",
               "RelativeDocumentMoniker": "Persistence\\Migrations\\20250618152337_Fix-student.cs",
@@ -1178,7 +1212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "20250618152405_Fix-student.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Migrations\\20250618152405_Fix-student.cs",
               "RelativeDocumentMoniker": "Persistence\\Migrations\\20250618152405_Fix-student.cs",
@@ -1189,7 +1223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Commons\\BaseEntity.cs",
               "RelativeDocumentMoniker": "Domain\\Commons\\BaseEntity.cs",
@@ -1202,7 +1236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "DbSeeder_Role.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_Role.cs",
               "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DbSeeder_Role.cs",
@@ -1215,7 +1249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "DependenceInjection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs",
               "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DependenceInjection.cs",
@@ -1228,20 +1262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
-              "Title": "UserTokenRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserTokenRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\UserTokenRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Repositories\\UserTokenRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\UserTokenRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T14:23:00.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Presentation\\Program.cs",
               "RelativeDocumentMoniker": "Presentation\\Program.cs",
@@ -1254,7 +1275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "TokenResponse.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Token\\TokenResponse.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Token\\TokenResponse.cs",
@@ -1267,7 +1288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "TokenCreateDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Token\\TokenCreateDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Token\\TokenCreateDTO.cs",
@@ -1280,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 73,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\DTOs\\Login\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Login\\LoginDTO.cs",
@@ -1293,7 +1314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 74,
               "Title": "20250618075519_add_BioTutor_table.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618075519_add_BioTutor_table.cs",
               "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618075519_add_BioTutor_table.cs",
@@ -1302,7 +1323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 75,
               "Title": "20250618075206_add_BioTutor_table.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618075206_add_BioTutor_table.cs",
               "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250618075206_add_BioTutor_table.cs",
@@ -1311,7 +1332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 76,
               "Title": "EduSyncContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContextFactory.cs",
               "RelativeDocumentMoniker": "Persistence\\DatabaseConfigs\\EduSyncContextFactory.cs",
@@ -1324,20 +1345,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 77,
               "Title": "WeeklySchedule.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\WeeklySchedule.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
               "RelativeToolTip": "Domain\\Entities\\WeeklySchedule.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T02:52:07.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 78,
               "Title": "IAudiable.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Domain\\Commons\\IAudiable.cs",
               "RelativeDocumentMoniker": "Domain\\Commons\\IAudiable.cs",

@@ -1,6 +1,9 @@
 ﻿using Application.DTOs.Commons;
+using Application.DTOs.Tutors.Slots;
+using Application.Extentions;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +20,8 @@ namespace Application.Services
 		{
 			_unitOfWork = unitOfWork;
 		}
+
+		
 
 		public async Task<BaseResponse<string>> RegisterSlotAsync(long slotId, long userId)
 		{
@@ -37,7 +42,7 @@ namespace Application.Services
 				if (slot.IsBooked || slot.StudentId != null)
 					return BaseResponse<string>.ErrorResponse("Slot đã được đăng ký bởi người khác");
 
-				slot.StudentId = student.UserId; 
+				slot.StudentId = student.UserId;
 				slot.IsBooked = true;
 
 				await _unitOfWork.SaveChangesAsync();

@@ -107,17 +107,6 @@ namespace Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("BioTutor");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Fullname = "Bùi Đức Tùng",
-                            Introduces = "Tôi là bậc thầy IELTS",
-                            Specializations = "IELTS",
-                            TutorId = 1L
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
@@ -3026,6 +3015,9 @@ namespace Persistence.Migrations
                     b.Property<short>("NumberOfSlot")
                         .HasColumnType("smallint");
 
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<long?>("StudentId")
                         .HasColumnType("bigint");
 
@@ -3059,6 +3051,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-1-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3067,10 +3061,12 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-1-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 2, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3083,6 +3079,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-2-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3091,10 +3089,12 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-2-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 3, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3107,6 +3107,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-3-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3115,10 +3117,12 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-3-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 4, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3131,6 +3135,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-4-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3139,10 +3145,12 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-4-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 5, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3155,6 +3163,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-5-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3163,10 +3173,12 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-5-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 6, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3179,6 +3191,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-6-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3187,10 +3201,12 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-6-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 7, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3203,6 +3219,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-7-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3211,10 +3229,12 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-7-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3227,6 +3247,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-8-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3235,10 +3257,12 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-8-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 9, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3251,6 +3275,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-9-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3259,10 +3285,12 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-9-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 10, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         },
                         new
@@ -3275,6 +3303,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-10-slot1",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3283,10 +3313,12 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DurationSession = 54000000000L,
-                            IsBooked = false,
+                            IsBooked = true,
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-10-slot2",
                             NumberOfSlot = (short)1,
+                            StartTime = new DateTime(2025, 1, 11, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 2L,
                             TutorId = 1L
                         });
                 });
@@ -3319,6 +3351,20 @@ namespace Persistence.Migrations
                     b.HasIndex("TutorUserId");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 2L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            RegistrationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 3L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            RegistrationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Tutor", b =>
@@ -3403,9 +3449,27 @@ namespace Persistence.Migrations
                             Id = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tutor1@example.com",
-                            PasswordHash = "Password123@",
+                            PasswordHash = "hashedpassword",
                             RoleId = 2L,
                             Username = "tutor1"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "student1@example.com",
+                            PasswordHash = "hashedpassword",
+                            RoleId = 3L,
+                            Username = "student1"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "student2@example.com",
+                            PasswordHash = "hashedpassword",
+                            RoleId = 3L,
+                            Username = "student2"
                         });
                 });
 
@@ -3466,14 +3530,8 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<long>("SlotId")
                         .HasColumnType("bigint");
-
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -3496,9 +3554,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3506,9 +3562,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3516,9 +3570,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3526,9 +3578,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3536,9 +3586,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3546,9 +3594,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3556,9 +3602,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3566,9 +3610,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3576,9 +3618,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3586,9 +3626,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3596,9 +3634,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3606,9 +3642,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3616,9 +3650,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3626,9 +3658,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3636,9 +3666,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3646,9 +3674,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3656,9 +3682,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3666,9 +3690,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3676,9 +3698,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3686,9 +3706,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3696,9 +3714,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3706,9 +3722,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3716,9 +3730,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3726,9 +3738,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3736,9 +3746,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3746,9 +3754,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3756,9 +3762,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3766,9 +3770,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3776,9 +3778,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3786,9 +3786,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 1L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 1L
                         },
                         new
                         {
@@ -3796,9 +3794,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3806,9 +3802,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3816,9 +3810,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3826,9 +3818,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3836,9 +3826,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3846,9 +3834,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3856,9 +3842,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3866,9 +3850,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3876,9 +3858,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3886,9 +3866,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3896,9 +3874,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3906,9 +3882,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3916,9 +3890,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3926,9 +3898,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3936,9 +3906,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3946,9 +3914,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3956,9 +3922,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3966,9 +3930,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3976,9 +3938,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3986,9 +3946,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -3996,9 +3954,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4006,9 +3962,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4016,9 +3970,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4026,9 +3978,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4036,9 +3986,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4046,9 +3994,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4056,9 +4002,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4066,9 +4010,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4076,9 +4018,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4086,9 +4026,7 @@ namespace Persistence.Migrations
                             CourseId = 1L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 2L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 2L
                         },
                         new
                         {
@@ -4096,9 +4034,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4106,9 +4042,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4116,9 +4050,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4126,9 +4058,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4136,9 +4066,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4146,9 +4074,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4156,9 +4082,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4166,9 +4090,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4176,9 +4098,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4186,9 +4106,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4196,9 +4114,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4206,9 +4122,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4216,9 +4130,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4226,9 +4138,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4236,9 +4146,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4246,9 +4154,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4256,9 +4162,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4266,9 +4170,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4276,9 +4178,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4286,9 +4186,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4296,9 +4194,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4306,9 +4202,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4316,9 +4210,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4326,9 +4218,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4336,9 +4226,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4346,9 +4234,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4356,9 +4242,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4366,9 +4250,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4376,9 +4258,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4386,9 +4266,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 3L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 3L
                         },
                         new
                         {
@@ -4396,9 +4274,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4406,9 +4282,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4416,9 +4290,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4426,9 +4298,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4436,9 +4306,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4446,9 +4314,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4456,9 +4322,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4466,9 +4330,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4476,9 +4338,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4486,9 +4346,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4496,9 +4354,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4506,9 +4362,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4516,9 +4370,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4526,9 +4378,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4536,9 +4386,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4546,9 +4394,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4556,9 +4402,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4566,9 +4410,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4576,9 +4418,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4586,9 +4426,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4596,9 +4434,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4606,9 +4442,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4616,9 +4450,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4626,9 +4458,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4636,9 +4466,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4646,9 +4474,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4656,9 +4482,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4666,9 +4490,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4676,9 +4498,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4686,9 +4506,7 @@ namespace Persistence.Migrations
                             CourseId = 2L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 4L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 4L
                         },
                         new
                         {
@@ -4696,9 +4514,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4706,9 +4522,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4716,9 +4530,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4726,9 +4538,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4736,9 +4546,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4746,9 +4554,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4756,9 +4562,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4766,9 +4570,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4776,9 +4578,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4786,9 +4586,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4796,9 +4594,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4806,9 +4602,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4816,9 +4610,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4826,9 +4618,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4836,9 +4626,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4846,9 +4634,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4856,9 +4642,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4866,9 +4650,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4876,9 +4658,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4886,9 +4666,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4896,9 +4674,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4906,9 +4682,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4916,9 +4690,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4926,9 +4698,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4936,9 +4706,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4946,9 +4714,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4956,9 +4722,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4966,9 +4730,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4976,9 +4738,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4986,9 +4746,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 5L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 5L
                         },
                         new
                         {
@@ -4996,9 +4754,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5006,9 +4762,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5016,9 +4770,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5026,9 +4778,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5036,9 +4786,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5046,9 +4794,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5056,9 +4802,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5066,9 +4810,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5076,9 +4818,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5086,9 +4826,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5096,9 +4834,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5106,9 +4842,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5116,9 +4850,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5126,9 +4858,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5136,9 +4866,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5146,9 +4874,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5156,9 +4882,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5166,9 +4890,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5176,9 +4898,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5186,9 +4906,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5196,9 +4914,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5206,9 +4922,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5216,9 +4930,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5226,9 +4938,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5236,9 +4946,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5246,9 +4954,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5256,9 +4962,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5266,9 +4970,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5276,9 +4978,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5286,9 +4986,7 @@ namespace Persistence.Migrations
                             CourseId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 6L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 6L
                         },
                         new
                         {
@@ -5296,9 +4994,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5306,9 +5002,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5316,9 +5010,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5326,9 +5018,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5336,9 +5026,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5346,9 +5034,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5356,9 +5042,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5366,9 +5050,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5376,9 +5058,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5386,9 +5066,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5396,9 +5074,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5406,9 +5082,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5416,9 +5090,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5426,9 +5098,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5436,9 +5106,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5446,9 +5114,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5456,9 +5122,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5466,9 +5130,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5476,9 +5138,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5486,9 +5146,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5496,9 +5154,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5506,9 +5162,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5516,9 +5170,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5526,9 +5178,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5536,9 +5186,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5546,9 +5194,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5556,9 +5202,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5566,9 +5210,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5576,9 +5218,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5586,9 +5226,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 7L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 7L
                         },
                         new
                         {
@@ -5596,9 +5234,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5606,9 +5242,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5616,9 +5250,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5626,9 +5258,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5636,9 +5266,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5646,9 +5274,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5656,9 +5282,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5666,9 +5290,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5676,9 +5298,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5686,9 +5306,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5696,9 +5314,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5706,9 +5322,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5716,9 +5330,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5726,9 +5338,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5736,9 +5346,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5746,9 +5354,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5756,9 +5362,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5766,9 +5370,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5776,9 +5378,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5786,9 +5386,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5796,9 +5394,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5806,9 +5402,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5816,9 +5410,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5826,9 +5418,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5836,9 +5426,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5846,9 +5434,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5856,9 +5442,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5866,9 +5450,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5876,9 +5458,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5886,9 +5466,7 @@ namespace Persistence.Migrations
                             CourseId = 4L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 8L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 8L
                         },
                         new
                         {
@@ -5896,9 +5474,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5906,9 +5482,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5916,9 +5490,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5926,9 +5498,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5936,9 +5506,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5946,9 +5514,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5956,9 +5522,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5966,9 +5530,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5976,9 +5538,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5986,9 +5546,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -5996,9 +5554,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6006,9 +5562,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6016,9 +5570,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6026,9 +5578,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6036,9 +5586,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6046,9 +5594,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6056,9 +5602,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6066,9 +5610,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6076,9 +5618,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6086,9 +5626,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6096,9 +5634,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6106,9 +5642,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6116,9 +5650,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6126,9 +5658,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6136,9 +5666,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6146,9 +5674,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6156,9 +5682,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6166,9 +5690,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6176,9 +5698,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6186,9 +5706,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 9L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 9L
                         },
                         new
                         {
@@ -6196,9 +5714,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6206,9 +5722,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6216,9 +5730,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6226,9 +5738,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6236,9 +5746,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6246,9 +5754,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6256,9 +5762,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6266,9 +5770,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6276,9 +5778,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6286,9 +5786,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6296,9 +5794,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6306,9 +5802,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6316,9 +5810,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6326,9 +5818,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6336,9 +5826,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6346,9 +5834,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6356,9 +5842,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6366,9 +5850,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6376,9 +5858,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6386,9 +5866,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6396,9 +5874,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6406,9 +5882,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6416,9 +5890,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6426,9 +5898,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6436,9 +5906,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6446,9 +5914,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6456,9 +5922,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6466,9 +5930,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6476,9 +5938,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6486,9 +5946,7 @@ namespace Persistence.Migrations
                             CourseId = 5L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 10L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 10L
                         },
                         new
                         {
@@ -6496,9 +5954,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6506,9 +5962,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6516,9 +5970,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6526,9 +5978,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6536,9 +5986,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6546,9 +5994,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6556,9 +6002,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6566,9 +6010,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6576,9 +6018,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6586,9 +6026,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6596,9 +6034,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6606,9 +6042,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6616,9 +6050,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6626,9 +6058,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6636,9 +6066,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6646,9 +6074,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6656,9 +6082,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6666,9 +6090,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6676,9 +6098,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6686,9 +6106,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6696,9 +6114,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6706,9 +6122,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6716,9 +6130,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6726,9 +6138,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6736,9 +6146,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6746,9 +6154,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6756,9 +6162,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6766,9 +6170,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6776,9 +6178,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6786,9 +6186,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 11L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 11L
                         },
                         new
                         {
@@ -6796,9 +6194,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6806,9 +6202,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6816,9 +6210,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6826,9 +6218,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6836,9 +6226,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6846,9 +6234,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6856,9 +6242,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6866,9 +6250,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6876,9 +6258,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6886,9 +6266,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6896,9 +6274,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6906,9 +6282,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6916,9 +6290,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6926,9 +6298,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6936,9 +6306,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6946,9 +6314,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6956,9 +6322,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6966,9 +6330,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6976,9 +6338,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6986,9 +6346,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -6996,9 +6354,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7006,9 +6362,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7016,9 +6370,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7026,9 +6378,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7036,9 +6386,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7046,9 +6394,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7056,9 +6402,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7066,9 +6410,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7076,9 +6418,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7086,9 +6426,7 @@ namespace Persistence.Migrations
                             CourseId = 6L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 12L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 12L
                         },
                         new
                         {
@@ -7096,9 +6434,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7106,9 +6442,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7116,9 +6450,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7126,9 +6458,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7136,9 +6466,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7146,9 +6474,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7156,9 +6482,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7166,9 +6490,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7176,9 +6498,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7186,9 +6506,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7196,9 +6514,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7206,9 +6522,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7216,9 +6530,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7226,9 +6538,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7236,9 +6546,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7246,9 +6554,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7256,9 +6562,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7266,9 +6570,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7276,9 +6578,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7286,9 +6586,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7296,9 +6594,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7306,9 +6602,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7316,9 +6610,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7326,9 +6618,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7336,9 +6626,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7346,9 +6634,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7356,9 +6642,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7366,9 +6650,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7376,9 +6658,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7386,9 +6666,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 13L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 13L
                         },
                         new
                         {
@@ -7396,9 +6674,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7406,9 +6682,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7416,9 +6690,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7426,9 +6698,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7436,9 +6706,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7446,9 +6714,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7456,9 +6722,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7466,9 +6730,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7476,9 +6738,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7486,9 +6746,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7496,9 +6754,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7506,9 +6762,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7516,9 +6770,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7526,9 +6778,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7536,9 +6786,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7546,9 +6794,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7556,9 +6802,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7566,9 +6810,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7576,9 +6818,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7586,9 +6826,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7596,9 +6834,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7606,9 +6842,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7616,9 +6850,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7626,9 +6858,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7636,9 +6866,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7646,9 +6874,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7656,9 +6882,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7666,9 +6890,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7676,9 +6898,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7686,9 +6906,7 @@ namespace Persistence.Migrations
                             CourseId = 7L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 14L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 14L
                         },
                         new
                         {
@@ -7696,9 +6914,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7706,9 +6922,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7716,9 +6930,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7726,9 +6938,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7736,9 +6946,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7746,9 +6954,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7756,9 +6962,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7766,9 +6970,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7776,9 +6978,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7786,9 +6986,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7796,9 +6994,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7806,9 +7002,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7816,9 +7010,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7826,9 +7018,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7836,9 +7026,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7846,9 +7034,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7856,9 +7042,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7866,9 +7050,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7876,9 +7058,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7886,9 +7066,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7896,9 +7074,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7906,9 +7082,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7916,9 +7090,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7926,9 +7098,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7936,9 +7106,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7946,9 +7114,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7956,9 +7122,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7966,9 +7130,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7976,9 +7138,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7986,9 +7146,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 15L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 15L
                         },
                         new
                         {
@@ -7996,9 +7154,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8006,9 +7162,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8016,9 +7170,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8026,9 +7178,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8036,9 +7186,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8046,9 +7194,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8056,9 +7202,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8066,9 +7210,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8076,9 +7218,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8086,9 +7226,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8096,9 +7234,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8106,9 +7242,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8116,9 +7250,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8126,9 +7258,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8136,9 +7266,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8146,9 +7274,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8156,9 +7282,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8166,9 +7290,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8176,9 +7298,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8186,9 +7306,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8196,9 +7314,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8206,9 +7322,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8216,9 +7330,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8226,9 +7338,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8236,9 +7346,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8246,9 +7354,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8256,9 +7362,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8266,9 +7370,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8276,9 +7378,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8286,9 +7386,7 @@ namespace Persistence.Migrations
                             CourseId = 8L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 16L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 16L
                         },
                         new
                         {
@@ -8296,9 +7394,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8306,9 +7402,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8316,9 +7410,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8326,9 +7418,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8336,9 +7426,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8346,9 +7434,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8356,9 +7442,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8366,9 +7450,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8376,9 +7458,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8386,9 +7466,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8396,9 +7474,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8406,9 +7482,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8416,9 +7490,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8426,9 +7498,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8436,9 +7506,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8446,9 +7514,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8456,9 +7522,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8466,9 +7530,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8476,9 +7538,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8486,9 +7546,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8496,9 +7554,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8506,9 +7562,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8516,9 +7570,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8526,9 +7578,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8536,9 +7586,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8546,9 +7594,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8556,9 +7602,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8566,9 +7610,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8576,9 +7618,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8586,9 +7626,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 17L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 17L
                         },
                         new
                         {
@@ -8596,9 +7634,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8606,9 +7642,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8616,9 +7650,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8626,9 +7658,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8636,9 +7666,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8646,9 +7674,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8656,9 +7682,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8666,9 +7690,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8676,9 +7698,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8686,9 +7706,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8696,9 +7714,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8706,9 +7722,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8716,9 +7730,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8726,9 +7738,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8736,9 +7746,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8746,9 +7754,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8756,9 +7762,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8766,9 +7770,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8776,9 +7778,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8786,9 +7786,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8796,9 +7794,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8806,9 +7802,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8816,9 +7810,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8826,9 +7818,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8836,9 +7826,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8846,9 +7834,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8856,9 +7842,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8866,9 +7850,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8876,9 +7858,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8886,9 +7866,7 @@ namespace Persistence.Migrations
                             CourseId = 9L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 18L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 18L
                         },
                         new
                         {
@@ -8896,9 +7874,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8906,9 +7882,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8916,9 +7890,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8926,9 +7898,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8936,9 +7906,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8946,9 +7914,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8956,9 +7922,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8966,9 +7930,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8976,9 +7938,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8986,9 +7946,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -8996,9 +7954,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9006,9 +7962,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9016,9 +7970,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9026,9 +7978,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9036,9 +7986,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9046,9 +7994,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9056,9 +8002,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9066,9 +8010,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9076,9 +8018,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9086,9 +8026,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9096,9 +8034,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9106,9 +8042,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9116,9 +8050,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9126,9 +8058,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9136,9 +8066,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9146,9 +8074,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9156,9 +8082,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9166,9 +8090,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9176,9 +8098,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9186,9 +8106,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 19L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 19L
                         },
                         new
                         {
@@ -9196,9 +8114,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9206,9 +8122,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 2, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9216,9 +8130,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 3, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9226,9 +8138,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 4, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9236,9 +8146,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 5, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9246,9 +8154,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 6, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9256,9 +8162,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 7, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9266,9 +8170,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 8, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9276,9 +8178,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 9, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9286,9 +8186,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9296,9 +8194,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 11, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9306,9 +8202,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 12, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 12, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9316,9 +8210,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 13, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 13, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9326,9 +8218,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 14, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 14, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9336,9 +8226,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 15, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 15, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9346,9 +8234,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 16, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 16, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9356,9 +8242,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 17, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9366,9 +8250,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 18, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 18, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9376,9 +8258,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 19, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 19, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9386,9 +8266,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 20, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 20, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9396,9 +8274,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 21, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 21, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9406,9 +8282,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 22, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 22, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9416,9 +8290,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 23, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 23, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9426,9 +8298,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 2,
-                            EndTime = new DateTime(2025, 1, 24, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 24, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9436,9 +8306,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 3,
-                            EndTime = new DateTime(2025, 1, 25, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 25, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9446,9 +8314,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 4,
-                            EndTime = new DateTime(2025, 1, 26, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 26, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9456,9 +8322,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 5,
-                            EndTime = new DateTime(2025, 1, 27, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 27, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9466,9 +8330,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 6,
-                            EndTime = new DateTime(2025, 1, 28, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9476,9 +8338,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 0,
-                            EndTime = new DateTime(2025, 1, 29, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         },
                         new
                         {
@@ -9486,9 +8346,7 @@ namespace Persistence.Migrations
                             CourseId = 10L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             DayOfWeek = 1,
-                            EndTime = new DateTime(2025, 1, 30, 10, 30, 0, 0, DateTimeKind.Unspecified),
-                            SlotId = 20L,
-                            StartTime = new DateTime(2025, 1, 30, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            SlotId = 20L
                         });
                 });
 

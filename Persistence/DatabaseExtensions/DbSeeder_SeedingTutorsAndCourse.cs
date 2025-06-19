@@ -13,7 +13,6 @@ namespace Persistence.DatabaseExtensions
 	{
 		public static void Seed(this ModelBuilder modelBuilder)
 		{
-			// Cấu hình precision cho decimal
 			modelBuilder.Entity<Course>()
 				.Property(c => c.ServiceFeePercentage)
 				.HasPrecision(5, 2);
@@ -22,7 +21,6 @@ namespace Persistence.DatabaseExtensions
 				.Property(p => p.Amount)
 				.HasPrecision(18, 2);
 
-			// Cấu hình chuyển đổi TimeSpan cho DurationSession
 			modelBuilder.Entity<Slot>()
 				.Property(s => s.DurationSession)
 				.HasConversion(
@@ -30,28 +28,44 @@ namespace Persistence.DatabaseExtensions
 					v => TimeSpan.FromTicks(v)
 				);
 
-			// Dùng thời gian cố định để tránh lỗi PendingModelChangesWarning
 			var createdDate = new DateTime(2025, 1, 1, 9, 0, 0);
 
-			// Seed Role
 			modelBuilder.Entity<Role>().HasData(
 				new Role { Id = 1, Name = "Admin", CreatedAt = createdDate, UpdatedAt = createdDate },
 				new Role { Id = 2, Name = "Tutor", CreatedAt = createdDate, UpdatedAt = createdDate },
 				new Role { Id = 3, Name = "Student", CreatedAt = createdDate, UpdatedAt = createdDate }
 			);
-			var user = new User
-			{
-				Id = 1,
-				Email = "tutor1@example.com",
-				Username = "tutor1",
-				PasswordHash = "Password123@",
-				RoleId = 2, // assuming 2 = Tutor
-				CreatedAt = createdDate
-			};
-			// Seed User
-			modelBuilder.Entity<User>().HasData(user);
 
-			// Seed Tutor
+			modelBuilder.Entity<User>().HasData(
+				new User
+				{
+					Id = 1,
+					Email = "tutor1@example.com",
+					Username = "tutor1",
+					PasswordHash = "hashedpassword",
+					RoleId = 2,
+					CreatedAt = createdDate
+				},
+				new User
+				{
+					Id = 2,
+					Email = "student1@example.com",
+					Username = "student1",
+					PasswordHash = "hashedpassword",
+					RoleId = 3,
+					CreatedAt = createdDate
+				},
+				new User
+				{
+					Id = 3,
+					Email = "student2@example.com",
+					Username = "student2",
+					PasswordHash = "hashedpassword",
+					RoleId = 3,
+					CreatedAt = createdDate
+				}
+			);
+
 			modelBuilder.Entity<Tutor>().HasData(
 				new Tutor
 				{
@@ -60,15 +74,19 @@ namespace Persistence.DatabaseExtensions
 				}
 			);
 
-			modelBuilder.Entity<BioTutor>().HasData(new BioTutor
-			{
-				Id = 1,
-				TutorId =1,
-				Fullname = "Bùi Đức Tùng",
-				Introduces = "Tôi là bậc thầy IELTS",
-				Specializations = "IELTS"
-			});
-			// Seed 10 IELTS Courses
+			modelBuilder.Entity<Student>().HasData(
+				new Student
+				{
+					UserId = 2,
+					CreatedAt = createdDate
+				},
+				new Student
+				{
+					UserId = 3,
+					CreatedAt = createdDate
+				}
+			);
+
 			var courses = Enumerable.Range(1, 10).Select(i => new Course
 			{
 				Id = i,
@@ -84,28 +102,41 @@ namespace Persistence.DatabaseExtensions
 			});
 			modelBuilder.Entity<Course>().HasData(courses);
 
-			// Seed 2 Slots per Course => 20 slots
 			var slots = new List<Slot>();
 			int slotId = 1;
 			for (int i = 1; i <= 10; i++)
 			{
-				for (int j = 0; j < 2; j++)
+				var baseStartTime = createdDate.AddDays(i);
+
+				slots.Add(new Slot
 				{
-					slots.Add(new Slot
-					{
-						Id = slotId,
-						CourseId = i,
-						TutorId = 1,
-						StudentId = null,
-						NumberOfSlot = 1,
-						DurationSession = new TimeSpan(0, 1, 30, 0),
-						IsBooked = false,
-						IsTrial = j == 0,
-						MeetUrl = $"https://meetlink.com/ielts-{i}-slot{j + 1}",
-						CreatedAt = createdDate
-					});
-					slotId++;
-				}
+					Id = slotId++,
+					CourseId = i,
+					TutorId = 1,
+					StudentId = 3,
+					NumberOfSlot = 1,
+					DurationSession = new TimeSpan(0, 1, 30, 0),
+					StartTime = baseStartTime,
+					IsBooked = false,
+					IsTrial = true,
+					MeetUrl = $"https://meetlink.com/ielts-{i}-slot1",
+					CreatedAt = createdDate
+				});
+
+				slots.Add(new Slot
+				{
+					Id = slotId++,
+					CourseId = i,
+					TutorId = 1,
+					StudentId = 2,
+					NumberOfSlot = 1,
+					DurationSession = new TimeSpan(0, 1, 30, 0),
+					StartTime = baseStartTime.AddHours(2),
+					IsBooked = true,
+					IsTrial = false,
+					MeetUrl = $"https://meetlink.com/ielts-{i}-slot2",
+					CreatedAt = createdDate
+				});
 			}
 			modelBuilder.Entity<Slot>().HasData(slots);
 
@@ -129,7 +160,7 @@ namespace Persistence.DatabaseExtensions
 
 			var weeklySchedules = new List<WeeklySchedule>();
 			int scheduleId = 1;
-			for (int i = 1; i <= 20; i++) 
+			for (int i = 1; i <= 20; i++)
 			{
 				for (int j = 0; j < 30; j++)
 				{
@@ -138,8 +169,6 @@ namespace Persistence.DatabaseExtensions
 						Id = scheduleId++,
 						CourseId = slots[i - 1].CourseId,
 						SlotId = i,
-						StartTime = createdDate.AddDays(j),
-						EndTime = createdDate.AddDays(j).AddMinutes(90),
 						DayOfWeek = (DayOfWeek)(j % 7),
 						CreatedAt = createdDate
 					});

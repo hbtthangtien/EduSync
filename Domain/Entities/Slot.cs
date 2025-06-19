@@ -10,6 +10,8 @@ namespace Domain.Entities
 		public short NumberOfSlot {  get; set; }
 		public TimeSpan DurationSession {  get; set; }
 		public bool IsBooked { get; set; }
+		public DateTime StartTime { get; set; }
+		public DateTime EndTime =>  StartTime.AddMinutes(DurationSession.TotalMinutes);
 		public bool IsTrial { get; set; }
 		public string MeetUrl { get; set; }
 		public Course? Course { get; set; }
