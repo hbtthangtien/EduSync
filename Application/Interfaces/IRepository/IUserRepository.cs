@@ -9,6 +9,7 @@ namespace Application.Interfaces.IRepository
 {
 	public interface IUserRepository : IBaseRepository<User>
 	{
+		Task<User?> FindByIdAsync(long id);
 		long GetUserId();
 		Task<User?> GetByUserAsync(string email);
 		bool Exists(string username);

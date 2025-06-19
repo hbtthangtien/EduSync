@@ -21,5 +21,12 @@ namespace Presentation.Controllers
 			var data = await _tutorService.UpdateBioTutors(request);
 			return Ok(data);
 		}
+		[HttpGet]
+		public async Task<IActionResult> GetAllTutors()
+		{
+			var tutors = await _tutorService.GetAllTutorsAsync();
+			return Ok(tutors);
+		}
+
 	}
 }

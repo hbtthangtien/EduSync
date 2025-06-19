@@ -1,5 +1,4 @@
-﻿using Application.DTOs.BioTutor;
-using Application.DTOs.Cousre;
+﻿using Application.DTOs.Cousre;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
+using Application.DTOs.Tutors.Bio;
 
 namespace Application.Services
 {
@@ -54,5 +54,37 @@ namespace Application.Services
 
 			return dto;
 		}
+
+		public async Task<List<CourseDTO>> GetAllCoursesAsync()
+		{
+			var courses = await _unitOfWorks.Courses
+				.GetInstance()
+				.Include(c => c.CreatedByTutor)
+					.ThenInclude(t => t.BioTutor)
+				.Include(c => c.Slots)
+				.ToListAsync();
+
+			var result = courses.Select(course =>
+			{
+				var studentCount = course.Slots?
+					.Where(slot => slot.StudentId.HasValue)
+					.Select(slot => slot.StudentId.Value)
+					.Distinct()
+					.Count() ?? 0;
+
+				return new CourseDTO
+				{
+					Id = course.Id,
+					Title = course.Title,
+					Description = course.Description,
+					TutorName = course.CreatedByTutor?.BioTutor?.Fullname ?? "Chưa cập nhật",
+					StudentCount = studentCount
+				};
+			}).ToList();
+
+			return result;
+		}
+
+
 	}
 }

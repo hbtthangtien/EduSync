@@ -10,5 +10,7 @@ namespace Application.Interfaces.IService
 	public interface ICousreService
 	{
 		Task<CourseDetailDTO?> GetCourseDetailByIdAsync(long courseId);
+		Task<List<CourseDTO>> GetAllCoursesAsync();
+
 	}
 }

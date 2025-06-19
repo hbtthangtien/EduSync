@@ -27,5 +27,12 @@ namespace Presentation.Controllers
 
 			return Ok(result);
 		}
+		[HttpGet]
+		public async Task<IActionResult> GetAllCourses()
+		{
+			var courses = await _courseService.GetAllCoursesAsync();
+			return Ok(courses);
+		}
+
 	}
 }
