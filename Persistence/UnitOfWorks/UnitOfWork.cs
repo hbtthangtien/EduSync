@@ -46,6 +46,8 @@ namespace Persistence.UnitOfWorks
 
 		public ICourseRepository Courses { get; private set; }
 
+		public IChatMessageRepository ChatMessages { get; private set; }
+
 		public UnitOfWork(EduSyncContext context,
 			IUserRepository user,
 			IRoleRepository role,
@@ -65,8 +67,10 @@ namespace Persistence.UnitOfWorks
 			IRatingRepository ratings,
 			ISlotRepository slots,
 			IWeeklyScheduleRepository weeklySchedules,
-			ICourseRepository courses)
+			ICourseRepository courses,
+			IChatMessageRepository chatMessage)
 		{
+			ChatMessages = chatMessage;
 			_context = context;
 			User = user;
 			Role = role;

@@ -1,7 +1,10 @@
 ﻿using Application.DTOs.Commons;
 using Application.DTOs.Tutors;
 using Application.DTOs.Tutors.Bio;
+using Application.DTOs.Tutors.Courses;
+using Application.DTOs.Tutors.Dashboard;
 using Application.DTOs.Tutors.Slots;
+using Application.DTOs.Tutors.Students;
 using Application.Extentions;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
@@ -46,8 +49,6 @@ namespace Application.Services
 			return result;
 		}
 
-
-
 		public async Task<IdResponse> UpdateBioTutors(BioUpdate request)
 		{
 			var tutor = await _unitOfWork.TuTors
@@ -72,6 +73,7 @@ namespace Application.Services
 			await _unitOfWork.SaveChangesAsync();
 			return IdResponse.SuccessResponse(tutor.UserId, "Update success");
 		}
+
 		public async Task<BaseResponse<List<SlotTutorDTO>>> GetSlotsBytutorAsync(long tutorId)
 		{
 			var tutor = await _unitOfWork.TuTors.GetInstance()
@@ -92,6 +94,86 @@ namespace Application.Services
 				})
 				.ToList();
 			return BaseResponse<List<SlotTutorDTO>>.SuccessResponse(result);
+		}
+
+		public async Task<BaseResponse<List<StudentInCourse>>> GetStudentsByCourseId(long tutorId, long courseId)
+		{
+			var data = await _unitOfWork.Slots
+				.GetInstance()
+				.Where(e => e.TutorId == tutorId && e.CourseId == courseId)
+				.Include(e => e.Course)
+				.Include(e => e.Student)
+					.ThenInclude(e => e.User)
+				.Distinct()
+				.Select(e => new StudentInCourse
+				{
+					Id = (long)e!.StudentId,
+					StudentName = e.Student!.User!.Username,
+					TitleCourse = e.Course!.Title
+				})
+				.ToListAsync();
+
+			return BaseResponse<List<StudentInCourse>>.SuccessResponse(data);
+		}
+
+		public async Task<BaseResponse<List<StudentInCourse>>> GetAllStudentInAllCourse(long tutorId)
+		{
+			var data = await _unitOfWork.Slots
+				.GetInstance()
+				.Where(e => e.TutorId == tutorId)
+				.Include(e => e.Course)
+				.Include(e => e.Student)
+					.ThenInclude(e => e.User)
+				.Distinct()
+				.Select(e => new StudentInCourse
+				{
+					Id = (long)e!.StudentId,
+					StudentName = e.Student!.User!.Username,
+					TitleCourse = e.Course!.Title
+				})
+				.ToListAsync();
+			return BaseResponse<List<StudentInCourse>>.SuccessResponse(data);
+		}
+
+		public async Task<BaseResponse<List<CourseTutors>>> GetAllCourseOfTutors(long tutorId)
+		{
+			var data =  await _unitOfWork.Courses
+				.GetInstance()
+				.Where(c => c.CreatedByTutorId == tutorId)
+				.Select(c => new CourseTutors
+				{
+					Id = c.Id,
+					Title = c.Title,
+					Description = c.Description,
+					NumberOfStudent = c.Slots.Count(s => s.StudentId != null)
+				})
+				.ToListAsync();
+			return BaseResponse<List<CourseTutors>>.SuccessResponse(data);
+		}
+
+		public async Task<BaseResponse<DashboardOfTutors>> ReportOftutors(long tutorId)
+		{
+			var dashboard = await _unitOfWork.TuTors.GetInstance()
+					.Where(t => t.UserId == tutorId)
+					.Select(t => new DashboardOfTutors
+					{
+						Slots = t.Slots.Count(), // Tổng số lớp học
+						TotalStudents = t.Slots.Count(s => s.StudentId != null), // Số học viên
+						IncomePerMonth = t.Courses
+							.SelectMany(c => c.Slots)
+							.Where(s => s.CreatedAt.Month == DateTime.Now.Month && s.StudentId != null)
+							.Sum(s => (double?)s.Course!.PricePerSession) ?? 0,
+						Overalls = t.Ratings.Any() ? Math.Round(t.Ratings.Average(r => r.Score), 1) : 0,
+						UpcomingSchedules = t.Slots
+							.Where(s => s.StartTime > DateTime.Now)
+							.OrderBy(s => s.StartTime)
+							.Take(5)
+							.Select(s => $"{s.StartTime:dd/MM/yyyy} - {s.StartTime:HH:mm} - {s.EndTime:HH:mm} | {s.Course.Title}")
+							.ToList()
+					})
+					.FirstOrDefaultAsync()??
+					throw ExceptionFactory.NotFound("Tutor",tutorId);
+			return BaseResponse<DashboardOfTutors>.SuccessResponse(dashboard);
 		}
 	}
 }

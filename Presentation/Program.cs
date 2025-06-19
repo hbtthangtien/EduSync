@@ -20,6 +20,7 @@ namespace Presentation
 			builder.Services.InitialValueConfig(builder.Configuration);
 			builder.Services.AddServices();
 			builder.Services.AddConfiguredControllers();
+			builder.Services.AddSignalR();
 			builder.Services.AddDbContext<EduSyncContext>(options =>
 			{
 			options.UseSqlServer(builder.Configuration.GetConnectionString("localmssql"));

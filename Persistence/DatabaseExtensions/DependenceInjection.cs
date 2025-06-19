@@ -42,6 +42,7 @@ namespace Persistence.DatabaseExtensions
 			services.AddScoped<IWeeklyScheduleRepository, WeeklyScheduleRepository>();
 			services.AddScoped<IContentRepository, ContentRepository>();
 			services.AddScoped<ISlotRepository,SlotRepository>();
+			services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
 			//unit of work
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 		}
