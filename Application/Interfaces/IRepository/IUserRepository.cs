@@ -13,5 +13,6 @@ namespace Application.Interfaces.IRepository
 		long GetUserId();
 		Task<User?> GetByUserAsync(string email);
 		bool Exists(string username);
+
 	}
 }

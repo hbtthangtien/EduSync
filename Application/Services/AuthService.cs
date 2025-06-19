@@ -35,8 +35,9 @@ namespace Application.Services
 			var claims = new[]
 			{
 				new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), 
-				new Claim(ClaimTypes.Name, user.Email),
-				new Claim(ClaimTypes.Role, roleName)
+				new Claim(ClaimTypes.Email, user.Email),
+				new Claim(ClaimTypes.Role, roleName),
+				new Claim(ClaimTypes.Name, user.Username)
 			};
 
 
