@@ -131,6 +131,29 @@ namespace Application.Services
 
 			return BaseResponse<string>.SuccessResponse(null, null, "Đăng xuất thành công");
 		}
+		public async Task<BaseResponse<TokenResponse>> RefreshTokenAsync(TokenRefreshDTO dto)
+		{
+			var existingToken = await _unitOfWorks.UserTokens
+				.FirstOrDefaultAsync(t => t.RefreshToken == dto.RefreshToken);
+
+			if (existingToken == null || existingToken.ExpiryDate < DateTime.UtcNow)
+				return BaseResponse<TokenResponse>.Failure("Refresh token không hợp lệ hoặc đã hết hạn.");
+
+			var user = await _unitOfWorks.Users.GetByIdAsync(existingToken.UserId);
+			if (user == null)
+				return BaseResponse<TokenResponse>.Failure("Người dùng không tồn tại.");
+
+			var role = await _unitOfWorks.Roles.GetByIdAsync(user.RoleId);
+
+			// Xoá refresh token cũ nếu muốn
+			_unitOfWorks.UserTokens.RemoveAsync(existingToken);
+
+			var newToken = await GenerateToken(user, role?.Name ?? "User");
+
+			await _unitOfWorks.SaveChangesAsync();
+
+			return BaseResponse<TokenResponse>.SuccessResponse(newToken, null, "Refresh token thành công");
+		}
 
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Register;
 using Application.DTOs.RegisterTutor;
+using Application.DTOs.User;
 using Domain.Entities;
 using Mapster;
 using System;
@@ -37,6 +38,16 @@ namespace Infrastructure.ApplicationMappers
 				.Map(dest => dest.Fullname, src => src.Fullname)
 				.Map(dest => dest.Specializations, src => src.Specializations)
 			.Map(dest => dest.Introduces, src => src.Introduces);
+
+			TypeAdapterConfig<Course, DashboardCourseSummaryDTO>.NewConfig()
+				.Map(dest => dest.Title, src => src.Title)
+				.Map(dest => dest.TutorName, src => src.CreatedByTutor!.BioTutor!.Fullname)
+				.Map(dest => dest.StudentCount, src => src.Slots!
+					.Where(s => s.StudentId.HasValue)
+					.Select(s => s.StudentId!.Value)
+					.Distinct()
+					.Count());
+
 		}
 	}
 }

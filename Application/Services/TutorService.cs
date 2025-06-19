@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Commons;
+using Application.DTOs.Tutors;
 using Application.DTOs.Tutors.Bio;
 using Application.DTOs.Tutors.Slots;
 using Application.Extentions;
@@ -14,6 +15,38 @@ namespace Application.Services
 		public TutorService(IUnitOfWork unitOfWork) : base(unitOfWork)
 		{
 		}
+
+		public async Task<List<TutorDTO>> GetAllTutorsAsync()
+		{
+			var tutors = await _unitOfWork.TuTors
+				.GetInstance()
+				.Include(t => t.BioTutor)
+				.Include(t => t.Ratings)
+				.ToListAsync();
+
+			var result = tutors.Select(tutor =>
+			{
+				double avgRating = tutor.Ratings.Any()
+					? tutor.Ratings.Average(r => r.Score)
+					: 0;
+
+				return new TutorDTO
+				{
+					Id = tutor.UserId, 
+					FullName = tutor.BioTutor?.Fullname ?? "Chưa cập nhật",
+					Introduces = tutor.BioTutor?.Introduces ?? "Chưa có mô tả",
+					Specializations = tutor.BioTutor?.Specializations?
+						.Split(',', StringSplitOptions.RemoveEmptyEntries)
+						.Select(s => s.Trim())
+						.ToList() ?? new List<string>(),
+					Rating = Math.Round(avgRating, 1)
+				};
+			}).ToList();
+
+			return result;
+		}
+
+
 
 		public async Task<IdResponse> UpdateBioTutors(BioUpdate request)
 		{

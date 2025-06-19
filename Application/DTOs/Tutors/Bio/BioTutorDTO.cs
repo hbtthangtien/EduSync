@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.BioTutor
+namespace Application.DTOs.Tutors.Bio
 {
     public class BioTutorDTO
     {

@@ -15,5 +15,6 @@ namespace Application.Interfaces.IService
         Task<BaseResponse<TokenResponse>> LoginAsync(LoginDTO loginDto);
         Task<BaseResponse<object>> RegisterAsync(RegisterDTO registerDto);
 		Task<BaseResponse<string>> LogoutAsync(string token);
+        Task<BaseResponse<TokenResponse>> RefreshTokenAsync(TokenRefreshDTO dto);
 	}
 }

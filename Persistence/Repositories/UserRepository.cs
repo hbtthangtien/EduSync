@@ -45,6 +45,9 @@ namespace Persistence.Repositories
 				.FirstOrDefaultAsync(u => u.Email == email);
 		}
 
-
+		public async Task<User> FindByIdAsync(long id)
+		{
+			return await _dbSet.FindAsync(id); 
+		}
 	}
 }

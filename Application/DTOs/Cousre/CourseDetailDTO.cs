@@ -1,4 +1,4 @@
-﻿using Application.DTOs.BioTutor;
+﻿using Application.DTOs.Tutors.Bio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.Cousre
 {
-	public class CourseDetailDTO
+    public class CourseDetailDTO
 	{
 		public string Title { get; set; }
 		public string Description { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Commons;
+using Application.DTOs.Tutors;
 using Application.DTOs.Tutors.Bio;
 using Application.DTOs.Tutors.Slots;
 using System;
@@ -12,7 +13,7 @@ namespace Application.Interfaces.IService
 	public interface ITutorService
 	{
 		public Task<IdResponse> UpdateBioTutors(BioUpdate request);
-
+		Task<List<TutorDTO>> GetAllTutorsAsync();
 		Task<BaseResponse<List<SlotTutorDTO>>> GetSlotsBytutorAsync(long tutorId);
 	}
 }

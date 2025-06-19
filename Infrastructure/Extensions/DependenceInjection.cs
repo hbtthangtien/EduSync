@@ -30,6 +30,8 @@ namespace Infrastructure.Extensions
 			services.AddScoped<IStudentService, StudentService>();
 			services.AddScoped<IHomePageService, HomePageService>();
 			services.AddScoped<ISlotService, SlotService>();
+			services.AddScoped<IAdminUserService, AdminService>();
+			services.AddScoped<IFileStorageService, LocalFileStorageService>();
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{

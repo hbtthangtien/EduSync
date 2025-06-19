@@ -1,22 +1,37 @@
 ﻿using Application.Interfaces.IService;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services
 {
 	public class LocalFileStorageService : IFileStorageService
 	{
-		private readonly string _uploadPath;
+		private readonly Cloudinary _cloudinary;
 
 		public LocalFileStorageService(IConfiguration configuration)
 		{
-			_uploadPath = configuration["FileStorage:CertificateFolder"]
-				?? throw new ArgumentNullException("Upload path not configured.");
+			var section = configuration.GetSection("Cloudinary");
+
+			var cloudName = section["CloudName"];
+			var apiKey = section["ApiKey"];
+			var apiSecret = section["ApiSecret"];
+
+			if (string.IsNullOrWhiteSpace(cloudName))
+				throw new ArgumentNullException(nameof(cloudName), "Missing Cloudinary:CloudName in configuration");
+
+			if (string.IsNullOrWhiteSpace(apiKey))
+				throw new ArgumentNullException(nameof(apiKey), "Missing Cloudinary:ApiKey in configuration");
+
+			if (string.IsNullOrWhiteSpace(apiSecret))
+				throw new ArgumentNullException(nameof(apiSecret), "Missing Cloudinary:ApiSecret in configuration");
+
+			var account = new Account(cloudName, apiKey, apiSecret);
+			_cloudinary = new Cloudinary(account)
+			{
+				Api = { Secure = true }
+			};
 		}
 
 		public async Task<string> UploadFileAsync(IFormFile file)
@@ -24,25 +39,41 @@ namespace Application.Services
 			if (file == null || file.Length == 0)
 				throw new ArgumentException("File không hợp lệ");
 
-			if (!Directory.Exists(_uploadPath))
-				Directory.CreateDirectory(_uploadPath);
+			await using var stream = file.OpenReadStream();
+			var uploadParams = new ImageUploadParams
+			{
+				File = new FileDescription(file.FileName, stream),
+				Folder = "certificates" 
+			};
 
-			var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-			var fullPath = Path.Combine(_uploadPath, uniqueFileName);
+			var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
-			using var stream = new FileStream(fullPath, FileMode.Create);
-			await file.CopyToAsync(stream);
+			if (uploadResult.StatusCode != System.Net.HttpStatusCode.OK)
+				throw new Exception("Tải file lên Cloudinary thất bại.");
 
-			return Path.Combine("uploads/certificates", uniqueFileName).Replace("\\", "/");
+			return uploadResult.SecureUrl.ToString();
 		}
 
-		public Task DeleteFileAsync(string filePath)
+		public async Task DeleteFileAsync(string fileUrl)
 		{
-			var fullPath = Path.Combine(_uploadPath, Path.GetFileName(filePath));
-			if (File.Exists(fullPath))
-				File.Delete(fullPath);
+			var publicId = GetPublicIdFromUrl(fileUrl);
 
-			return Task.CompletedTask;
+			if (string.IsNullOrEmpty(publicId))
+				throw new ArgumentException("URL không hợp lệ hoặc không tìm được publicId");
+
+			var deletionParams = new DeletionParams(publicId);
+			await _cloudinary.DestroyAsync(deletionParams);
+		}
+
+		private string GetPublicIdFromUrl(string fileUrl)
+		{
+			var uri = new Uri(fileUrl);
+			var segments = uri.AbsolutePath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+			if (segments.Length < 3) return null;
+
+			var folder = segments[^2];
+			var filename = Path.GetFileNameWithoutExtension(segments[^1]);
+			return $"{folder}/{filename}";
 		}
 	}
 }
