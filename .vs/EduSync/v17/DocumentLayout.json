@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\migrations\\20250619032732_initials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\migrations\\20250619032732_initials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseextensions\\dbseeder_seedingtutorsandcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dbseeder_seedingtutorsandcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseconfigs\\edusynccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dependenceinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|e:\\documents\\c#\\sp_exe\\edusync\\persistence\\databaseextensions\\dbseeder_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF13F703-2A80-433C-9E0C-3E58B78C631D}|Persistence\\Persistence.csproj|solutionrelative:persistence\\databaseextensions\\dbseeder_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\tutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F225C9C2-75F6-4747-AD0E-AF86EE847E1D}|Presentation\\Presentation.csproj|e:\\documents\\c#\\sp_exe\\edusync\\presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\tutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FEED957-5EFF-4A2D-B91E-FFA6AACBFAD4}|Domain\\Domain.csproj|e:\\documents\\c#\\sp_exe\\edusync\\domain\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -129,7 +145,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -137,33 +153,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250619032732_initials.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250619032732_initials.cs",
+              "RelativeDocumentMoniker": "Persistence\\Migrations\\20250619032732_initials.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Migrations\\20250619032732_initials.cs",
+              "RelativeToolTip": "Persistence\\Migrations\\20250619032732_initials.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T03:27:33.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DbSeeder_SeedingTutorsAndCourse.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "RelativeToolTip": "Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAAwJYAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T03:26:53.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EduSyncContext.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "RelativeToolTip": "Persistence\\DatabaseConfigs\\EduSyncContext.cs",
+              "ViewState": "AQIAALoAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T03:24:36.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependenceInjection.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "RelativeToolTip": "Persistence\\DatabaseExtensions\\DependenceInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T03:23:18.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\User.cs",
+              "RelativeToolTip": "Domain\\Entities\\User.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAwwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T03:20:16.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DbSeeder_Role.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_Role.cs",
               "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DbSeeder_Role.cs",
               "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_Role.cs",
               "RelativeToolTip": "Persistence\\DatabaseExtensions\\DbSeeder_Role.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T03:09:50.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserToken.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\UserToken.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\UserToken.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\UserToken.cs",
-              "RelativeToolTip": "Domain\\Entities\\UserToken.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T03:07:30.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "WeeklySchedule.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\WeeklySchedule.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\WeeklySchedule.cs",
@@ -176,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Program.cs",
               "RelativeDocumentMoniker": "Presentation\\Program.cs",
@@ -189,19 +257,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TuTorRepository.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\TuTorRepository.cs",
-              "RelativeDocumentMoniker": "Persistence\\Repositories\\TuTorRepository.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\TuTorRepository.cs",
-              "RelativeToolTip": "Persistence\\Repositories\\TuTorRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAwwBEAAAACAAAA",
+              "DocumentIndex": 9,
+              "Title": "UserToken.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\UserToken.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\UserToken.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\UserToken.cs",
+              "RelativeToolTip": "Domain\\Entities\\UserToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T15:09:35.88Z"
+              "WhenOpened": "2025-06-19T03:07:30.097Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\HomeController.cs",
@@ -213,20 +282,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DbSeeder_SeedingTutorsAndCourse.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
-              "RelativeDocumentMoniker": "Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
-              "RelativeToolTip": "Persistence\\DatabaseExtensions\\DbSeeder_SeedingTutorsAndCourse.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAswEMAAAAFAAAA",
+              "DocumentIndex": 6,
+              "Title": "Tutor.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Tutor.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Tutor.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Tutor.cs",
+              "RelativeToolTip": "Domain\\Entities\\Tutor.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAwwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T14:58:41.965Z",
+              "WhenOpened": "2025-06-18T15:07:02.711Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
+              "Title": "TuTorRepository.cs",
+              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\TuTorRepository.cs",
+              "RelativeDocumentMoniker": "Persistence\\Repositories\\TuTorRepository.cs",
+              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Repositories\\TuTorRepository.cs",
+              "RelativeToolTip": "Persistence\\Repositories\\TuTorRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwBEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T15:09:35.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "AuthService.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\AuthService.cs",
@@ -238,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Slot.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Slot.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Slot.cs",
@@ -251,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "TutorService.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\TutorService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\TutorService.cs",
@@ -264,19 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Tutor.cs",
-              "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Tutor.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Tutor.cs",
-              "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Tutor.cs",
-              "RelativeToolTip": "Domain\\Entities\\Tutor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T15:07:02.711Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "ITutorService.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IService\\ITutorService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\ITutorService.cs",
@@ -288,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "LocalFileStorageService.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\LocalFileStorageService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\LocalFileStorageService.cs",
@@ -300,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "Course.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Course.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Course.cs",
@@ -312,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Student.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\Student.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Student.cs",
@@ -324,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "BioTutor.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\Entities\\BioTutor.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\BioTutor.cs",
@@ -336,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "TutorsController.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Controllers\\TutorsController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\TutorsController.cs",
@@ -348,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "Application.csproj",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Application.csproj",
               "RelativeDocumentMoniker": "Application\\Application.csproj",
@@ -360,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Presentation.http",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Presentation.http",
               "RelativeDocumentMoniker": "Presentation\\Presentation.http",
@@ -372,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "StudentController.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Controllers\\StudentController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\StudentController.cs",
@@ -384,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "CourseService.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Services\\CourseService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\CourseService.cs",
@@ -396,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "CourseDetailDTO.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\DTOs\\Cousre\\CourseDetailDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Cousre\\CourseDetailDTO.cs",
@@ -408,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "RegisterTutorDTO.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\DTOs\\RegisterTutor\\RegisterTutorDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\RegisterTutor\\RegisterTutorDTO.cs",
@@ -420,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "IFileStorageService.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Interfaces\\IService\\IFileStorageService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IService\\IFileStorageService.cs",
@@ -432,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Microsoft.PackageDependencyResolution.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
@@ -442,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "DependenceInjection.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Extensions\\DependenceInjection.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Extensions\\DependenceInjection.cs",
@@ -454,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "ExceptionCatchGlobal.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\Middleware\\ExceptionCatchGlobal.cs",
               "RelativeDocumentMoniker": "Presentation\\Middleware\\ExceptionCatchGlobal.cs",
@@ -466,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "BusinessException.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Domain\\ExceptionCustoms\\BusinessException.cs",
               "RelativeDocumentMoniker": "Domain\\ExceptionCustoms\\BusinessException.cs",
@@ -478,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "BaseResponse.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\DTOs\\Commons\\BaseResponse.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Commons\\BaseResponse.cs",
@@ -490,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "BioUpdate.cs",
               "DocumentMoniker": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\DTOs\\Tutors\\Bio\\BioUpdate.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\Tutors\\Bio\\BioUpdate.cs",

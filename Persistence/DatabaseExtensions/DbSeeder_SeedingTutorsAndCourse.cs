@@ -13,7 +13,6 @@ namespace Persistence.DatabaseExtensions
 	{
 		public static void Seed(this ModelBuilder modelBuilder)
 		{
-			// Cấu hình precision cho decimal
 			modelBuilder.Entity<Course>()
 				.Property(c => c.ServiceFeePercentage)
 				.HasPrecision(5, 2);
@@ -22,7 +21,6 @@ namespace Persistence.DatabaseExtensions
 				.Property(p => p.Amount)
 				.HasPrecision(18, 2);
 
-			// Cấu hình chuyển đổi TimeSpan cho DurationSession
 			modelBuilder.Entity<Slot>()
 				.Property(s => s.DurationSession)
 				.HasConversion(
@@ -30,17 +28,14 @@ namespace Persistence.DatabaseExtensions
 					v => TimeSpan.FromTicks(v)
 				);
 
-			// Dùng thời gian cố định để tránh lỗi PendingModelChangesWarning
 			var createdDate = new DateTime(2025, 1, 1, 9, 0, 0);
 
-			// Seed Role
 			modelBuilder.Entity<Role>().HasData(
 				new Role { Id = 1, Name = "Admin", CreatedAt = createdDate, UpdatedAt = createdDate },
 				new Role { Id = 2, Name = "Tutor", CreatedAt = createdDate, UpdatedAt = createdDate },
 				new Role { Id = 3, Name = "Student", CreatedAt = createdDate, UpdatedAt = createdDate }
 			);
 
-			// Seed User
 			modelBuilder.Entity<User>().HasData(
 				new User
 				{
@@ -62,7 +57,6 @@ namespace Persistence.DatabaseExtensions
 				}
 			);
 
-			// Seed Tutor
 			modelBuilder.Entity<Tutor>().HasData(
 				new Tutor
 				{
@@ -71,7 +65,6 @@ namespace Persistence.DatabaseExtensions
 				}
 			);
 
-			// Seed Student
 			modelBuilder.Entity<Student>().HasData(
 				new Student
 				{
@@ -80,7 +73,6 @@ namespace Persistence.DatabaseExtensions
 				}
 			);
 
-			// Seed 10 IELTS Courses
 			var courses = Enumerable.Range(1, 10).Select(i => new Course
 			{
 				Id = i,
@@ -96,7 +88,6 @@ namespace Persistence.DatabaseExtensions
 			});
 			modelBuilder.Entity<Course>().HasData(courses);
 
-			// Seed 2 Slots per Course => 20 slots, assign student to even slots
 			var slots = new List<Slot>();
 			int slotId = 1;
 			for (int i = 1; i <= 10; i++)
@@ -108,7 +99,7 @@ namespace Persistence.DatabaseExtensions
 						Id = slotId,
 						CourseId = i,
 						TutorId = 1,
-						StudentId = slotId % 2 == 0 ? 1 : null,
+						StudentId = slotId % 2 == 0 ? 2 : null,
 						NumberOfSlot = 1,
 						DurationSession = new TimeSpan(0, 1, 30, 0),
 						StartTime = createdDate.AddDays(j),
@@ -122,7 +113,6 @@ namespace Persistence.DatabaseExtensions
 			}
 			modelBuilder.Entity<Slot>().HasData(slots);
 
-			// Seed 30 Content per Course => 300 content
 			var contents = new List<Content>();
 			int contentId = 1;
 			for (int i = 1; i <= 10; i++)
@@ -141,10 +131,9 @@ namespace Persistence.DatabaseExtensions
 			}
 			modelBuilder.Entity<Content>().HasData(contents);
 
-			// Seed 30 WeeklySchedules per Slot => 600 schedules
 			var weeklySchedules = new List<WeeklySchedule>();
 			int scheduleId = 1;
-			for (int i = 1; i <= 20; i++) // 20 slots total
+			for (int i = 1; i <= 20; i++)
 			{
 				for (int j = 0; j < 30; j++)
 				{
