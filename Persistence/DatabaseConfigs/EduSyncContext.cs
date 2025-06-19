@@ -26,6 +26,8 @@ namespace Persistence.DatabaseConfigs
 		public DbSet<Payment> Payments { get; set; }
 		public DbSet<Course> Courses { get; set; }
 		public DbSet<Content> Contents { get; set; }
+		public DbSet<ChatMessage> ChatMessages { get; set; }
+
 		public DbSet<Slot> Slots { get; set; }
 		public DbSet<WeeklySchedule> WeeklySchedules { get; set; }
 		public DbSet<CourseCancellation> CourseCancellations { get; set; }
@@ -199,7 +201,34 @@ namespace Persistence.DatabaseConfigs
 				entity.HasOne(e => e.Course)
 					.WithMany(c => c.Slots)
 					.HasForeignKey(e => e.CourseId)
+					.OnDelete(DeleteBehavior.Restrict); 
+			});
+			modelBuilder.Entity<ChatMessage>(entity =>
+			{
+				entity.HasKey(e => e.Id);
+
+				entity.HasOne(e => e.Sender)
+					.WithMany() 
+					.HasForeignKey(e => e.SenderId)
 					.OnDelete(DeleteBehavior.Restrict);
+
+				entity.HasOne(e => e.Receiver)
+					.WithMany() 
+					.HasForeignKey(e => e.ReceiverId)
+					.OnDelete(DeleteBehavior.Restrict);
+
+				entity.Property(e => e.ConversationId)
+					.IsRequired()
+					.HasMaxLength(100);
+
+				entity.Property(e => e.Content)
+					.IsRequired()
+					.HasMaxLength(2000);
+
+				entity.Property(e => e.SentAt)
+					.IsRequired();
+
+				entity.HasIndex(e => e.ConversationId);
 			});
 
 

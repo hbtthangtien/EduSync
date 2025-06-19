@@ -32,6 +32,7 @@ namespace Infrastructure.Extensions
 			services.AddScoped<ISlotService, SlotService>();
 			services.AddScoped<IAdminUserService, AdminService>();
 			services.AddScoped<IFileStorageService, LocalFileStorageService>();
+			services.AddScoped<IChatService, ChatService>();
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{
@@ -89,6 +90,10 @@ namespace Infrastructure.Extensions
 			var jwtConfig = configuration.GetSection("JwtConfig");
 			services.Configure<JwtConfigs>(jwtConfig);
 		}
-		
+		public static void SignalR (this IServiceCollection services, IConfiguration configuration)
+		{
+			services.AddSignalR();
+
+		}
 	}
 }

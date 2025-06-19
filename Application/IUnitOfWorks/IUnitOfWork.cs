@@ -22,6 +22,7 @@ namespace Application.IUnitOfWorks
 		public IRatingRepository Ratings { get; }
 		public ISlotRepository Slots { get; }
 		public IWeeklyScheduleRepository WeeklySchedules { get; }
+		public IChatMessageRepository ChatMessages { get; }
 		public ICourseRepository Courses { get; }
 		Task<int> SaveChangesAsync();
 	}

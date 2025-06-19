@@ -1,4 +1,5 @@
-﻿using Application.DTOs.Register;
+﻿using Application.DTOs.ChatMesseage;
+using Application.DTOs.Register;
 using Application.DTOs.RegisterTutor;
 using Application.DTOs.User;
 using Domain.Entities;
@@ -47,6 +48,10 @@ namespace Infrastructure.ApplicationMappers
 					.Select(s => s.StudentId!.Value)
 					.Distinct()
 					.Count());
+			TypeAdapterConfig<ChatMessage, ChatMessageResponse>.NewConfig()
+				.Map(dest => dest.Id, src => src.Id)
+				.Map(dest => dest.Content, src => src.Content)
+				.Map(dest => dest.SentAt, src => src.SentAt);
 
 		}
 	}
