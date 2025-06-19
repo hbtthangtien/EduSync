@@ -473,13 +473,18 @@ namespace Persistence.Migrations
                 values: new object[,]
                 {
                     { 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, "tutor1@example.com", "hashedpassword", 2L, null, null, "tutor1" },
-                    { 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, "student1@example.com", "hashedpassword", 3L, null, null, "student1" }
+                    { 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, "student1@example.com", "hashedpassword", 3L, null, null, "student1" },
+                    { 3L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, "student2@example.com", "hashedpassword", 3L, null, null, "student2" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Students",
                 columns: new[] { "UserId", "CreatedAt", "DeletedAt", "RegistrationDate", "TutorUserId", "UpdatedAt", "UpdatedBy" },
-                values: new object[] { 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, null });
+                values: new object[,]
+                {
+                    { 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, null },
+                    { 3L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, null, null }
+                });
 
             migrationBuilder.InsertData(
                 table: "Tutors",
@@ -815,26 +820,26 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CourseId", "CreatedAt", "DeletedAt", "DurationSession", "IsBooked", "IsTrial", "MeetUrl", "NumberOfSlot", "StartTime", "StudentId", "TutorId", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1L, 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-1-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 2L, 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-1-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 3L, 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-2-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 4L, 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-2-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 5L, 3L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-3-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 6L, 3L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-3-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 7L, 4L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-4-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 8L, 4L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-4-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 9L, 5L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-5-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 10L, 5L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-5-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 11L, 6L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-6-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 12L, 6L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-6-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 13L, 7L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-7-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 14L, 7L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-7-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 15L, 8L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-8-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 16L, 8L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-8-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 17L, 9L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-9-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 18L, 9L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-9-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
-                    { 19L, 10L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-10-slot1", (short)1, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 1L, null, null },
-                    { 20L, 10L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-10-slot2", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null }
+                    { 1L, 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-1-slot1", (short)1, new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 2L, 1L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-1-slot2", (short)1, new DateTime(2025, 1, 2, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 3L, 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-2-slot1", (short)1, new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 4L, 2L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-2-slot2", (short)1, new DateTime(2025, 1, 3, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 5L, 3L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-3-slot1", (short)1, new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 6L, 3L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-3-slot2", (short)1, new DateTime(2025, 1, 4, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 7L, 4L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-4-slot1", (short)1, new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 8L, 4L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-4-slot2", (short)1, new DateTime(2025, 1, 5, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 9L, 5L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-5-slot1", (short)1, new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 10L, 5L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-5-slot2", (short)1, new DateTime(2025, 1, 6, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 11L, 6L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-6-slot1", (short)1, new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 12L, 6L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-6-slot2", (short)1, new DateTime(2025, 1, 7, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 13L, 7L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-7-slot1", (short)1, new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 14L, 7L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-7-slot2", (short)1, new DateTime(2025, 1, 8, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 15L, 8L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-8-slot1", (short)1, new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 16L, 8L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-8-slot2", (short)1, new DateTime(2025, 1, 9, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 17L, 9L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-9-slot1", (short)1, new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 18L, 9L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-9-slot2", (short)1, new DateTime(2025, 1, 10, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null },
+                    { 19L, 10L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, false, true, "https://meetlink.com/ielts-10-slot1", (short)1, new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified), 3L, 1L, null, null },
+                    { 20L, 10L, new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), null, 54000000000L, true, false, "https://meetlink.com/ielts-10-slot2", (short)1, new DateTime(2025, 1, 11, 11, 0, 0, 0, DateTimeKind.Unspecified), 2L, 1L, null, null }
                 });
 
             migrationBuilder.InsertData(

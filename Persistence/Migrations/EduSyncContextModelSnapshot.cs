@@ -3051,7 +3051,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-1-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3064,7 +3065,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-1-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 2, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3078,7 +3079,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-2-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 3, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3091,7 +3093,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-2-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 3, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3105,7 +3107,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-3-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 4, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3118,7 +3121,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-3-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 4, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3132,7 +3135,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-4-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 5, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3145,7 +3149,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-4-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 5, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3159,7 +3163,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-5-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 6, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3172,7 +3177,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-5-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 6, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3186,7 +3191,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-6-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 7, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3199,7 +3205,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-6-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 7, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3213,7 +3219,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-7-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 8, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3226,7 +3233,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-7-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3240,7 +3247,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-8-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 9, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3253,7 +3261,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-8-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 9, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3267,7 +3275,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-9-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 10, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3280,7 +3289,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-9-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 10, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         },
@@ -3294,7 +3303,8 @@ namespace Persistence.Migrations
                             IsTrial = true,
                             MeetUrl = "https://meetlink.com/ielts-10-slot1",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 11, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StudentId = 3L,
                             TutorId = 1L
                         },
                         new
@@ -3307,7 +3317,7 @@ namespace Persistence.Migrations
                             IsTrial = false,
                             MeetUrl = "https://meetlink.com/ielts-10-slot2",
                             NumberOfSlot = (short)1,
-                            StartTime = new DateTime(2025, 1, 2, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2025, 1, 11, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StudentId = 2L,
                             TutorId = 1L
                         });
@@ -3346,6 +3356,12 @@ namespace Persistence.Migrations
                         new
                         {
                             UserId = 2L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            RegistrationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            UserId = 3L,
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             RegistrationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
@@ -3445,6 +3461,15 @@ namespace Persistence.Migrations
                             PasswordHash = "hashedpassword",
                             RoleId = 3L,
                             Username = "student1"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "student2@example.com",
+                            PasswordHash = "hashedpassword",
+                            RoleId = 3L,
+                            Username = "student2"
                         });
                 });
 
