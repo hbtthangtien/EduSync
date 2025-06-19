@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Login;
 using Application.DTOs.Register;
+using Application.DTOs.Token;
 using Application.Interfaces.IService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,16 @@ namespace Presentation.Controllers
 			return Ok(result);
 
 		}
+		[HttpPost("refresh")]
+		public async Task<IActionResult> RefreshToken([FromBody] TokenRefreshDTO dto)
+		{
+			var result = await _authService.RefreshTokenAsync(dto);
+			if (!result.Success)
+				return Unauthorized(result.Message);
+
+			return Ok(result);
+		}
+
 
 	}
 }

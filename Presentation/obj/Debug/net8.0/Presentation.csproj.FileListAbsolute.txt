@@ -557,3 +557,5 @@ E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\Presentation.pdb
 E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\Presentation.genruntimeconfig.cache
 E:\Documents\C#\SP_Exe\EduSync\Presentation\obj\Debug\net8.0\ref\Presentation.dll
 C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\obj\Debug\net8.0\Presentation.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\bin\Debug\net8.0\CloudinaryDotNet.dll
+C:\Users\Admin\Desktop\source\repos\EduSync\Presentation\bin\Debug\net8.0\Newtonsoft.Json.dll
