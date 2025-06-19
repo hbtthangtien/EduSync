@@ -15,6 +15,7 @@ namespace Application.Interfaces.IRepository
 		public Task AddAsync(T entity);
 		public void UpdateAsync(T entity);
 		public void RemoveAsync(T entity);
+		Task<T?> GetByIdAsync(long id);
 		public Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null);
 		public IQueryable<T> Find(Expression<Func<T, bool>> expression);
 		public Task<bool> HasAnyAsync(Expression<Func<T, bool>> expression);

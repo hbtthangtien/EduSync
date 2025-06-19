@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.IRepository;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Persistence.DatabaseConfigs;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace Persistence.Repositories
 	public class StudentRepository : BaseRepository<Student>, IStudentRepository
 	{
 		public StudentRepository(EduSyncContext context) : base(context) { }
-
+		public async Task<Student?> FindAsync(Expression<Func<Student, bool>> predicate)
+		{
+			return await _context.Students.FirstOrDefaultAsync(predicate);
+		}
 	}
 }
