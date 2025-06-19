@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Commons;
 using Application.DTOs.Tutors.Bio;
+using Application.DTOs.Tutors.Slots;
 using Application.Extentions;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
@@ -37,6 +38,27 @@ namespace Application.Services
 			
 			await _unitOfWork.SaveChangesAsync();
 			return IdResponse.SuccessResponse(tutor.UserId, "Update success");
+		}
+		public async Task<BaseResponse<List<SlotTutorDTO>>> GetSlotsBytutorAsync(long tutorId)
+		{
+			var tutor = await _unitOfWork.TuTors.GetInstance()
+				.Where(e => e.UserId == tutorId)
+				.Include(e => e.Slots)
+				.ThenInclude(s => s.Course)
+				.AsNoTracking()
+				.FirstOrDefaultAsync();
+
+			var result = tutor.Slots
+				.GroupBy(s => new { s.StartTime.Date, s.Course.Title })
+				.Select(g => new SlotTutorDTO
+				{
+					Id = tutor.UserId,
+					Date = g.Key.Date,
+					CourseTitle = g.Key.Title,
+					Shifts = g.Select(s => $"{s.StartTime:HH\\:mm} - {s.EndTime:HH\\:mm}").ToList()
+				})
+				.ToList();
+			return BaseResponse<List<SlotTutorDTO>>.SuccessResponse(result);
 		}
 	}
 }

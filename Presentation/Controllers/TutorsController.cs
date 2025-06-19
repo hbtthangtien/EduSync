@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Tutors.Bio;
 using Application.Interfaces.IService;
+using Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,5 +22,12 @@ namespace Presentation.Controllers
 			var data = await _tutorService.UpdateBioTutors(request);
 			return Ok(data);
 		}
+		[HttpGet("{id}/slots")]
+		public async Task<IActionResult> GetSlotByTutorId(int id)
+		{
+			var data = await _tutorService.GetSlotsBytutorAsync(id);
+			return Ok(data);
 	}
+	}
+	
 }
