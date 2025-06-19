@@ -142,6 +142,7 @@ namespace Application.Services
 				.Where(c => c.CreatedByTutorId == tutorId)
 				.Select(c => new CourseTutors
 				{
+					Id = c.Id,
 					Title = c.Title,
 					Description = c.Description,
 					NumberOfStudent = c.Slots.Count(s => s.StudentId != null)
