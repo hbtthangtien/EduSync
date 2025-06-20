@@ -18,6 +18,8 @@ namespace Domain.Entities
 		public long TrialSessions { get; set; }
 		public double PricePerSession { get; set; }
 		public decimal ServiceFeePercentage { get; set; }
+		public int NumberOfSession {  get; set; }
+		public TimeSpan DurationSession { get; set; }
 		public CourseStatus Status { get; set; }
 		public Tutor? CreatedByTutor { get; set; }
 		public ICollection<Content> Contents { get; set; } = new List<Content>();

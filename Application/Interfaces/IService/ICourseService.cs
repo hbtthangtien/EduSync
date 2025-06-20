@@ -1,6 +1,7 @@
 ﻿using Application.DTOs.Commons;
 using Application.DTOs.Cousre;
 using Application.DTOs.Tutors.Courses;
+using Application.DTOs.Tutors.Courses.Contents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Application.Interfaces.IService
 	{
 		Task<CourseDetailDTO?> GetCourseDetailByIdAsync(long courseId);
 		Task<List<CourseDTO>> GetAllCoursesAsync();
-		Task<IdResponse> CreateCourseAsync(long tutorId, CreateCourse create);
+		Task<BaseResponse<ResponseCreateCourse>> CreateCourseAsync(long tutorId, CreateCourse create);
+		Task CreateContentForCourse(long courseId, List<CreateContent> listContent);
 	}
 }

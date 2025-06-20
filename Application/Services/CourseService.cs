@@ -13,6 +13,9 @@ using Application.DTOs.Tutors.Bio;
 using Application.DTOs.Commons;
 using Application.DTOs.Tutors.Courses;
 using Application.DTOs.ActivationRequest;
+using Application.DTOs.Tutors.Courses.Contents;
+using Mapster;
+using Application.Extentions;
 
 namespace Application.Services
 {
@@ -22,7 +25,7 @@ namespace Application.Services
 		private readonly IUserContextService _userContextService;
 		private readonly IFileStorageService _fileService;
 		private readonly IActivationRequestService _activationRequestService;
-		public CourseService( IUnitOfWork unitOfWorks,
+		public CourseService(IUnitOfWork unitOfWorks,
 			IUserContextService userContextService,
 			IFileStorageService fileStorage,
 			IActivationRequestService activationRequestService)
@@ -97,9 +100,20 @@ namespace Application.Services
 			return result;
 		}
 
-		public async Task<IdResponse> CreateCourseAsync(long tutorId, CreateCourse create)
+		public async Task<BaseResponse<ResponseCreateCourse>> CreateCourseAsync(long tutorId, CreateCourse create)
 		{
-			var certificates = await CreateCertificates(tutorId,create);
+			//create certificates from request
+			var certificates = await CreateCertificates(tutorId, create);
+
+			// create content from file
+			var contents = create.listContent.Select(e => new Content
+			{
+				ContentType = e.ContentType,
+				Descriptions = e.Descriptions,
+
+			}).ToList();
+
+			// create courses
 			var courses = new Course
 			{
 				Title = create.Title,
@@ -110,17 +124,25 @@ namespace Application.Services
 				IsTrialAvailable = true,
 				PricePerSession = create.PricePerSession,
 				Status = Domain.Enums.CourseStatus.Pending,
-				Certificates = certificates
-			}; 
+				NumberOfSession = create.NumberOfSession,
+				DurationSession = create.DurationSession,
+				Certificates = certificates,
+				Contents = contents
+			};
+			// save
 			await _unitOfWorks.Courses.AddAsync(courses);
 			await _unitOfWorks.SaveChangesAsync();
+
+			/// make activationn request to admin
 			var activation = new CreateActivationRequest
 			{
 				CourseId = courses.Id,
 				TutorId = tutorId,
 			};
+
 			var activationRequestId = await _activationRequestService.CreateActivationRequest(activation);
-			return IdResponse.SuccessResponse(courses.Id, "Create success");
+			var response = new ResponseCreateCourse { Id = courses.Id, NumberOfSessions = create.NumberOfSession };
+			return BaseResponse<ResponseCreateCourse>.SuccessResponse(response);
 		}
 		private async Task<List<Certificate>> CreateCertificates(long tutorId, CreateCourse create)
 		{
@@ -144,6 +166,30 @@ namespace Application.Services
 				}
 			};
 			return certificates;
+		}
+
+		public async Task CreateContentForCourse(long courseId, List<CreateContent> listContent)
+		{
+			var course = await _unitOfWorks.Courses
+				.GetInstance()
+				.Where(e => e.Id == courseId)
+				.Include(e => e.Contents)
+				.SingleOrDefaultAsync()
+				?? throw ExceptionFactory.NotFound("Course", courseId);
+			var contents = listContent.Select(e => new Content
+			{
+				ContentType = e.ContentType,
+				CourseId = courseId,
+				Descriptions = e.Descriptions,
+
+			}).ToList();
+			foreach (var item in contents)
+			{
+				course.Contents.Add(item);
+				
+			}
+			await _unitOfWorks.SaveChangesAsync();
+			
 		}
 	}
 }

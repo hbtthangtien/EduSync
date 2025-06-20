@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Tutors.Bio;
 using Application.DTOs.Tutors.Courses;
+using Application.DTOs.Tutors.Courses.Contents;
 using Application.Interfaces.IService;
 using Application.Services;
 using Microsoft.AspNetCore.Http;
@@ -81,6 +82,11 @@ namespace Presentation.Controllers
 		{
 			var data = await _courseService.CreateCourseAsync(id,request);
 			return Ok(data);
+		}
+		[HttpPost("{id}/courses/{courseId}/contents")]
+		public async Task<IActionResult> CreateContentForCourse(long id, long courseId, List<CreateContent> listContent)
+		{
+			return Ok();
 		}
 	}
 	
