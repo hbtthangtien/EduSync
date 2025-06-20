@@ -218,20 +218,17 @@ namespace Application.Services
 			if (user == null)
 				return false;
 
-			// Nếu đã là gia sư thì không cần tạo nữa
 			if (await _unitOfWork.TuTors.GetSingle(x => x.UserId == user.Id) != null)
 				return false;
 
-			// Tạo mới tutor
 			var tutor = new Tutor
 			{
 				UserId = user.Id,
 				CreatedAt = DateTime.UtcNow
 			};
 			await _unitOfWork.TuTors.AddAsync(tutor);
-			await _unitOfWork.SaveChangesAsync(); // để đảm bảo TutorId có trước khi gán vào Bio
+			await _unitOfWork.SaveChangesAsync(); 
 
-			// Gán dữ liệu từ ActivationRequest sang BioTutor
 			var bioTutor = new BioTutor
 			{
 				TutorId = tutor.UserId,
@@ -243,7 +240,6 @@ namespace Application.Services
 			await _unitOfWork.BioTuTors.AddAsync(bioTutor);
 			await _unitOfWork.SaveChangesAsync();
 
-			// Gán role "Tutor" cho user
 			var role = await _unitOfWork.Roles.GetSingle(r => r.Name == "Tutor");
 			if (role != null)
 			{
@@ -251,7 +247,6 @@ namespace Application.Services
 				await _unitOfWork.Users.UpdateAsync(user);
 			}
 
-			// Đánh dấu đơn đã duyệt
 			request.IsActivated = true;
 			request.ActivationDate = DateTime.UtcNow;
 
