@@ -39,7 +39,7 @@ namespace Presentation.Controllers
 		}
 
 		[HttpGet("conversation/{partnerId:long}")]
-		public async Task<IActionResult> GetConversation(long partnerId, [FromQuery] long currentUserId = 2)
+		public async Task<IActionResult> GetConversation(long partnerId, [FromQuery] long currentUserId )
 		{
 			var messages = await _chatService.GetConversationAsync(currentUserId, partnerId);
 			return Ok(messages);
