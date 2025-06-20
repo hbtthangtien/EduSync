@@ -8,7 +8,7 @@ namespace Domain.Commons
 {
 	public class BaseEntityNoId : IAudiable
 	{
-		public DateTime CreatedAt { get; set; }
+		public DateTime CreatedAt { get; set; } = DateTime.Now;
 		public DateTime? UpdatedAt { get; set; }
 		public DateTime? DeletedAt { get; set; }
 		public string? UpdatedBy { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Tutors.Bio;
+using Application.DTOs.Tutors.Courses;
 using Application.Interfaces.IService;
 using Application.Services;
 using Microsoft.AspNetCore.Http;
@@ -11,10 +12,12 @@ namespace Presentation.Controllers
 	public class TutorsController : ControllerBase
 	{
 		private readonly ITutorService _tutorService;
-
-		public TutorsController(ITutorService tutorService)
+		private readonly ICourseService _courseService;
+		public TutorsController(ITutorService tutorService,
+			ICourseService courseService)
 		{
 			_tutorService = tutorService;
+			_courseService = courseService;
 		}
 
 		[HttpPut("{id}/bio")]
@@ -63,6 +66,20 @@ namespace Presentation.Controllers
 		public async Task<IActionResult> DashBoardForTutors(long id)
 		{
 			var data = await _tutorService.ReportOftutors(id);
+			return Ok(data);
+		}
+
+		[HttpGet("{id}/bio")]
+		public async Task<IActionResult> GetBioByTutor(long id)
+		{
+			var data = await _tutorService.GetBioViewDetails(id);
+			return Ok(data);
+		}
+
+		[HttpPost("{id}/courses")]
+		public async Task<IActionResult> CreateCourseByTutor(long id,[FromForm] CreateCourse request)
+		{
+			var data = await _courseService.CreateCourseAsync(id,request);
 			return Ok(data);
 		}
 	}

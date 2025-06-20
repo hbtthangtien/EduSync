@@ -10,15 +10,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Application.DTOs.Tutors.Bio;
+using Application.DTOs.Commons;
+using Application.DTOs.Tutors.Courses;
+using Application.DTOs.ActivationRequest;
 
 namespace Application.Services
 {
-	public class CourseService : ICousreService
+	public class CourseService : ICourseService
 	{
 		private readonly IUnitOfWork _unitOfWorks;
-		public CourseService( IUnitOfWork unitOfWorks)
+		private readonly IUserContextService _userContextService;
+		private readonly IFileStorageService _fileService;
+		private readonly IActivationRequestService _activationRequestService;
+		public CourseService( IUnitOfWork unitOfWorks,
+			IUserContextService userContextService,
+			IFileStorageService fileStorage,
+			IActivationRequestService activationRequestService)
 		{
 			_unitOfWorks = unitOfWorks;
+			_userContextService = userContextService;
+			_fileService = fileStorage;
+			_activationRequestService = activationRequestService;
 		}
 
 		public async Task<CourseDetailDTO?> GetCourseDetailByIdAsync(long courseId)
@@ -85,6 +97,53 @@ namespace Application.Services
 			return result;
 		}
 
-
+		public async Task<IdResponse> CreateCourseAsync(long tutorId, CreateCourse create)
+		{
+			var certificates = await CreateCertificates(tutorId,create);
+			var courses = new Course
+			{
+				Title = create.Title,
+				Description = create.Description,
+				CreatedByTutorId = tutorId,
+				TrialSessions = 2,
+				ServiceFeePercentage = 20,
+				IsTrialAvailable = true,
+				PricePerSession = create.PricePerSession,
+				Status = Domain.Enums.CourseStatus.Pending,
+				Certificates = certificates
+			}; 
+			await _unitOfWorks.Courses.AddAsync(courses);
+			await _unitOfWorks.SaveChangesAsync();
+			var activation = new CreateActivationRequest
+			{
+				CourseId = courses.Id,
+				TutorId = tutorId,
+			};
+			var activationRequestId = await _activationRequestService.CreateActivationRequest(activation);
+			return IdResponse.SuccessResponse(courses.Id, "Create success");
+		}
+		private async Task<List<Certificate>> CreateCertificates(long tutorId, CreateCourse create)
+		{
+			var imageFrontUrl = await _fileService.UploadFileAsync(create.FrontImage);
+			var imageBackUrl = await _fileService.UploadFileAsync(create.BackImage);
+			var certificates = new List<Certificate>
+			{
+				new Certificate
+				{
+					CertificateUrl = imageFrontUrl,
+					TutorId = tutorId,
+					IsVerified = true,
+					VerifiedDate = DateTime.Now,
+				},
+				new Certificate
+				{
+					CertificateUrl = imageBackUrl,
+					TutorId = tutorId,
+					IsVerified = true,
+					VerifiedDate = DateTime.Now,
+				}
+			};
+			return certificates;
+		}
 	}
 }

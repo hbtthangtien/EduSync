@@ -26,13 +26,14 @@ namespace Infrastructure.Extensions
 			services.AddScoped<IUserContextService, UserContextService>();
 			services.AddScoped<ITutorService, TutorService>();
 			services.AddScoped<IFileStorageService, LocalFileStorageService>();
-			services.AddScoped<ICousreService, CourseService>();
+			services.AddScoped<ICourseService, CourseService>();
 			services.AddScoped<IStudentService, StudentService>();
 			services.AddScoped<IHomePageService, HomePageService>();
 			services.AddScoped<ISlotService, SlotService>();
 			services.AddScoped<IAdminUserService, AdminService>();
 			services.AddScoped<IFileStorageService, LocalFileStorageService>();
 			services.AddScoped<IChatService, ChatService>();
+			services.AddScoped<IActivationRequestService, ActivationRequestService>();
 		}
 		public static void AddAuthenticationByJwt(this IServiceCollection services, IConfiguration configuration)
 		{
