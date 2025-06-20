@@ -97,7 +97,7 @@ namespace Application.Services
 
 		public async Task<BaseResponse<ResponseCreateCourse>> CreateCourseAsync(long tutorId, CreateCourse create)
 		{
-			//create certificates from request
+			// create certificates from request
 			var certificates = await CreateCertificates(tutorId, create);
 
 			// create content from file
@@ -105,11 +105,10 @@ namespace Application.Services
 			{
 				ContentType = e.ContentType,
 				Descriptions = e.Descriptions,
-
 			}).ToList();
 
-			// create courses
-			var courses = new Course
+			// create course
+			var course = new Course
 			{
 				Title = create.Title,
 				Description = create.Description,
@@ -124,21 +123,33 @@ namespace Application.Services
 				Certificate = certificates,
 				Contents = contents
 			};
-			// save
-			await _unitOfWorks.Courses.AddAsync(courses);
+
+			await _unitOfWorks.Courses.AddAsync(course);
 			await _unitOfWorks.SaveChangesAsync();
 
-			/// make activationn request to admin
+			// Lấy BioTutor để đẩy vào ActivationRequest
+			var bio = await _unitOfWorks.BioTuTors.GetSingle(x => x.TutorId == tutorId);
+
 			var activation = new CreateActivationRequest
 			{
-				CourseId = courses.Id,
+				CourseId = course.Id,
 				TutorId = tutorId,
+				Fullname = bio?.Fullname ?? "",
+				Introduces = bio?.Introduces ?? "",
+				Specializations = bio?.Specializations ?? ""
 			};
 
-			var activationRequestId = await _activationRequestService.CreateActivationRequest(activation);
-			var response = new ResponseCreateCourse { Id = courses.Id, NumberOfSessions = create.NumberOfSession };
+			await _activationRequestService.CreateActivationRequest(activation);
+
+			var response = new ResponseCreateCourse
+			{
+				Id = course.Id,
+				NumberOfSessions = create.NumberOfSession
+			};
+
 			return BaseResponse<ResponseCreateCourse>.SuccessResponse(response);
 		}
+
 		private async Task<List<Certificate>> CreateCertificates(long tutorId, CreateCourse create)
 		{
 			var imageFrontUrl = await _fileService.UploadFileAsync(create.FrontImage);

@@ -1,4 +1,4 @@
-﻿using Application.Certificates;
+﻿using Application.DTOs.Certifiace;
 using Application.DTOs.Cousre;
 using Application.DTOs.Tutors.Bio;
 using Application.DTOs.User;
@@ -298,6 +298,20 @@ namespace Application.Services
 			};
 
 			return dto;
+		}
+		public async Task<bool> ApproveCourseAsync(long courseId)
+		{
+			var course = await _unitOfWork.Courses
+				.GetInstance()
+				.FirstOrDefaultAsync(c => c.Id == courseId);
+
+			if (course == null || course.Status != CourseStatus.Pending)
+				return false;
+
+			course.Status = CourseStatus.Approved;
+			await _unitOfWork.SaveChangesAsync();
+
+			return true;
 		}
 
 

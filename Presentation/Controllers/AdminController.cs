@@ -87,6 +87,16 @@ namespace Presentation.Controllers
 
 			return Ok(result);
 		}
+
+		[HttpPut("courses/{courseId}/approve")]
+		public async Task<IActionResult> ApproveCourse(long courseId)
+		{
+			var result = await _adminUserService.ApproveCourseAsync(courseId);
+			if (!result)
+				return BadRequest("Không thể duyệt khóa học. Có thể khóa học không tồn tại hoặc đã được duyệt trước đó.");
+
+			return Ok("Khóa học đã được duyệt thành công.");
+		}
 	}
 
 }
