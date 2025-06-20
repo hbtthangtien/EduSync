@@ -16,5 +16,7 @@ namespace Application.Interfaces.IService
 		Task<List<CourseAdminDTO>> GetAllCourseAdminAsync();
 		Task<CourseDetailDTO?> GetCourseDetailByIdForAdminAsync(long courseId);
 		Task<AdminDashboardReportDTO> GetAdminDashboardReportAsync();
+		Task<bool> ApproveActivationRequestAsync(long requestId);
+		Task<CourseDetailAdminDTO?> GetCourseDetailMoreForAdminAsync(long courseId);
 	}
 }

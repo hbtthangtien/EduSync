@@ -1,21 +1,16 @@
-﻿using Application.DTOs.Cousre;
+﻿
+
+using Application.DTOs.ActivationRequest;
+using Application.DTOs.Commons;
+using Application.DTOs.Cousre;
+using Application.DTOs.Tutors.Bio;
+using Application.DTOs.Tutors.Courses;
+using Application.DTOs.Tutors.Courses.Contents;
+using Application.Extentions;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
-using Microsoft.Extensions.Configuration;
-using System;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Entities;
-using Application.DTOs.Tutors.Bio;
-using Application.DTOs.Commons;
-using Application.DTOs.Tutors.Courses;
-using Application.DTOs.ActivationRequest;
-using Application.DTOs.Tutors.Courses.Contents;
-using Mapster;
-using Application.Extentions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Services
 {
@@ -126,7 +121,7 @@ namespace Application.Services
 				Status = Domain.Enums.CourseStatus.Pending,
 				NumberOfSession = create.NumberOfSession,
 				DurationSession = create.DurationSession,
-				Certificates = certificates,
+				Certificate = certificates,
 				Contents = contents
 			};
 			// save

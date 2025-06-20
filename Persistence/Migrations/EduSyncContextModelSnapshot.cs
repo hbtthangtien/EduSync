@@ -33,7 +33,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("ActivationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("CourseId")
+                    b.Property<long?>("CourseId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -42,13 +42,25 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Introduces")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsActivated")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("TutorId")
+                    b.Property<string>("Specializations")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("TutorUserId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -61,7 +73,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.HasIndex("TutorId");
+                    b.HasIndex("TutorUserId");
 
                     b.ToTable("ActivationRequests");
                 });
@@ -172,6 +184,20 @@ namespace Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRead")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("ReadAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<long>("ReceiverId")
                         .HasColumnType("bigint");
 
@@ -180,6 +206,12 @@ namespace Persistence.Migrations
 
                     b.Property<DateTime>("SentAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -8419,18 +8451,15 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Domain.Entities.Tutor", "Tutor")
+                    b.HasOne("Domain.Entities.Tutor", null)
                         .WithMany("ActivationRequests")
-                        .HasForeignKey("TutorId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasForeignKey("TutorUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Course");
-
-                    b.Navigation("Tutor");
                 });
 
             modelBuilder.Entity("Domain.Entities.BioTutor", b =>
@@ -8447,7 +8476,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
-                        .WithMany("Certificates")
+                        .WithMany("Certificate")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -8660,7 +8689,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
-                    b.Navigation("Certificates");
+                    b.Navigation("Certificate");
 
                     b.Navigation("Contents");
 

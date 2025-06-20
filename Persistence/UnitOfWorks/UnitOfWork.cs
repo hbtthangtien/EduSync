@@ -37,6 +37,7 @@ namespace Persistence.UnitOfWorks
 		public ICourseCancellationRepository CourseCancellations { get; private set; }
 
 		public IPaymentRepository Payments { get; private set; }
+		public IBioTuTorRepository BioTuTors { get; private set; }
 
 		public IRatingRepository Ratings { get; private set; }
 
@@ -68,9 +69,12 @@ namespace Persistence.UnitOfWorks
 			ISlotRepository slots,
 			IWeeklyScheduleRepository weeklySchedules,
 			ICourseRepository courses,
-			IChatMessageRepository chatMessage)
+			IChatMessageRepository chatMessage,
+			IBioTuTorRepository bioTuTors
+			)
 		{
 			ChatMessages = chatMessage;
+			BioTuTors = bioTuTors;
 			_context = context;
 			User = user;
 			Role = role;

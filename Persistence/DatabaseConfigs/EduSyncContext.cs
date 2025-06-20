@@ -103,16 +103,7 @@ namespace Persistence.DatabaseConfigs
 					.HasForeignKey(e => e.TutorId)
 					.OnDelete(DeleteBehavior.Restrict);
 
-				//entity.HasMany(e => e.Students)
-				//	.WithMany()
-				//	.UsingEntity<Slot>();
-
 				entity.HasMany(e => e.Slots)
-					.WithOne(e => e.Tutor)
-					.HasForeignKey(e => e.TutorId)
-					.OnDelete(DeleteBehavior.Restrict);
-
-				entity.HasMany(e => e.ActivationRequests)
 					.WithOne(e => e.Tutor)
 					.HasForeignKey(e => e.TutorId)
 					.OnDelete(DeleteBehavior.Restrict);
@@ -124,23 +115,13 @@ namespace Persistence.DatabaseConfigs
 
 			modelBuilder.Entity<ActivationRequest>(entity =>
 			{
+				entity.HasKey(e => e.Id);
+
 				entity.HasOne(e => e.Course)
 					.WithMany()
 					.HasForeignKey(e => e.CourseId)
 					.OnDelete(DeleteBehavior.Restrict);
 			});
-
-			modelBuilder.Entity<Certificate>(entity =>
-			{
-				entity.HasOne(e => e.Course)
-					.WithMany(e => e.Certificates)
-					.HasForeignKey(e => e.CourseId);
-
-				entity.HasOne(e => e.Tutor)
-					.WithMany(e => e.Certificates)
-					.HasForeignKey(e => e.TutorId);
-			});
-
 			modelBuilder.Entity<Content>(entity =>
 			{
 				entity.HasOne(e => e.Course)
@@ -229,6 +210,12 @@ namespace Persistence.DatabaseConfigs
 					.IsRequired();
 
 				entity.HasIndex(e => e.ConversationId);
+				entity.Property(e => e.IsRead)
+				.IsRequired()
+				.HasDefaultValue(false);
+
+				entity.Property(e => e.ReadAt)
+					.IsRequired(false);
 			});
 
 

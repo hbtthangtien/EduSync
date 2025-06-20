@@ -25,7 +25,7 @@ namespace Domain.Entities
 		public ICollection<Content> Contents { get; set; } = new List<Content>();
 		public ICollection<Slot> Slots { get; set; } = new List<Slot>();
 		public ICollection<WeeklySchedule> WeeklySchedules { get; set; } = new List<WeeklySchedule>();
-		public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
+		public ICollection<Certificate> Certificate { get; set; } = new List<Certificate>();
 		public ICollection<CourseCancellation> CourseCancellations { get; set; } = new List<CourseCancellation>();
 
 
