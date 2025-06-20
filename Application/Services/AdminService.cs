@@ -1,8 +1,10 @@
-﻿using Application.DTOs.Cousre;
+﻿using Application.Certificate;
+using Application.DTOs.Cousre;
 using Application.DTOs.Tutors.Bio;
 using Application.DTOs.User;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
+using Domain.Entities;
 using Domain.Enums;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
@@ -59,7 +61,7 @@ namespace Application.Services
 			var user = await _unitOfWork.Users.FindByIdAsync(userId);
 			if (user == null) return false;
 
-			user.DeletedAt = DateTime.UtcNow; 
+			user.DeletedAt = DateTime.Now; 
 			await _unitOfWork.SaveChangesAsync();
 			return true;
 		}
@@ -191,7 +193,6 @@ namespace Application.Services
 					.Count()
 			}).ToList();
 
-			// Trả về DTO dashboard
 			return new AdminDashboardReportDTO
 			{
 				TotalUsers = totalUsers,
@@ -203,6 +204,107 @@ namespace Application.Services
 				RecentCourses = recentCourseList
 			};
 		}
+
+		public async Task<bool> ApproveActivationRequestAsync(long requestId)
+		{
+			var request = await _unitOfWork.ActivationRequests
+				.GetInstance()
+				.FirstOrDefaultAsync(x => x.Id == requestId);
+
+			if (request == null || request.IsActivated)
+				return false;
+
+			var user = await _unitOfWork.Users.GetSingle(x => x.Id == request.TutorUserId);
+			if (user == null)
+				return false;
+
+			// Nếu đã là gia sư thì không cần tạo nữa
+			if (await _unitOfWork.TuTors.GetSingle(x => x.UserId == user.Id) != null)
+				return false;
+
+			// Tạo mới tutor
+			var tutor = new Tutor
+			{
+				UserId = user.Id,
+				CreatedAt = DateTime.UtcNow
+			};
+			await _unitOfWork.TuTors.AddAsync(tutor);
+			await _unitOfWork.SaveChangesAsync(); // để đảm bảo TutorId có trước khi gán vào Bio
+
+			// Gán dữ liệu từ ActivationRequest sang BioTutor
+			var bioTutor = new BioTutor
+			{
+				TutorId = tutor.UserId,
+				Fullname = request.Fullname ?? "Chưa cập nhật",
+				Specializations = request.Specializations ?? "Chưa cập nhật",
+				Introduces = request.Introduces ?? "Chưa cập nhật",
+				CreatedAt = DateTime.UtcNow
+			};
+			await _unitOfWork.BioTuTors.AddAsync(bioTutor);
+			await _unitOfWork.SaveChangesAsync();
+
+			// Gán role "Tutor" cho user
+			var role = await _unitOfWork.Roles.GetSingle(r => r.Name == "Tutor");
+			if (role != null)
+			{
+				user.RoleId = role.Id;
+				await _unitOfWork.Users.UpdateAsync(user);
+			}
+
+			// Đánh dấu đơn đã duyệt
+			request.IsActivated = true;
+			request.ActivationDate = DateTime.UtcNow;
+
+			await _unitOfWork.SaveChangesAsync();
+			return true;
+		}
+
+		public async Task<CourseDetailAdminDTO?> GetCourseDetailMoreForAdminAsync(long courseId)
+		{
+			var course = await _unitOfWork.Courses
+				.GetInstance()
+				.Include(c => c.CreatedByTutor)
+					.ThenInclude(t => t.BioTutor)
+				.Include(c => c.Slots)
+				.Include(c => c.Contents)
+				.Include(c => c.Certificate) 
+				.FirstOrDefaultAsync(c => c.Id == courseId);
+
+			if (course == null)
+				return null;
+
+			var studentCount = course.Slots?
+				.Where(s => s.StudentId.HasValue)
+				.Select(s => s.StudentId!.Value)
+				.Distinct()
+				.Count() ?? 0;
+
+			var dto = new CourseDetailAdminDTO
+			{
+				Title = course.Title,
+				Description = course.Description,
+				TutorBio = new BioTutorDTO
+				{
+					FullName = course.CreatedByTutor?.BioTutor?.Fullname ?? "Chưa cập nhật",
+					Introduces = course.CreatedByTutor?.BioTutor?.Introduces ?? "Chưa có mô tả"
+				},
+				IsTrialAvailable = course.IsTrialAvailable,
+				TrialSessions = course.TrialSessions,
+				PricePerSession = course.PricePerSession,
+				CreatedAt = course.CreatedAt,
+				CourseContents = course.Contents?.Select(c => c.Descriptions).ToList() ?? new List<string>(),
+
+				Certificate = course.Certificate?.Select(cert => new CertificateDTO
+				{
+					CertificateUrl = cert.CertificateUrl,
+					IsVerified = cert.IsVerified,
+					VerifiedDate = cert.VerifiedDate
+				}).ToList() ?? new List<CertificateDTO>()
+			};
+
+			return dto;
+		}
+
 
 	}
 }

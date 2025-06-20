@@ -44,5 +44,22 @@ namespace Presentation.Controllers
 			var messages = await _chatService.GetConversationAsync(currentUserId, partnerId);
 			return Ok(messages);
 		}
+
+		[HttpPost("mark-as-read")]
+		public async Task<IActionResult> MarkAsRead([FromBody] MarkAsReadRequest request, [FromQuery] long currentUserId)
+		{
+			//var currentUserId = long.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+
+			bool result = await _chatService.MarkMessagesAsReadAsync(currentUserId, request.MessageIds);
+
+			if (!result)
+			{
+				return NotFound(new { error = "No unread messages found for the provided IDs." });
+			}
+
+			return Ok(new { status = "marked as read" });
+		}
+
+
 	}
 }

@@ -21,9 +21,11 @@ namespace Application.IUnitOfWorks
 		public IPaymentRepository Payments { get; }
 		public IRatingRepository Ratings { get; }
 		public ISlotRepository Slots { get; }
+		public IBioTuTorRepository BioTuTors { get; }
 		public IWeeklyScheduleRepository WeeklySchedules { get; }
 		public IChatMessageRepository ChatMessages { get; }
 		public ICourseRepository Courses { get; }
+		public 
 		Task<int> SaveChangesAsync();
 	}
 }

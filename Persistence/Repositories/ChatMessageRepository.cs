@@ -27,5 +27,13 @@ namespace Persistence.Repositories
 				.OrderBy(m => m.SentAt)
 				.ToListAsync();
 		}
+		public async Task<List<ChatMessage>> GetUnreadMessagesByIdsAsync(List<long> ids, long currentUserId)
+		{
+			return await _context.ChatMessages
+				.Where(m => ids.Contains(m.Id) &&
+							m.ReceiverId == currentUserId &&
+							!m.IsRead)
+				.ToListAsync();
+		}
 	}
 }

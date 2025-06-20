@@ -33,39 +33,32 @@ namespace Application.Services
 		{
 			var userId = _userRepo.GetUserId();
 
-			var course = await _unitOfWorks.Courses.GetSingle(x => x.Title == "Khóa học mặc định");
+			// Kiểm tra xem đã là gia sư chưa
+			if (await _unitOfWorks.TuTors.GetSingle(x => x.UserId == userId) is not null)
+				return BaseResponse<string>.Failure("Tài khoản của bạn đã là gia sư.");
 
-			if (await _unitOfWorks.Students.GetSingle(x => x.UserId == userId) is null)
-				return BaseResponse<string>.Failure("Tài khoản không hợp lệ hoặc chưa phải là học sinh.");
+			// Kiểm tra xem đã có đơn đăng ký chưa
+			var existingRequest = await _unitOfWorks.ActivationRequests
+				.GetSingle(x => x.TutorUserId == userId && !x.IsActivated);
+			if (existingRequest != null)
+				return BaseResponse<string>.Failure("Bạn đã gửi đơn và đang chờ duyệt.");
 
-			var tutor = registerTutor.Adapt<Tutor>();
-			tutor.UserId = userId;
-
-			var bioTutor = registerTutor.Adapt<BioTutor>();
-			bioTutor.Tutor = tutor;
-			tutor.BioTutor = bioTutor;
-
-			var tutorRole = await _unitOfWorks.Roles.GetSingle(r => r.Name == "Tutor");
-			if (tutorRole == null)
-				return BaseResponse<string>.Failure("Vai trò 'Tutor' chưa được khởi tạo.");
-
-			var user = await _unitOfWorks.Users.GetSingle(x => x.Id == userId);
-
-			if (user != null)
+			// Tạo mới đơn đăng ký
+			var request = new ActivationRequest
 			{
-				user.RoleId = tutorRole.Id;
-				await _unitOfWorks.Users.UpdateAsync(user);
-			}
+				TutorUserId = userId,
+				RequestDate = DateTime.UtcNow,
+				IsActivated = false,
+				Fullname = registerTutor.Fullname,
+				Specializations = registerTutor.Specializations,
+				Introduces = registerTutor.Introduces
+			};
 
-
-
-			// Lưu thông tin tutor
-			await _unitOfWorks.TuTors.AddAsync(tutor);
+			await _unitOfWorks.ActivationRequests.AddAsync(request);
 			await _unitOfWorks.SaveChangesAsync();
 
-			return BaseResponse<string>.SuccessResponse("Bạn đã đăng ký làm gia sư thành công. Vui lòng đăng nhập lại để cập nhật quyền truy cập.");
+			return BaseResponse<string>.SuccessResponse("Đơn đăng ký làm gia sư của bạn đã được gửi.");
 		}
-
 
 
 	}

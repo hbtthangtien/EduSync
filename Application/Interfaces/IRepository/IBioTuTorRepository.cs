@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Application.Interfaces.IRepository
 {
-	public interface ICertificateRepository : IBaseRepository<Domain.Entities.Certificate>
+	public interface IBioTuTorRepository : IBaseRepository<BioTutor>
 	{
 	}
 }

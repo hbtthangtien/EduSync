@@ -36,7 +36,8 @@ namespace Application.Services
 				ReceiverId = request.ReceiverId,
 				ConversationId = conversationId,
 				Content = request.Content,
-				SentAt = DateTime.UtcNow
+				CreatedAt = DateTime.Now,
+				SentAt = DateTime.Now
 			};
 
 			await _unitOfWork.ChatMessages.AddAsync(message);
@@ -52,6 +53,29 @@ namespace Application.Services
 
 			return messages.Adapt<List<ChatMessageResponse>>();
 		}
+		public async Task<bool> MarkMessagesAsReadAsync(long currentUserId, List<long> messageIds)
+		{
+			if (messageIds == null || !messageIds.Any())
+				return false;
+
+			var messages = await _unitOfWork.ChatMessages.GetUnreadMessagesByIdsAsync(messageIds, currentUserId);
+
+			if (messages == null || !messages.Any())
+			{
+				return false; // Không có tin nhắn cần cập nhật
+			}
+
+			foreach (var msg in messages)
+			{
+				msg.IsRead = true;
+				msg.ReadAt = DateTime.Now;
+			}
+
+			await _unitOfWork.SaveChangesAsync();
+			return true;
+		}
+
+
 
 	}
 }

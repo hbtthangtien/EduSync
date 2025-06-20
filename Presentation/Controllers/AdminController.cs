@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Cousre;
+using Application.DTOs.RegisterTutor;
 using Application.Interfaces.IService;
 using Application.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -65,6 +66,26 @@ namespace Presentation.Controllers
 		{
 			var report = await _adminUserService.GetAdminDashboardReportAsync();
 			return Ok(report);
+		}
+
+		[HttpPost("activation/approve")]
+		public async Task<IActionResult> ApproveTutorActivation([FromBody] ApproveRequestDTO request)
+		{
+			var success = await _adminUserService.ApproveActivationRequestAsync(request.RequestId);
+
+			if (!success)
+				return NotFound(new { error = "Đơn duyệt không tồn tại hoặc đã được xử lý." });
+
+			return Ok(new { message = "Đơn đã được duyệt thành công." });
+		}
+		[HttpGet("coursedetail/{courseId:long}")]
+		public async Task<IActionResult> GetCourseDetailMore(long courseId)
+		{
+			var result = await _adminUserService.GetCourseDetailMoreForAdminAsync(courseId);
+			if (result == null)
+				return NotFound(new { Message = "Không tìm thấy khóa học" });
+
+			return Ok(result);
 		}
 	}
 

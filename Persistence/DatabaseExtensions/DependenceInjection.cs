@@ -43,6 +43,7 @@ namespace Persistence.DatabaseExtensions
 			services.AddScoped<IContentRepository, ContentRepository>();
 			services.AddScoped<ISlotRepository,SlotRepository>();
 			services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
+			services.AddScoped<IBioTuTorRepository, BioTuTorRepository>();
 			//unit of work
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 		}

@@ -11,5 +11,8 @@ namespace Application.Interfaces.IService
 	{
 		Task SendMessageAsync(SendMessageRequest request);
 		Task<List<ChatMessageResponse>> GetConversationAsync(long userId1, long userId2);
+
+		Task<bool> MarkMessagesAsReadAsync(long currentUserId, List<long> messageIds);
 	}
 }
+

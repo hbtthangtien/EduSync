@@ -11,5 +11,7 @@ namespace Application.Interfaces.IRepository
 	{
 		Task AddAsync(ChatMessage message);
 		Task<List<ChatMessage>> GetMessagesByConversationIdAsync(string conversationId);
+
+		Task<List<ChatMessage>> GetUnreadMessagesByIdsAsync(List<long> messageIds, long currentUserId);
 	}
 }
