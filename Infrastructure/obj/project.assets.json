@@ -5978,23 +5978,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\hbtth\\.nuget\\packages\\": {},
+    "E:\\AppDownload\\Visual Studio Code Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Infrastructure\\obj\\",
+      "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\hbtth\\.nuget\\packages\\",
+      "outputPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "E:\\AppDownload\\Visual Studio Code Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hbtth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6010,11 +6010,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Application\\Application.csproj"
+            "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Application.csproj": {
+              "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Application\\Application.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\source\\repos\\EduSync\\Persistence\\Persistence.csproj"
+            "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Persistence.csproj": {
+              "projectPath": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Persistence\\Persistence.csproj"
             }
           }
         }
@@ -6055,7 +6055,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

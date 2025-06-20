@@ -8,9 +8,9 @@ namespace Presentation.Controllers
 	[Route("api/courses")]
 	public class CourseController : ControllerBase
 	{
-		private readonly ICousreService _courseService;
+		private readonly ICourseService _courseService;
 
-		public CourseController(ICousreService courseService)
+		public CourseController(ICourseService courseService)
 		{
 			_courseService = courseService;
 		}

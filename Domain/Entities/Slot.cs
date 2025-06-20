@@ -8,7 +8,7 @@ namespace Domain.Entities
 		public long TutorId { get; set; }
 		public long? StudentId { get; set; }
 		public short NumberOfSlot {  get; set; }
-		public TimeSpan DurationSession {  get; set; }
+		public TimeSpan DurationSession { get; set; }
 		public bool IsBooked { get; set; }
 		public DateTime StartTime { get; set; }
 		public DateTime EndTime =>  StartTime.AddMinutes(DurationSession.TotalMinutes);

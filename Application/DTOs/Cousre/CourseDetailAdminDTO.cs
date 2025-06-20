@@ -1,4 +1,4 @@
-﻿using Application.Certificate;
+﻿using Application.Certificates;
 using Application.DTOs.Tutors.Bio;
 using System;
 using System.Collections.Generic;

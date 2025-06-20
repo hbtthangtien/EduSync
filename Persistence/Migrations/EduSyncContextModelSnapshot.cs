@@ -2685,8 +2685,14 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<TimeSpan>("DurationSession")
+                        .HasColumnType("time");
+
                     b.Property<bool>("IsTrialAvailable")
                         .HasColumnType("bit");
+
+                    b.Property<int>("NumberOfSession")
+                        .HasColumnType("int");
 
                     b.Property<double>("PricePerSession")
                         .HasColumnType("float");
@@ -2724,7 +2730,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2737,7 +2745,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2750,7 +2760,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2763,7 +2775,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2776,7 +2790,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2789,7 +2805,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2802,7 +2820,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2815,7 +2835,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2828,7 +2850,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -2841,7 +2865,9 @@ namespace Persistence.Migrations
                             CreatedAt = new DateTime(2025, 1, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedByTutorId = 1L,
                             Description = "A comprehensive IELTS preparation course covering Listening, Reading, Writing, and Speaking.",
+                            DurationSession = new TimeSpan(0, 0, 0, 0, 0),
                             IsTrialAvailable = true,
+                            NumberOfSession = 0,
                             PricePerSession = 150.0,
                             ServiceFeePercentage = 10m,
                             Status = 4,
@@ -8450,7 +8476,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
-                        .WithMany("Certificates")
+                        .WithMany("Certificate")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -8663,7 +8689,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
-                    b.Navigation("Certificates");
+                    b.Navigation("Certificate");
 
                     b.Navigation("Contents");
 

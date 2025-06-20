@@ -23,5 +23,7 @@ namespace Application.Interfaces.IService
 		Task<BaseResponse<List<StudentInCourse>>> GetAllStudentInAllCourse(long tutorId);
 		Task<BaseResponse<List<CourseTutors>>> GetAllCourseOfTutors(long tutorId);
 		Task<BaseResponse<DashboardOfTutors>> ReportOftutors(long tutorId);
+		Task<BaseResponse<BioViewDetails>> GetBioViewDetails(long tutorId);
+
 	}
 }

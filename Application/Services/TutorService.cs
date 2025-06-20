@@ -175,5 +175,22 @@ namespace Application.Services
 					throw ExceptionFactory.NotFound("Tutor",tutorId);
 			return BaseResponse<DashboardOfTutors>.SuccessResponse(dashboard);
 		}
+
+		public async Task<BaseResponse<BioViewDetails>> GetBioViewDetails(long tutorId)
+		{
+			var bio = await _unitOfWork.TuTors.GetInstance()
+					.Where(e => e.UserId == tutorId)
+					.Include(e => e.BioTutor)
+					.Select(e => new BioViewDetails
+					{
+						UserId = e.UserId,
+						FullName = e.BioTutor.Fullname,
+						Introduces = e.BioTutor.Introduces,
+						Specializations = e.BioTutor.Specializations
+					})
+					.FirstOrDefaultAsync()
+					?? throw ExceptionFactory.NotFound("Tutor", tutorId);
+			return BaseResponse<BioViewDetails>.SuccessResponse(bio);
+		}
 	}
 }
