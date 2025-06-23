@@ -16,5 +16,7 @@ namespace Application.Interfaces.IService
 		Task<List<CourseDTO>> GetAllCoursesAsync();
 		Task<BaseResponse<ResponseCreateCourse>> CreateCourseAsync(long tutorId, CreateCourse create);
 		Task CreateContentForCourse(long courseId, List<CreateContent> listContent);
+
+
 	}
 }
