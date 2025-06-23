@@ -9,7 +9,7 @@ namespace Application.DTOs.Tutors
 	public class TutorDTO
 	{
 		public long Id { get; set; }
-		public string FullName { get; set; } = string.Empty;
+		public string FullName { get; set; }
 		public string Introduces { get; set; } = "Chưa có mô tả";
 		public List<string> Specializations { get; set; } = new();
 		public double Rating { get; set; }
