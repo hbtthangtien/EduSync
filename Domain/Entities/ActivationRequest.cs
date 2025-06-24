@@ -9,7 +9,7 @@ namespace Domain.Entities
 {
 	public class ActivationRequest : BaseEntity
 	{
-		public long TutorUserId { get; set; }
+		public long? TutorUserId { get; set; }
 		public long? CourseId { get; set; }
 		public DateTime RequestDate { get; set; }
 		public DateTime? ActivationDate { get; set; }

@@ -258,7 +258,7 @@ namespace Application.Services
 		{
 			var requests = await _unitOfWork.ActivationRequests
 				.GetInstance()
-				.OrderByDescending(r => r.CreatedAt)
+				.Where(r => r.TutorUserId != null && r.TutorUserId != 0).OrderByDescending(r => r.CreatedAt)
 				.Select(r => new ActivationRequestDTO
 				{
 					RequestId = r.Id,
