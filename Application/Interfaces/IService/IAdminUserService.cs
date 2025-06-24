@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Cousre;
+using Application.DTOs.RegisterTutor;
 using Application.DTOs.User;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,6 @@ namespace Application.Interfaces.IService
 		Task<bool> ApproveActivationRequestAsync(long requestId);
 		Task<CourseDetailAdminDTO?> GetCourseDetailMoreForAdminAsync(long courseId);
 		Task<bool> ApproveCourseAsync(long courseId);
+		Task<List<ActivationRequestDTO>> GetAllActivationRequestsAsync();
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using Application.DTOs.Tutors.Bio;
 using Application.DTOs.Tutors.Courses;
 using Application.DTOs.Tutors.Courses.Contents;
+using Application.DTOs.Tutors.Slots;
 using Application.Interfaces.IService;
 using Application.Services;
 using Microsoft.AspNetCore.Http;
@@ -14,11 +15,14 @@ namespace Presentation.Controllers
 	{
 		private readonly ITutorService _tutorService;
 		private readonly ICourseService _courseService;
+		private readonly ISlotService _slotService;
 		public TutorsController(ITutorService tutorService,
-			ICourseService courseService)
+			ICourseService courseService,
+			ISlotService slotService)
 		{
 			_tutorService = tutorService;
 			_courseService = courseService;
+			_slotService = slotService;
 		}
 
 		[HttpPut("{id}/bio")]
@@ -86,7 +90,15 @@ namespace Presentation.Controllers
 		[HttpPost("{id}/courses/{courseId}/contents")]
 		public async Task<IActionResult> CreateContentForCourse(long id, long courseId, List<CreateContent> listContent)
 		{
+			await _courseService.CreateContentForCourse(courseId, listContent);
 			return Ok();
+		}
+
+		[HttpPost("{id}/courses/{courseId}/slots")]
+		public async Task<IActionResult> CreateSlotForStudent(long id,long courseId, CreateSlot slot)
+		{
+			var data = await _slotService.CreateSlotWithScheduleAsync(id, slot);
+			return Ok(data);
 		}
 	}
 	

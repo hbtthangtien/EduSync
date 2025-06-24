@@ -68,6 +68,13 @@ namespace Presentation.Controllers
 			return Ok(report);
 		}
 
+		[HttpGet("activation/getall")]
+		public async Task<IActionResult> GetAll()
+		{
+			var result = await _adminUserService.GetAllActivationRequestsAsync();
+			return Ok(result);
+		}
+
 		[HttpPost("activation/approve")]
 		public async Task<IActionResult> ApproveTutorActivation([FromBody] ApproveRequestDTO request)
 		{

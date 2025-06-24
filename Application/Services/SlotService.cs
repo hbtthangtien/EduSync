@@ -3,6 +3,7 @@ using Application.DTOs.Tutors.Slots;
 using Application.Extentions;
 using Application.Interfaces.IService;
 using Application.IUnitOfWorks;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,43 @@ namespace Application.Services
 			_unitOfWork = unitOfWork;
 		}
 
-		
+		public async Task<IdResponse> CreateSlotWithScheduleAsync(long tutorId, CreateSlot slots)
+		{
+			var dateStart = slots.StartTime.Day;
+			var timeStart = slots.StartTime.TimeOfDay;
+			var durationOfCourse = await _unitOfWork.Courses
+				.GetInstance()
+				.Where(e => e.Id == slots.CourseId)
+				.Select(e => e.DurationSession)
+				.FirstOrDefaultAsync();
+			;
+			var listWeeklySchedule = GenerateWeeklySchedule(slots, durationOfCourse);
+			var studentId = await _unitOfWork.Users.GetInstance()
+					.Where(e => e.Email == slots.StudentEmail && e.RoleId == 3)
+					.Select(e => e.Id)
+					.FirstOrDefaultAsync();
+			
+			var slot = new Slot
+			{
+				CourseId = slots.CourseId,
+				DurationSession = durationOfCourse,
+				IsBooked = true,
+				MeetUrl = slots.MeetUrl,
+				IsTrial = true,
+				StartTime = slots.StartTime,
+				TutorId = tutorId,
+				NumberOfSlot = slots.NumberOfSession,
+				WeeklySchedules = listWeeklySchedule,
+				StudentId = studentId				
+			};
+			if (await IsOverlappingSchedule(slot,slots.DayOfWeeks))
+			{
+				await _unitOfWork.Slots.AddAsync(slot);
+				await _unitOfWork.SaveChangesAsync();
+				return IdResponse.SuccessResponse(slot.Id,"Add successfully");
+			}
+			throw ExceptionFactory.Conflict("Slots",slot.StartTime.ToString("F"));
+		}
 
 		public async Task<BaseResponse<string>> RegisterSlotAsync(long slotId, long userId)
 		{
@@ -56,6 +93,77 @@ namespace Application.Services
 			{ "exception", ex.Message }
 		});
 			}
+		}
+
+		private Dictionary<DayOfWeek, int> GetDistanceOfDayOfWeek(List<DayOfWeek> days)
+		{
+			Dictionary<DayOfWeek,int> results = new Dictionary<DayOfWeek, int>();
+			for(int i = 0;i<days.Count-1;i++)
+			{
+				results[days[i]]=(days[i + 1] - days[i]);
+			}
+			int lastResult = (int)(DayOfWeek.Sunday - days.Last() + days.First());
+			results[days.Last()]=Math.Abs(lastResult);
+			return results;
+		}
+
+		private List<WeeklySchedule> GenerateWeeklySchedule(CreateSlot slots, TimeSpan durationOfCourse)
+		{
+			var dateStart = slots.StartTime;
+			var distanceDayOfWeek = GetDistanceOfDayOfWeek(slots.DayOfWeeks);
+			var list = new List<WeeklySchedule>();
+			var duration = durationOfCourse.TotalMinutes;
+			int dayStep = slots.NumberOfSession / slots.DayOfWeeks.Count;
+			bool isAddFirstTime = false;
+
+			// check if start day is tuesday and slot include monday, wednesday, friday
+			bool check = dateStart.DayOfWeek - slots.DayOfWeeks.First() <= 0;
+			for (int i = 0; i<dayStep; i++)
+			{
+				
+				foreach(var j in distanceDayOfWeek)
+				{					
+					if (check && !isAddFirstTime)
+                    {
+						dateStart = dateStart.AddDays(dateStart.DayOfWeek - slots.DayOfWeeks.First());
+						var weeklySchedule = new WeeklySchedule
+						{
+							CourseId = slots.CourseId,
+							StartTime = dateStart,
+							EndTime = dateStart.AddMinutes(duration),
+							DayOfWeek = j.Key,
+						};
+						list.Add(weeklySchedule);
+						isAddFirstTime = true;
+					}
+					else
+					{
+						dateStart = dateStart.AddDays(j.Value);
+						var weeklySchedule = new WeeklySchedule
+						{
+							CourseId = slots.CourseId,
+							StartTime = dateStart,
+							EndTime = dateStart.AddMinutes(duration),
+							DayOfWeek = j.Key,
+						};
+						list.Add(weeklySchedule);
+					}
+                    
+				}
+			}
+			return list;
+		}
+
+		private async Task<bool> IsOverlappingSchedule(Slot slot,List<DayOfWeek> dayOfWeeks)
+		{
+			var check = await _unitOfWork.WeeklySchedules
+				.GetInstance()
+				.Where(e => e.CourseId == slot.CourseId 
+							&& dayOfWeeks.Contains(e.DayOfWeek)
+							&& ((slot.StartTime <= e.EndTime && slot.StartTime >= e.StartTime)
+							|| (slot.EndTime >= e.StartTime && slot.EndTime <= e.EndTime)))
+				.AnyAsync();
+			return !check;
 		}
 	}
 }
