@@ -241,8 +241,7 @@
               "RelativeToolTip": "Application\\DTOs\\Tutors\\Slots\\CreateSlot.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T10:24:47.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T10:24:47.166Z"
             },
             {
               "$type": "Document",
@@ -254,8 +253,7 @@
               "RelativeToolTip": "Application\\DTOs\\Tutors\\Courses\\CreateCourse.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T10:18:28.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T10:18:28.829Z"
             },
             {
               "$type": "Document",
@@ -267,8 +265,7 @@
               "RelativeToolTip": "Application\\Services\\SlotService.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAHUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T08:45:16.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T08:45:16.923Z"
             },
             {
               "$type": "Document",
@@ -338,7 +335,7 @@
               "RelativeDocumentMoniker": "Presentation\\appsettings.json",
               "ToolTip": "E:\\Documents\\C#\\SP_Exe\\EduSync\\Presentation\\appsettings.json",
               "RelativeToolTip": "Presentation\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-06-19T14:59:48.601Z",
               "EditorCaption": ""
@@ -353,8 +350,7 @@
               "RelativeToolTip": "Application\\DTOs\\Tutors\\Slots\\SlotTutorDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T10:24:46.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T10:24:46.33Z"
             },
             {
               "$type": "Document",
@@ -390,8 +386,7 @@
               "RelativeToolTip": "Presentation\\Middleware\\ExceptionCatchGlobal.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAAACkAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T09:17:16.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T09:17:16.708Z"
             },
             {
               "$type": "Document",

@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Certifiace;
 using Application.DTOs.Cousre;
+using Application.DTOs.RegisterTutor;
 using Application.DTOs.Tutors.Bio;
 using Application.DTOs.User;
 using Application.Interfaces.IService;
@@ -252,6 +253,26 @@ namespace Application.Services
 
 			await _unitOfWork.SaveChangesAsync();
 			return true;
+		}
+		public async Task<List<ActivationRequestDTO>> GetAllActivationRequestsAsync()
+		{
+			var requests = await _unitOfWork.ActivationRequests
+				.GetInstance()
+				.Where(r => r.TutorUserId != null && r.TutorUserId != 0).OrderByDescending(r => r.CreatedAt)
+				.Select(r => new ActivationRequestDTO
+				{
+					RequestId = r.Id,
+					TutorUserId = r.TutorUserId,
+					Fullname = r.Fullname,
+					Specializations = r.Specializations,
+					Introduces = r.Introduces,
+					IsActivated = r.IsActivated,
+					ActivationDate = r.ActivationDate,
+					CreatedAt = r.CreatedAt
+				})
+				.ToListAsync();
+
+			return requests;
 		}
 
 		public async Task<CourseDetailAdminDTO?> GetCourseDetailMoreForAdminAsync(long courseId)
