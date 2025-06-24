@@ -26,15 +26,22 @@ namespace Application.Services
 		{
 			var dateStart = slots.StartTime.Day;
 			var timeStart = slots.StartTime.TimeOfDay;
-			var listWeeklySchedule = GenerateWeeklySchedule(slots);
+			var durationOfCourse = await _unitOfWork.Courses
+				.GetInstance()
+				.Where(e => e.Id == slots.CourseId)
+				.Select(e => e.DurationSession)
+				.FirstOrDefaultAsync();
+			;
+			var listWeeklySchedule = GenerateWeeklySchedule(slots, durationOfCourse);
 			var studentId = await _unitOfWork.Users.GetInstance()
 					.Where(e => e.Email == slots.StudentEmail && e.RoleId == 3)
 					.Select(e => e.Id)
 					.FirstOrDefaultAsync();
+			
 			var slot = new Slot
 			{
 				CourseId = slots.CourseId,
-				DurationSession = slots.Durations,
+				DurationSession = durationOfCourse,
 				IsBooked = true,
 				MeetUrl = slots.MeetUrl,
 				IsTrial = true,
@@ -100,12 +107,12 @@ namespace Application.Services
 			return results;
 		}
 
-		private List<WeeklySchedule> GenerateWeeklySchedule(CreateSlot slots)
+		private List<WeeklySchedule> GenerateWeeklySchedule(CreateSlot slots, TimeSpan durationOfCourse)
 		{
 			var dateStart = slots.StartTime;
 			var distanceDayOfWeek = GetDistanceOfDayOfWeek(slots.DayOfWeeks);
 			var list = new List<WeeklySchedule>();
-			var duration = slots.Durations.TotalMinutes;
+			var duration = durationOfCourse.TotalMinutes;
 			int dayStep = slots.NumberOfSession / slots.DayOfWeeks.Count;
 			bool isAddFirstTime = false;
 

@@ -19,7 +19,5 @@ namespace Application.DTOs.Tutors.Slots
 		public long CourseId { get; set; }
 
 		public short NumberOfSession {  get; set; }
-
-		public TimeSpan Durations { get; set; }
 	}
 }
