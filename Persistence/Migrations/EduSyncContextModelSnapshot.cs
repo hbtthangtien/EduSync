@@ -60,7 +60,7 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("TutorUserId")
+                    b.Property<long?>("TutorUserId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -773,9 +773,7 @@ namespace Persistence.Migrations
 
                     b.HasOne("Domain.Entities.Tutor", null)
                         .WithMany("ActivationRequests")
-                        .HasForeignKey("TutorUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TutorUserId");
 
                     b.Navigation("Course");
                 });
