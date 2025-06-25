@@ -258,7 +258,8 @@ namespace Application.Services
 		{
 			var requests = await _unitOfWork.ActivationRequests
 				.GetInstance()
-				.Where(r => r.TutorUserId != null && r.TutorUserId != 0).OrderByDescending(r => r.CreatedAt)
+				.Where(r => r.TutorUserId != null && r.TutorUserId != 0)
+				.OrderByDescending(r => r.CreatedAt)
 				.Select(r => new ActivationRequestDTO
 				{
 					RequestId = r.Id,
@@ -268,12 +269,20 @@ namespace Application.Services
 					Introduces = r.Introduces,
 					IsActivated = r.IsActivated,
 					ActivationDate = r.ActivationDate,
-					CreatedAt = r.CreatedAt
+					CreatedAt = r.CreatedAt,
+
+					// Lấy danh sách CertificateUrl liên quan đến ActivationRequest
+					CertificateUrls = _unitOfWork.Certificates
+						.GetInstance()
+						.Where(c => c.ActivationRequestId == r.Id)
+						.Select(c => c.CertificateUrl)
+						.ToList()
 				})
 				.ToListAsync();
 
 			return requests;
 		}
+
 
 		public async Task<CourseDetailAdminDTO?> GetCourseDetailMoreForAdminAsync(long courseId)
 		{

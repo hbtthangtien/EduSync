@@ -35,5 +35,12 @@ namespace Persistence.Repositories
 							!m.IsRead)
 				.ToListAsync();
 		}
+		public async Task<List<ChatMessage>> GetMessagesByUserAsync(long userId)
+		{
+			return await _context.ChatMessages
+				.Where(m => m.SenderId == userId || m.ReceiverId == userId)
+				.ToListAsync();
+		}
+
 	}
 }
