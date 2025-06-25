@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class initials : Migration
+    public partial class UpdateCertificateFixed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,23 +28,6 @@ namespace Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "WeeklySchedules",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DayOfWeek = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_WeeklySchedules", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -246,7 +229,7 @@ namespace Persistence.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TutorUserId = table.Column<long>(type: "bigint", nullable: false),
+                    TutorUserId = table.Column<long>(type: "bigint", nullable: true),
                     CourseId = table.Column<long>(type: "bigint", nullable: true),
                     RequestDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ActivationDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -268,45 +251,7 @@ namespace Persistence.Migrations
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    //table.ForeignKey(
-                    //    name: "FK_ActivationRequests_Tutors_TutorUserId",
-                    //    column: x => x.TutorUserId,
-                    //    principalTable: "Tutors",
-                    //    principalColumn: "UserId",
-                    //    onDelete: ReferentialAction.Cascade);
-                });
 
-            migrationBuilder.CreateTable(
-                name: "Certificates",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TutorId = table.Column<long>(type: "bigint", nullable: false),
-                    CourseId = table.Column<long>(type: "bigint", nullable: false),
-                    CertificateUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsVerified = table.Column<bool>(type: "bit", nullable: false),
-                    VerifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Certificates", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Certificates_Courses_CourseId",
-                        column: x => x.CourseId,
-                        principalTable: "Courses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Certificates_Tutors_TutorId",
-                        column: x => x.TutorId,
-                        principalTable: "Tutors",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -446,6 +391,44 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Certificates",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TutorId = table.Column<long>(type: "bigint", nullable: true),
+                    CourseId = table.Column<long>(type: "bigint", nullable: true),
+                    CertificateUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsVerified = table.Column<bool>(type: "bit", nullable: false),
+                    VerifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ActivationRequestId = table.Column<long>(type: "bigint", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Certificates", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Certificates_ActivationRequests_ActivationRequestId",
+                        column: x => x.ActivationRequestId,
+                        principalTable: "ActivationRequests",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Certificates_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Certificates_Tutors_TutorId",
+                        column: x => x.TutorId,
+                        principalTable: "Tutors",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Payments",
                 columns: table => new
                 {
@@ -484,14 +467,16 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ScheduleTimes",
+                name: "WeeklySchedules",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseId = table.Column<long>(type: "bigint", nullable: false),
                     SlotId = table.Column<long>(type: "bigint", nullable: false),
-                    WeeklySchedulesId = table.Column<long>(type: "bigint", nullable: false),
+                    DayOfWeek = table.Column<int>(type: "int", nullable: false),
+                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -499,25 +484,19 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ScheduleTimes", x => x.Id);
+                    table.PrimaryKey("PK_WeeklySchedules", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ScheduleTimes_Courses_CourseId",
+                        name: "FK_WeeklySchedules_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ScheduleTimes_Slots_SlotId",
+                        name: "FK_WeeklySchedules_Slots_SlotId",
                         column: x => x.SlotId,
                         principalTable: "Slots",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ScheduleTimes_WeeklySchedules_WeeklySchedulesId",
-                        column: x => x.WeeklySchedulesId,
-                        principalTable: "WeeklySchedules",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
@@ -545,6 +524,11 @@ namespace Persistence.Migrations
                 table: "BioTutor",
                 column: "TutorId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Certificates_ActivationRequestId",
+                table: "Certificates",
+                column: "ActivationRequestId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Certificates_CourseId",
@@ -619,21 +603,6 @@ namespace Persistence.Migrations
                 column: "TutorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ScheduleTimes_CourseId",
-                table: "ScheduleTimes",
-                column: "CourseId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ScheduleTimes_SlotId",
-                table: "ScheduleTimes",
-                column: "SlotId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ScheduleTimes_WeeklySchedulesId",
-                table: "ScheduleTimes",
-                column: "WeeklySchedulesId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Slots_CourseId",
                 table: "Slots",
                 column: "CourseId");
@@ -674,14 +643,21 @@ namespace Persistence.Migrations
                 name: "IX_UserTokens_UserId",
                 table: "UserTokens",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WeeklySchedules_CourseId",
+                table: "WeeklySchedules",
+                column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WeeklySchedules_SlotId",
+                table: "WeeklySchedules",
+                column: "SlotId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ActivationRequests");
-
             migrationBuilder.DropTable(
                 name: "BioTutor");
 
@@ -701,19 +677,19 @@ namespace Persistence.Migrations
                 name: "Ratings");
 
             migrationBuilder.DropTable(
-                name: "ScheduleTimes");
+                name: "UserTokens");
 
             migrationBuilder.DropTable(
-                name: "UserTokens");
+                name: "WeeklySchedules");
+
+            migrationBuilder.DropTable(
+                name: "ActivationRequests");
 
             migrationBuilder.DropTable(
                 name: "CourseCancellations");
 
             migrationBuilder.DropTable(
                 name: "Slots");
-
-            migrationBuilder.DropTable(
-                name: "WeeklySchedules");
 
             migrationBuilder.DropTable(
                 name: "Courses");

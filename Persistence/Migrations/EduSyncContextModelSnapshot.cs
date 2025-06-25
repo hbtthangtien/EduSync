@@ -129,11 +129,14 @@ namespace Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<long?>("ActivationRequestId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("CertificateUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("CourseId")
+                    b.Property<long?>("CourseId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -145,7 +148,7 @@ namespace Persistence.Migrations
                     b.Property<bool>("IsVerified")
                         .HasColumnType("bit");
 
-                    b.Property<long>("TutorId")
+                    b.Property<long?>("TutorId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -158,6 +161,8 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ActivationRequestId");
 
                     b.HasIndex("CourseId");
 
@@ -791,17 +796,20 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
                 {
+                    b.HasOne("Domain.Entities.ActivationRequest", "ActivationRequest")
+                        .WithMany("Certificates")
+                        .HasForeignKey("ActivationRequestId");
+
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Certificate")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseId");
 
                     b.HasOne("Domain.Entities.Tutor", "Tutor")
                         .WithMany("Certificates")
                         .HasForeignKey("TutorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ActivationRequest");
 
                     b.Navigation("Course");
 
@@ -1001,6 +1009,11 @@ namespace Persistence.Migrations
                     b.Navigation("Course");
 
                     b.Navigation("Slot");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ActivationRequest", b =>
+                {
+                    b.Navigation("Certificates");
                 });
 
             modelBuilder.Entity("Domain.Entities.Course", b =>

@@ -18,5 +18,7 @@ namespace Domain.Entities
 		public string Specializations { get; set; } 
 		public string Introduces { get; set; }
 		public Course? Course { get; set; }
+		public ICollection<Certificate> Certificates { get; set; } = new List<Certificate>();
+
 	}
 }

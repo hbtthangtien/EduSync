@@ -128,6 +128,10 @@ namespace Persistence.DatabaseConfigs
 					.WithMany(e => e.Contents)
 					.HasForeignKey(e => e.CourseId);
 			});
+			modelBuilder.Entity<ActivationRequest>()
+				.HasMany(a => a.Certificates)
+				.WithOne(c => c.ActivationRequest)
+				.HasForeignKey(c => c.ActivationRequestId);
 
 			modelBuilder.Entity<Course>(entity =>
 			{
