@@ -16,5 +16,6 @@ namespace Application.DTOs.RegisterTutor
 		public bool IsActivated { get; set; }
 		public DateTime? ActivationDate { get; set; }
 		public DateTime CreatedAt { get; set; }
+		public List<string> CertificateUrls { get; set; }
 	}
 }

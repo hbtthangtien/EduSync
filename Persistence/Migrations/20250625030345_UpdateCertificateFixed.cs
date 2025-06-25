@@ -251,7 +251,11 @@ namespace Persistence.Migrations
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-
+                    table.ForeignKey(
+                        name: "FK_ActivationRequests_Tutors_TutorUserId",
+                        column: x => x.TutorUserId,
+                        principalTable: "Tutors",
+                        principalColumn: "UserId");
                 });
 
             migrationBuilder.CreateTable(

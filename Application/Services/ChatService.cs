@@ -43,6 +43,27 @@ namespace Application.Services
 			await _unitOfWork.ChatMessages.AddAsync(message);
 			await _unitOfWork.SaveChangesAsync();
 		}
+		public async Task<List<ChatContactResponse>> GetChatContactsAsync(long userId)
+		{
+			var messages = await _unitOfWork.ChatMessages.GetMessagesByUserAsync(userId);
+
+			if (messages == null || !messages.Any())
+				return new List<ChatContactResponse>();
+
+			var contactIds = messages
+				.Select(m => m.SenderId == userId ? m.ReceiverId : m.SenderId)
+				.Distinct()
+				.ToList();
+
+			var users = await _unitOfWork.Users.GetUsersByIdsAsync(contactIds);
+
+			return users.Select(u => new ChatContactResponse
+			{
+				UserId = u.Id,
+				FullName = u.Username,
+				//AvatarUrl = u.AvatarUrl
+			}).ToList();
+		}
 
 
 		public async Task<List<ChatMessageResponse>> GetConversationAsync(long userId1, long userId2)

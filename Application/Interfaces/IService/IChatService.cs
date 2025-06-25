@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.ChatMesseage;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Application.Interfaces.IService
 	{
 		Task SendMessageAsync(SendMessageRequest request);
 		Task<List<ChatMessageResponse>> GetConversationAsync(long userId1, long userId2);
+		Task<List<ChatContactResponse>> GetChatContactsAsync(long userId);
+
 
 		Task<bool> MarkMessagesAsReadAsync(long currentUserId, List<long> messageIds);
 	}

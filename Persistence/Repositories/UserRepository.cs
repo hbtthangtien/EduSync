@@ -49,5 +49,12 @@ namespace Persistence.Repositories
 		{
 			return await _dbSet.FindAsync(id); 
 		}
+		public async Task<List<User>> GetUsersByIdsAsync(List<long> userIds)
+		{
+			return await _context.Users
+				.Where(u => userIds.Contains(u.Id))
+				.ToListAsync();
+		}
+
 	}
 }

@@ -60,6 +60,11 @@ namespace Presentation.Controllers
 			return Ok(new { status = "marked as read" });
 		}
 
-
+		[HttpGet("contacts/{userId:long}")]
+		public async Task<IActionResult> GetChatContacts(long userId)
+		{
+			var contacts = await _chatService.GetChatContactsAsync(userId);
+			return Ok(contacts);
+		}
 	}
 }
