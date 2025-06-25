@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.DTOs.Tutors.Courses;
 
 namespace Application.Services
 {
@@ -17,6 +18,7 @@ namespace Application.Services
 	{
 		public readonly IUnitOfWork _unitOfWorks;
 		public IUserRepository _userRepo;
+
 		private readonly IFileStorageService _fileStorage;
 
 		public StudentService(
@@ -33,17 +35,18 @@ namespace Application.Services
 		{
 			var userId = _userRepo.GetUserId();
 
-			// Kiểm tra xem đã là gia sư chưa
 			if (await _unitOfWorks.TuTors.GetSingle(x => x.UserId == userId) is not null)
 				return BaseResponse<string>.Failure("Tài khoản của bạn đã là gia sư.");
 
-			// Kiểm tra xem đã có đơn đăng ký chưa
 			var existingRequest = await _unitOfWorks.ActivationRequests
 				.GetSingle(x => x.TutorUserId == userId && !x.IsActivated);
 			if (existingRequest != null)
 				return BaseResponse<string>.Failure("Bạn đã gửi đơn và đang chờ duyệt.");
 
-			// Tạo mới đơn đăng ký
+			// Upload certificate images
+			var certificates = await CreateCertificates(userId, registerTutor);
+
+			// Tạo mới đơn đăng ký kèm chứng chỉ
 			var request = new ActivationRequest
 			{
 				TutorUserId = userId,
@@ -51,13 +54,39 @@ namespace Application.Services
 				IsActivated = false,
 				Fullname = registerTutor.Fullname,
 				Specializations = registerTutor.Specializations,
-				Introduces = registerTutor.Introduces
+				Introduces = registerTutor.Introduces,
+				Certificates = certificates 
 			};
 
 			await _unitOfWorks.ActivationRequests.AddAsync(request);
 			await _unitOfWorks.SaveChangesAsync();
 
 			return BaseResponse<string>.SuccessResponse("Đơn đăng ký làm gia sư của bạn đã được gửi.");
+		}
+
+		public async Task<List<Certificate>> CreateCertificates(long tutorId, RegisterTutorDTO dto)
+		{
+			var imageFrontUrl = await _fileStorage.UploadFileAsync(dto.FrontImage);
+			var imageBackUrl = await _fileStorage.UploadFileAsync(dto.BackImage);
+
+			var certificates = new List<Certificate>
+		{
+		new Certificate
+		{
+			CertificateUrl = imageFrontUrl,
+			//TutorId = tutorId,
+			IsVerified = false,
+			VerifiedDate = null
+		},
+		new Certificate
+		{
+			CertificateUrl = imageBackUrl,
+			//TutorId = null,
+			IsVerified = false,
+			VerifiedDate = null
+		}
+		};
+			return certificates;
 		}
 
 

@@ -12,8 +12,8 @@ using Persistence.DatabaseConfigs;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EduSyncContext))]
-    [Migration("20250623020721_back_data")]
-    partial class back_data
+    [Migration("20250625030345_UpdateCertificateFixed")]
+    partial class UpdateCertificateFixed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,7 +63,7 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("TutorUserId")
+                    b.Property<long?>("TutorUserId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -132,11 +132,14 @@ namespace Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<long?>("ActivationRequestId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("CertificateUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("CourseId")
+                    b.Property<long?>("CourseId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -148,7 +151,7 @@ namespace Persistence.Migrations
                     b.Property<bool>("IsVerified")
                         .HasColumnType("bit");
 
-                    b.Property<long>("TutorId")
+                    b.Property<long?>("TutorId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -161,6 +164,8 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ActivationRequestId");
 
                     b.HasIndex("CourseId");
 
@@ -743,8 +748,14 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<long>("SlotId")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -770,9 +781,7 @@ namespace Persistence.Migrations
 
                     b.HasOne("Domain.Entities.Tutor", null)
                         .WithMany("ActivationRequests")
-                        .HasForeignKey("TutorUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TutorUserId");
 
                     b.Navigation("Course");
                 });
@@ -790,17 +799,20 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
                 {
+                    b.HasOne("Domain.Entities.ActivationRequest", "ActivationRequest")
+                        .WithMany("Certificates")
+                        .HasForeignKey("ActivationRequestId");
+
                     b.HasOne("Domain.Entities.Course", "Course")
                         .WithMany("Certificate")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseId");
 
                     b.HasOne("Domain.Entities.Tutor", "Tutor")
                         .WithMany("Certificates")
                         .HasForeignKey("TutorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ActivationRequest");
 
                     b.Navigation("Course");
 
@@ -1000,6 +1012,11 @@ namespace Persistence.Migrations
                     b.Navigation("Course");
 
                     b.Navigation("Slot");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ActivationRequest", b =>
+                {
+                    b.Navigation("Certificates");
                 });
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
