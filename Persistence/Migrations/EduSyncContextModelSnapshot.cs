@@ -772,7 +772,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.ActivationRequest", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
-                        .WithMany()
+                        .WithMany("ActivationRequests")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict);
 
@@ -1018,6 +1018,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
+                    b.Navigation("ActivationRequests");
+
                     b.Navigation("Certificate");
 
                     b.Navigation("Contents");

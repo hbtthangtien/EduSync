@@ -28,6 +28,7 @@ namespace Domain.Entities
 		public ICollection<Certificate> Certificate { get; set; } = new List<Certificate>();
 		public ICollection<CourseCancellation> CourseCancellations { get; set; } = new List<CourseCancellation>();
 
+		public ICollection<ActivationRequest> ActivationRequests { get; set; } = new List<ActivationRequest>();
 
 	}
 }

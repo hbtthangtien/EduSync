@@ -12,8 +12,8 @@ using Persistence.DatabaseConfigs;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EduSyncContext))]
-    [Migration("20250625030345_UpdateCertificateFixed")]
-    partial class UpdateCertificateFixed
+    [Migration("20250626112431_update")]
+    partial class update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -775,7 +775,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.ActivationRequest", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
-                        .WithMany()
+                        .WithMany("ActivationRequests")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict);
 
@@ -1021,6 +1021,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
+                    b.Navigation("ActivationRequests");
+
                     b.Navigation("Certificate");
 
                     b.Navigation("Contents");

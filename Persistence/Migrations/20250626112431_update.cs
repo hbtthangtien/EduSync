@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateCertificateFixed : Migration
+    public partial class update : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -251,11 +251,7 @@ namespace Persistence.Migrations
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ActivationRequests_Tutors_TutorUserId",
-                        column: x => x.TutorUserId,
-                        principalTable: "Tutors",
-                        principalColumn: "UserId");
+
                 });
 
             migrationBuilder.CreateTable(

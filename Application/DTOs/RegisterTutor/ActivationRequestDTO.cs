@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,6 @@ namespace Application.DTOs.RegisterTutor
 		public DateTime? ActivationDate { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public List<string> CertificateUrls { get; set; }
+		public CourseStatus? CourseStatus { get; set; }
 	}
 }
