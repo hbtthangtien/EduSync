@@ -19,7 +19,7 @@ namespace Application.DTOs.Cousre
 		public bool IsTrialAvailable { get; set; }
 		public long TrialSessions { get; set; }
 		public double PricePerSession { get; set; }
-
+		public long TutorId { get; set; }
 		public List<string> CourseContents { get; set; }
 
 	}
