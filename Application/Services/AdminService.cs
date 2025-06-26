@@ -27,7 +27,7 @@ namespace Application.Services
 			var users = await _unitOfWork.Users
 				.GetInstance()
 				.Include(u => u.Role)
-				.Where(u => u.DeletedAt == null)
+				.Where(u => u.RoleId != 1&& u.DeletedAt == null)
 				.ToListAsync();
 
 			return users.Select(u => new UserSumaryDTO
