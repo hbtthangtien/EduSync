@@ -117,10 +117,11 @@ namespace Persistence.DatabaseConfigs
 				entity.HasKey(e => e.Id);
 
 				entity.HasOne(e => e.Course)
-					.WithMany()
+					.WithMany(c => c.ActivationRequests) // <--- FIX ở đây
 					.HasForeignKey(e => e.CourseId)
 					.OnDelete(DeleteBehavior.Restrict);
 			});
+
 			modelBuilder.Entity<Content>(entity =>
 			{
 				entity.HasOne(e => e.Course)

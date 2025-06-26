@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Certifiace;
+using Application.DTOs.RegisterTutor;
 using Application.DTOs.Tutors.Bio;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Application.DTOs.Cousre
 		public List<string> CourseContents { get; set; }
 
 		public List<CertificateDTO> Certificate { get; set; }
+		public ActivationRequestDTO? ActivationRequest { get; set; }
 
 	}
 }

@@ -85,14 +85,24 @@ namespace Presentation.Controllers
 
 			return Ok(new { message = "Đơn đã được duyệt thành công." });
 		}
-		[HttpGet("coursedetail/{courseId:long}")]
-		public async Task<IActionResult> GetCourseDetailMore(long courseId)
+		[HttpGet("course/approve")]
+		public async Task<IActionResult> GetCourseDetailByTutor()
 		{
-			var result = await _adminUserService.GetCourseDetailMoreForAdminAsync(courseId);
-			if (result == null)
-				return NotFound(new { Message = "Không tìm thấy khóa học" });
+			var result = await _adminUserService.GetCourseDetailApproveAsync();
 
-			return Ok(result);
+			if (result == null)
+				return NotFound(new
+				{
+					success = false,
+					message = "Không tìm thấy khóa học."
+				});
+
+			return Ok(new
+			{
+				success = true,
+				message = "Lấy chi tiết khóa học thành công.",
+				data = result
+			});
 		}
 
 		[HttpPut("courses/{courseId}/approve")]

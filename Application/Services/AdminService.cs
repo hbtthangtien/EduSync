@@ -284,51 +284,47 @@ namespace Application.Services
 		}
 
 
-		public async Task<CourseDetailAdminDTO?> GetCourseDetailMoreForAdminAsync(long courseId)
+		public async Task<List<ActivationRequestDTO>> GetCourseDetailApproveAsync()
 		{
-			var course = await _unitOfWork.Courses
+			var requests = await _unitOfWork.ActivationRequests
 				.GetInstance()
-				.Include(c => c.CreatedByTutor)
-					.ThenInclude(t => t.BioTutor)
-				.Include(c => c.Slots)
-				.Include(c => c.Contents)
-				.Include(c => c.Certificate) 
-				.FirstOrDefaultAsync(c => c.Id == courseId);
+				.Include(r => r.Course)
+				.Where(r =>
+					(r.TutorUserId == null || r.TutorUserId == 0) &&
+					r.CourseId != null && r.CourseId != 0)
+				.OrderByDescending(r => r.CreatedAt)
+				.ToListAsync();
 
-			if (course == null)
-				return null;
-
-			var studentCount = course.Slots?
-				.Where(s => s.StudentId.HasValue)
-				.Select(s => s.StudentId!.Value)
+			var courseIds = requests
+				.Where(r => r.CourseId.HasValue)
+				.Select(r => r.CourseId.Value)
 				.Distinct()
-				.Count() ?? 0;
+				.ToList();
 
-			var dto = new CourseDetailAdminDTO
+			var certificates = await _unitOfWork.Certificates
+				.GetInstance()
+				.Where(c => c.CourseId.HasValue && courseIds.Contains(c.CourseId.Value))
+				.ToListAsync();
+
+			var result = requests.Select(r => new ActivationRequestDTO
 			{
-				Title = course.Title,
-				Description = course.Description,
-				TutorBio = new BioTutorDTO
-				{
-					FullName = course.CreatedByTutor?.BioTutor?.Fullname ?? "Chưa cập nhật",
-					Introduces = course.CreatedByTutor?.BioTutor?.Introduces ?? "Chưa có mô tả"
-				},
-				IsTrialAvailable = course.IsTrialAvailable,
-				TrialSessions = course.TrialSessions,
-				PricePerSession = course.PricePerSession,
-				CreatedAt = course.CreatedAt,
-				CourseContents = course.Contents?.Select(c => c.Descriptions).ToList() ?? new List<string>(),
+				RequestId = r.Id,
+				TutorUserId = r.TutorUserId,
+				Fullname = r.Fullname,
+				Specializations = r.Specializations,
+				Introduces = r.Introduces,
+				ActivationDate = r.ActivationDate,
+				CreatedAt = r.CreatedAt,
+				CourseStatus = r.Course?.Status ?? 0,
+				CertificateUrls = certificates
+					.Where(c => c.CourseId == r.CourseId)
+					.Select(c => c.CertificateUrl)
+					.ToList()
+			}).ToList();
 
-				Certificate = course.Certificate?.Select(cert => new CertificateDTO
-				{
-					CertificateUrl = cert.CertificateUrl,
-					IsVerified = cert.IsVerified,
-					VerifiedDate = cert.VerifiedDate
-				}).ToList() ?? new List<CertificateDTO>()
-			};
-
-			return dto;
+			return result;
 		}
+
 		public async Task<bool> ApproveCourseAsync(long courseId)
 		{
 			var course = await _unitOfWork.Courses

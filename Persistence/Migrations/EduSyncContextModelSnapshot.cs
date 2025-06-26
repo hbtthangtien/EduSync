@@ -673,7 +673,7 @@ namespace Persistence.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -681,9 +681,6 @@ namespace Persistence.Migrations
                         .IsUnique();
 
                     b.HasIndex("RoleId");
-
-                    b.HasIndex("Username")
-                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -772,7 +769,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.ActivationRequest", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
-                        .WithMany()
+                        .WithMany("ActivationRequests")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Restrict);
 
@@ -1018,6 +1015,8 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
                 {
+                    b.Navigation("ActivationRequests");
+
                     b.Navigation("Certificate");
 
                     b.Navigation("Contents");
