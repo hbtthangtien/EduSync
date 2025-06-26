@@ -34,11 +34,11 @@ namespace Application.Services
 		public async Task<CourseDetailDTO?> GetCourseDetailByIdAsync(long courseId)
 		{
 			var course = await _unitOfWorks.Courses
-			.GetInstance()
-			.Include(c => c.CreatedByTutor)
-			.ThenInclude(t => t.BioTutor)
-			.Include(c => c.Contents)
-			.FirstOrDefaultAsync(c => c.Id == courseId);
+				.GetInstance()
+				.Include(c => c.CreatedByTutor)
+					.ThenInclude(t => t.BioTutor)
+				.Include(c => c.Contents)
+				.FirstOrDefaultAsync(c => c.Id == courseId);
 
 			if (course == null)
 				return null;
@@ -47,6 +47,7 @@ namespace Application.Services
 			{
 				Title = course.Title,
 				Description = course.Description,
+				TutorId = course.CreatedByTutorId, 
 				TutorBio = new BioTutorDTO
 				{
 					FullName = course.CreatedByTutor?.BioTutor?.Fullname ?? "Chưa cập nhật",
@@ -55,15 +56,14 @@ namespace Application.Services
 				IsTrialAvailable = course.IsTrialAvailable,
 				TrialSessions = course.TrialSessions,
 				PricePerSession = course.PricePerSession,
-
 				CourseContents = course.Contents?
 					.Select(c => c.Descriptions)
 					.ToList() ?? new List<string>()
-
 			};
 
 			return dto;
 		}
+
 
 		public async Task<List<CourseDTO>> GetAllCoursesAsync()
 		{

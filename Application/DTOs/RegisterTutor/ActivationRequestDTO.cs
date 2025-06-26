@@ -11,6 +11,7 @@ namespace Application.DTOs.RegisterTutor
 	{
 		public long RequestId { get; set; }
 		public long? TutorUserId { get; set; }
+		public long? CourseId { get; set; }
 		public string Fullname { get; set; }
 		public string Specializations { get; set; }
 		public string Introduces { get; set; }

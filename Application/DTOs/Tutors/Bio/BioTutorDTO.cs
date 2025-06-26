@@ -8,6 +8,7 @@ namespace Application.DTOs.Tutors.Bio
 {
     public class BioTutorDTO
     {
+        
         public string FullName { get; set; }
         public string Introduces { get; set; }
     }

@@ -145,7 +145,8 @@ namespace Application.Services
 			// Tổng số khóa học
 			var totalCourses = await _unitOfWork.Courses
 				.GetInstance()
-				.CountAsync();
+				.CountAsync(c => c.Status == CourseStatus.Published || c.Status == CourseStatus.Approved);
+	
 
 			// Doanh thu tháng này
 			var monthlyRevenue = await _unitOfWork.Payments
@@ -310,6 +311,7 @@ namespace Application.Services
 			{
 				RequestId = r.Id,
 				TutorUserId = r.TutorUserId,
+				CourseId = r.CourseId,
 				Fullname = r.Fullname,
 				Specializations = r.Specializations,
 				Introduces = r.Introduces,
