@@ -101,7 +101,7 @@ namespace Application.Services
 			var certificates = await CreateCertificates(tutorId, create);
 
 			// create content from file
-			var contents = create.listContent.Select(e => new Content
+			var contents = create.ListContent.Select(e => new Content
 			{
 				ContentType = e.ContentType,
 				Descriptions = e.Descriptions,
@@ -197,5 +197,24 @@ namespace Application.Services
 			await _unitOfWorks.SaveChangesAsync();
 			
 		}
-	}
+
+        public async Task<BaseResponse<List<CourseCreateSlot>>> GetAllCoursePublish(long tutorId)
+        {
+			var courses = await _unitOfWorks.Courses
+				.GetInstance()
+				.Where(e => e.CreatedByTutorId == tutorId && e.Status == Domain.Enums.CourseStatus.Published)
+				.Include(e => e.CreatedByTutor)
+					.ThenInclude(e => e.BioTutor)
+				.Select(e => new CourseCreateSlot
+				{
+					Id = e.Id,
+					PricePerSession = e.PricePerSession,
+					Title = e.Title,
+					TutorName = e.CreatedByTutor.BioTutor.Fullname,
+					DurationSession = e.DurationSession
+				})
+				.ToListAsync();
+			return BaseResponse<List<CourseCreateSlot>>.SuccessResponse(courses);
+        }
+    }
 }

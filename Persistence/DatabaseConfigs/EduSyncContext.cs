@@ -59,8 +59,7 @@ namespace Persistence.DatabaseConfigs
 					.WithOne(e => e.User)
 					.HasForeignKey(e => e.UserId);
 
-				entity.HasIndex(e => e.Email).IsUnique(true);
-				entity.HasIndex(e => e.Username).IsUnique(true);
+				entity.HasIndex(e => e.Email).IsUnique(true);	
 			});
 
 			modelBuilder.Entity<Student>(entity =>

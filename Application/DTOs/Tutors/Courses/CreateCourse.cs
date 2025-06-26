@@ -19,7 +19,7 @@ namespace Application.DTOs.Tutors.Courses
 		public TimeSpan DurationSession { get; set; }
 		public string ListContentJson { get; set; }
 		[NotMapped]
-		public List<CreateContent>? listContent 
+		public List<CreateContent>? ListContent 
 			=> JsonConvert.DeserializeObject<List<CreateContent>>(ListContentJson);
 		public IFormFile FrontImage { get; set; }
 		public IFormFile BackImage { get; set; }

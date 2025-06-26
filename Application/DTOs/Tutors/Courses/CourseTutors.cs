@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Commons;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace Application.DTOs.Tutors.Courses
 		public string Description { get; set; }
 
 		public int NumberOfStudent {  get; set; }
+
+		public CourseStatus Status { get; set; }
 	}
 }

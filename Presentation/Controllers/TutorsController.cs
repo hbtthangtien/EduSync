@@ -81,6 +81,13 @@ namespace Presentation.Controllers
 			return Ok(data);
 		}
 
+		[HttpGet("{id}/slots/courses")]
+		public async Task<IActionResult> GetAllCoursePublish(long id)
+		{
+			var data = await _courseService.GetAllCoursePublish(id);
+			return Ok(data);
+		}
+
 		[HttpPost("{id}/courses")]
 		public async Task<IActionResult> CreateCourseByTutor(long id,[FromForm] CreateCourse request)
 		{

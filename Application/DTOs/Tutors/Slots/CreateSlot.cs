@@ -10,14 +10,12 @@ namespace Application.DTOs.Tutors.Slots
 	{
 		public List<DayOfWeek> DayOfWeeks { get; set; } = new List<DayOfWeek>();
 
-		public DateTime StartTime { get; set; }
+		public TimeSpan StartTime { get; set; }
 
 		public string MeetUrl { get; set; }
 
 		public string StudentEmail { get; set; }
 
 		public long CourseId { get; set; }
-
-		public short NumberOfSession {  get; set; }
 	}
 }

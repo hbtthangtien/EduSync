@@ -24,34 +24,33 @@ namespace Application.Services
 
 		public async Task<IdResponse> CreateSlotWithScheduleAsync(long tutorId, CreateSlot slots)
 		{
-			var dateStart = slots.StartTime.Day;
-			var timeStart = slots.StartTime.TimeOfDay;
-			var durationOfCourse = await _unitOfWork.Courses
+            var durationOfCourse = await _unitOfWork.Courses
 				.GetInstance()
-				.Where(e => e.Id == slots.CourseId)
-				.Select(e => e.DurationSession)
-				.FirstOrDefaultAsync();
-			;
-			var listWeeklySchedule = GenerateWeeklySchedule(slots, durationOfCourse);
+				.Where(e => e.Id == slots.CourseId && e.CreatedByTutorId == tutorId && e.Status == Domain.Enums.CourseStatus.Published)
+				.Select(e => new { e.DurationSession , e.NumberOfSession})
+				.FirstOrDefaultAsync() 
+				?? throw ExceptionFactory.Business("The course is not found or not published");
+			var listWeeklySchedule = GenerateWeeklySchedule(slots, durationOfCourse.DurationSession, (short)durationOfCourse.NumberOfSession);
+			var dateStart = listWeeklySchedule.First().StartTime;
 			var studentId = await _unitOfWork.Users.GetInstance()
 					.Where(e => e.Email == slots.StudentEmail && e.RoleId == 3)
-					.Select(e => e.Id)
-					.FirstOrDefaultAsync();
-			
+					.Select(e => new { e.Id })
+					.FirstOrDefaultAsync()
+					?? throw ExceptionFactory.NotFound("Student", slots.StudentEmail);								
 			var slot = new Slot
 			{
 				CourseId = slots.CourseId,
-				DurationSession = durationOfCourse,
+				DurationSession = durationOfCourse.DurationSession,
 				IsBooked = true,
 				MeetUrl = slots.MeetUrl,
 				IsTrial = true,
-				StartTime = slots.StartTime,
+				StartTime = dateStart,
 				TutorId = tutorId,
-				NumberOfSlot = slots.NumberOfSession,
+				NumberOfSlot = (short)durationOfCourse.NumberOfSession,
 				WeeklySchedules = listWeeklySchedule,
-				StudentId = studentId				
+				StudentId = studentId.Id				
 			};
-			if (await IsOverlappingSchedule(slot,slots.DayOfWeeks))
+			if (!await IsOverlappingSchedule(slot,slots.DayOfWeeks))
 			{
 				await _unitOfWork.Slots.AddAsync(slot);
 				await _unitOfWork.SaveChangesAsync();
@@ -97,23 +96,29 @@ namespace Application.Services
 
 		private Dictionary<DayOfWeek, int> GetDistanceOfDayOfWeek(List<DayOfWeek> days)
 		{
-			Dictionary<DayOfWeek,int> results = new Dictionary<DayOfWeek, int>();
-			for(int i = 0;i<days.Count-1;i++)
-			{
-				results[days[i]]=(days[i + 1] - days[i]);
-			}
-			int lastResult = (int)(DayOfWeek.Sunday - days.Last() + days.First());
-			results[days.Last()]=Math.Abs(lastResult);
-			return results;
-		}
+            var results = new Dictionary<DayOfWeek, int>();
+            if (days == null || days.Count < 2)
+                return results; 
+            for (int i = 0; i < days.Count - 1; i++)
+            {
+                int distance = ((int)days[i + 1] - (int)days[i] + 7) % 7;
+                if (distance == 0) distance = 7; 
+                results[days[i]] = distance;
+            }
+            int lastDistance = ((int)days.First() - (int)days.Last() + 7) % 7;
+            if (lastDistance == 0) lastDistance = 7;
+            results[days.Last()] = lastDistance;
+            return results;
+        }
 
-		private List<WeeklySchedule> GenerateWeeklySchedule(CreateSlot slots, TimeSpan durationOfCourse)
+		private List<WeeklySchedule> GenerateWeeklySchedule(CreateSlot slots, TimeSpan durationOfCourse,short NumberOfSession)
 		{
-			var dateStart = slots.StartTime;
-			var distanceDayOfWeek = GetDistanceOfDayOfWeek(slots.DayOfWeeks);
+			var dateStart = DateTime.Now.Date;
+			dateStart =  dateStart.AddMinutes(slots.StartTime.TotalMinutes);
+            var distanceDayOfWeek = GetDistanceOfDayOfWeek(slots.DayOfWeeks);
 			var list = new List<WeeklySchedule>();
 			var duration = durationOfCourse.TotalMinutes;
-			int dayStep = slots.NumberOfSession / slots.DayOfWeeks.Count;
+			int dayStep = NumberOfSession / slots.DayOfWeeks.Count;
 			bool isAddFirstTime = false;
 
 			// check if start day is tuesday and slot include monday, wednesday, friday
@@ -154,16 +159,30 @@ namespace Application.Services
 			return list;
 		}
 
-		private async Task<bool> IsOverlappingSchedule(Slot slot,List<DayOfWeek> dayOfWeeks)
-		{
-			var check = await _unitOfWork.WeeklySchedules
-				.GetInstance()
-				.Where(e => e.CourseId == slot.CourseId 
-							&& dayOfWeeks.Contains(e.DayOfWeek)
-							&& ((slot.StartTime <= e.EndTime && slot.StartTime >= e.StartTime)
-							|| (slot.EndTime >= e.StartTime && slot.EndTime <= e.EndTime)))
-				.AnyAsync();
-			return !check;
-		}
-	}
+        private async Task<bool> IsOverlappingSchedule(Slot slot, List<DayOfWeek> dayOfWeeks)
+        {
+            // Lấy tất cả lịch đã tồn tại của Course này và các ngày sẽ check
+            var existedSchedules = await _unitOfWork.WeeklySchedules
+                .GetInstance()
+                .Where(e => e.CourseId == slot.CourseId && dayOfWeeks.Contains(e.DayOfWeek))
+                .ToListAsync();
+
+            // Duyệt từng WeeklySchedule sẽ tạo mới (giả sử bạn dùng GenerateWeeklySchedule rồi)
+            var newSchedules = slot.WeeklySchedules; // <-- bạn đã gán trước khi gọi hàm này
+
+            foreach (var newSchedule in newSchedules)
+            {
+                // Kiểm tra có cái nào trùng trong DB không
+                bool overlap = existedSchedules.Any(e =>
+                    e.DayOfWeek == newSchedule.DayOfWeek
+                    && newSchedule.StartTime < e.EndTime
+                    && e.StartTime < newSchedule.EndTime
+                );
+                if (overlap)
+                    return true; // Phát hiện trùng, dừng luôn
+            }
+
+            return false; // Không có trùng nào hết
+        }
+    }
 }

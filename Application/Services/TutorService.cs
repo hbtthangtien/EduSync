@@ -84,10 +84,10 @@ namespace Application.Services
 				.FirstOrDefaultAsync();
 
 			var result = tutor.Slots
-				.GroupBy(s => new { s.StartTime.Date, s.Course.Title })
+				.GroupBy(s => new { s.StartTime.Date, s.Course.Title})
 				.Select(g => new SlotTutorDTO
 				{
-					Id = tutor.UserId,
+					Id = g.Select(e => e.Id).FirstOrDefault(),
 					Date = g.Key.Date,
 					CourseTitle = g.Key.Title,
 					Shifts = g.Select(s => $"{s.StartTime:HH\\:mm} - {s.EndTime:HH\\:mm}").ToList()
@@ -145,7 +145,8 @@ namespace Application.Services
 					Id = c.Id,
 					Title = c.Title,
 					Description = c.Description,
-					NumberOfStudent = c.Slots.Count(s => s.StudentId != null)
+					NumberOfStudent = c.Slots.Count(s => s.StudentId != null),
+					Status = c.Status,
 				})
 				.ToListAsync();
 			return BaseResponse<List<CourseTutors>>.SuccessResponse(data);
